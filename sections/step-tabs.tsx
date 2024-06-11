@@ -8,7 +8,7 @@ import { MegaTitle } from "../components/ui/mega-title";
 
 // Data
 import { buyCombo, customOrder } from "@/data/steps";
-import VideoModal from "../components/VideoModal";
+import VideoModal from "../components/video-modal";
 import { Steps } from "@/components/ui/Steps";
 
 export function StepTabs() {

@@ -1,7 +1,7 @@
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 import ContactPopOver from "@/components/ui/contact-pop-over";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import Topbar from "@/components/topbar";
 import {
   MessageBox,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/message-box";
 
 // Sections
-import { TargetAudience } from "@/sections/TargetAudience";
+import { TargetAudience } from "@/sections/target-audience";
 import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";

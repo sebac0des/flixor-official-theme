@@ -10,7 +10,7 @@ import { Button } from "./button";
 // Icons
 import { Star } from "lucide-react";
 
-export default function Reviews() {
+export default function GoogleReviews() {
   return (
     <Button
       asChild

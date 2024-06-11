@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 // Components
-import GoogleReviews from "@/components/ui/Reviews";
+import GoogleReviews from "@/components/ui/google-reviews";
 import { Button } from "@/components/ui/button";
 
 // Typed js

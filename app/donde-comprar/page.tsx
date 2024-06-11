@@ -1,6 +1,6 @@
 // Components
 import Banner from "@/components/ui/banner";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import Topbar from "@/components/topbar";
 
 // Sections
