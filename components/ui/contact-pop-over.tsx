@@ -15,6 +15,10 @@ import { Button } from "./button";
 // Next js
 import Link from "next/link";
 
+// Fonts
+import {inconsolata} from '@/app/fonts'
+import { cn } from "@/lib/utils";
+
 interface Props {
   dispatchWindowTime: number;
   image: string;
@@ -47,7 +51,7 @@ export default function ContactPopOver({
                 ¿Tenes una pregunta? ¡Escríbínos!
               </h4>
 
-              <p className="text-primary text-sm w-full">
+              <p className={cn(inconsolata.className,"text-primary text-sm w-full")}>
                 Estamos en línea listos para responder tus dudas en WhatsApp.
               </p>
             </div>
@@ -63,7 +67,7 @@ export default function ContactPopOver({
                 <i className="fi fi-brands-whatsapp ml-2 translate-y-0.5 text-lg"></i>
               </Link>
             </Button>
-            <small className="block text-center text-xs mt-1 text-gray-400">
+            <small className={cn(inconsolata.className,'block text-center text-xs mt-1 text-gray-400')}>
               Se abre en WhatsApp
             </small>
           </div>
