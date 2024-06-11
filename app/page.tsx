@@ -65,15 +65,15 @@ export default async function Page() {
 
       <MessageBox>
         <MessageBoxSmallMessage>
-          ¿Necesitas detalles de los productos?👋
+          Hola, soy Sebas👋
         </MessageBoxSmallMessage>
         <MessageBoxTitle>
-          Buscalos dentro de nuestro
+          Jalf es el comercio que uso para mostrar
           <MessageBoxLink
             className="ml-1"
-            href="https://demojalf.mitiendanube.com/"
+            href="https://github.com/sebac0des/flixor"
           >
-            Catalogo online.
+            Flixor template.
           </MessageBoxLink>
         </MessageBoxTitle>
       </MessageBox>
