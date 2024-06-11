@@ -8,7 +8,6 @@ import { poppins } from "./fonts";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
-import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Jalf",
@@ -27,7 +26,6 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
-        <Toaster />
       </body>
     </html>
   );
