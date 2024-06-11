@@ -23,11 +23,10 @@ import { homepage as faq } from "@/data/faq";
 import audience from "@/data/audience";
 import benefits from "@/data/benefits";
 
-// Services
-import { getAllVideos } from "@/services/videos";
+// Mock data
+import videos from "@/data/videos";
 
 export default async function Page() {
-  const videos = await getAllVideos();
 
   return (
     <main className="min-h-screen bg-[#fcfcfc]">
