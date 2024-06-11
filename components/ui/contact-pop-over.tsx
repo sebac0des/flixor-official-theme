@@ -1,7 +1,7 @@
 "use client";
 
 // React
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Components
 import {
@@ -16,10 +16,13 @@ import { Button } from "./button";
 import Link from "next/link";
 
 // Fonts
-import {inconsolata} from '@/app/fonts'
+import { inconsolata } from '@/app/fonts'
 import { cn } from "@/lib/utils";
 
-interface Props {
+
+
+interface ContactPopOverProps {
+  children: React.ReactNode
   dispatchWindowTime: number;
   image: string;
 }
@@ -27,7 +30,9 @@ interface Props {
 export default function ContactPopOver({
   image,
   dispatchWindowTime = 10000,
-}: Props) {
+  children,
+
+}: ContactPopOverProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -37,7 +42,7 @@ export default function ContactPopOver({
   }, [dispatchWindowTime]);
 
   return (
-    <div className="fixed right-1 bottom-1 z-50">
+    <div className={cn('right-0 bottom-0 fixed z-50')}>
       <Popover open={open}>
         <PopoverTrigger onClick={() => setOpen(!open)} asChild>
           <Avatar className="w-24 h-24 hover:cursor-pointer shadow-black/30 shadow-xl">
@@ -45,34 +50,49 @@ export default function ContactPopOver({
           </Avatar>
         </PopoverTrigger>
         <PopoverContent className="w-80 -translate-x-2 -translate-y-2">
-          <div className="grid gap-2">
-            <div>
-              <h4 className="font-bold leading-none text-lg text-left mb-2">
-                ¿Tenes una pregunta? ¡Escríbínos!
-              </h4>
-
-              <p className={cn(inconsolata.className,"text-primary text-sm w-full")}>
-                Estamos en línea listos para responder tus dudas en WhatsApp.
-              </p>
-            </div>
-
-            <Button
-              variant="accent"
-              asChild
-              className="w-full rounded-none mt-2"
-              size="icon"
-            >
-              <Link href="https://api.whatsapp.com/send?phone=+5491130963298&text=Hola,%20mi%20nombre%20es%20....%20y%20tengo%20una%20duda!">
-                Si, tengo preguntas
-                <i className="fi fi-brands-whatsapp ml-2 translate-y-0.5 text-lg"></i>
-              </Link>
-            </Button>
-            <small className={cn(inconsolata.className,'block text-center text-xs mt-1 text-gray-400')}>
-              Se abre en WhatsApp
-            </small>
-          </div>
+            {children}
         </PopoverContent>
       </Popover>
     </div>
   );
+}
+
+const ContactPopOverTitle = ({children}:{children:React.ReactNode}) => {
+  return <h4 className="font-bold leading-none text-lg text-left mb-2">
+    {children}
+  </h4>
+}
+
+const ContactPopOverMessage = ({children}:{children:React.ReactNode}) => {
+  return <p className={cn(inconsolata.className, "text-primary text-sm w-full")}>
+    {children}
+  </p>
+}
+
+const ContactPopOverButton = ({children,href}:{children:React.ReactNode, href:string})=>{
+  return  <Button
+  variant="accent"
+  asChild
+  className="w-full rounded-none mt-4 mb-1.5"
+  size="icon"
+>
+  <Link href={href}>
+    {children}
+    <i className="fi fi-brands-whatsapp ml-2 translate-y-0.5 text-lg"></i>
+  </Link>
+</Button>
+}
+
+const ContactPopOverSmallMessage = ({children}:{children:React.ReactNode}) => {
+  return <small className={cn(inconsolata.className, 'block text-center text-xs mt-1 text-gray-400')}>
+  {children}
+</small>
+}
+
+export {
+  ContactPopOver,
+  ContactPopOverTitle,
+  ContactPopOverMessage,
+  ContactPopOverButton,
+  ContactPopOverSmallMessage
 }

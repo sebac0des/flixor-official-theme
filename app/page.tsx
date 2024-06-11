@@ -1,8 +1,11 @@
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
-import ContactPopOver from "@/components/ui/contact-pop-over";
 import Header from "@/components/header";
 import Topbar from "@/components/topbar";
+
+import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
+
+
 import {
   MessageBox,
   MessageBoxTitle,
@@ -33,7 +36,17 @@ export default async function Page() {
       <ContactPopOver
         image="\images\sebas-call-me.webp"
         dispatchWindowTime={7000}
-      />
+      >
+        <ContactPopOverTitle>¿Tenes una pregunta? ¡Escríbínos!
+        </ContactPopOverTitle>
+        <ContactPopOverMessage>Estamos en línea listos para responder tus dudas en WhatsApp.
+
+        </ContactPopOverMessage>
+        <ContactPopOverButton
+          href="https://api.whatsapp.com/send?phone=+5491130963298&text=Hola,%20mi%20nombre%20es%20....%20y%20tengo%20una%20duda!"
+        >Si, tengo preguntas</ContactPopOverButton>
+        <ContactPopOverSmallMessage>Se abre en WhatsApp</ContactPopOverSmallMessage>
+      </ContactPopOver>
 
       <Navigation />
       <BenefitsVerticalSlider data={benefits} />
