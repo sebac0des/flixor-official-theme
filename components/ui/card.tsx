@@ -8,7 +8,6 @@ import { Button } from "./button";
 import Link from "next/link";
 import Image from "next/image";
 
-
 export function Card() {
   return <div className="relative">
       <Image
@@ -28,3 +27,4 @@ export function Card() {
       </div>
   </div>
 }
+
