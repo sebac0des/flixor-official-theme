@@ -1,5 +1,5 @@
 // Fonts
-import { inconsolata } from "@/app/fonts";
+import { body } from "@/app/fonts";
 
 // Next
 import Link from "next/link";
@@ -20,7 +20,7 @@ const Topbar = ({ message, url,className }: Props) => {
   return (
     <div
       className={cn(
-        inconsolata.className,
+        body.className,
         "bg-white border-b border-primary/20 py-2",
         className
       )}

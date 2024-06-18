@@ -10,7 +10,7 @@ import Wrapper from "@/components/ui/wrapper";
 import Image from "next/image";
 
 // Fonts
-import { inconsolata } from "@/app/fonts";
+import { body } from "@/app/fonts";
 
 // Data
 import data from "@/data/testimonials";
@@ -62,14 +62,14 @@ const Testimonials = () => {
                 </div>
                 <p
                   className={cn(
-                    inconsolata.className,
+                    body.className,
                     "text-primary text-center"
                   )}
                 >
                   {item.content}
                 </p>
 
-                <h4 className={cn(inconsolata.className, "text-center")}>
+                <h4 className={cn(body.className, "text-center")}>
                   - {item.name}
                 </h4>
               </CarouselItem>
