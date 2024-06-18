@@ -1,79 +1,30 @@
-import * as React from "react"
+// Fonts
+import { small } from "@/app/fonts";
 
-import { cn } from "@/lib/utils"
+// Components
+import { Button } from "./button";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border border-zinc-200 bg-white text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50",
-      className
-    )}
-    {...props}
-  />
-))
-Card.displayName = "Card"
+// Next js
+import Link from "next/link";
+import Image from "next/image";
 
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
-))
-CardHeader.displayName = "CardHeader"
 
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-CardTitle.displayName = "CardTitle"
+export function Card() {
+  return <div className="relative">
+      <Image
+          width={1080}
+          height={1080}
+          alt=""
+          src="/images/Body-Wash_Product-Brand-1-Bartlett-Pear-min.webp"
+          className="rounded-md h-screen"
+      />
 
-const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    className={cn("text-sm text-zinc-500 dark:text-zinc-400", className)}
-    {...props}
-  />
-))
-CardDescription.displayName = "CardDescription"
-
-const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-))
-CardContent.displayName = "CardContent"
-
-const CardFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
-    {...props}
-  />
-))
-CardFooter.displayName = "CardFooter"
-
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+      <div className="absolute bottom-0 left-0 p-4 text-white">
+          <span className={small.className}>Say 👋🏻 new formula!</span>
+          <h3 className="text-2xl font-medium tracking-wider">Product title</h3>
+          <Button variant="secondary" className="mt-3">
+              <Link href="">Mas info</Link>
+          </Button>
+      </div>
+  </div>
+}
