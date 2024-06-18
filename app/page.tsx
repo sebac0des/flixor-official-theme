@@ -5,7 +5,6 @@ import Topbar from "@/components/topbar";
 
 import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
 
-
 import {
   MessageBox,
   MessageBoxTitle,
@@ -18,7 +17,7 @@ import { TargetAudience } from "@/sections/target-audience";
 import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";
-import Testimonials from "@/sections/Testimonials/Testimonials";
+import Testimonials from "@/sections/testimonials";
 
 // Data
 import settings from "@/data/settings";
