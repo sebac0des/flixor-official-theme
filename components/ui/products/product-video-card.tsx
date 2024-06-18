@@ -20,7 +20,7 @@ export function ProductVideoCard(props:Props) {
         height={1080}
         alt=""
         src="/images/Body-Wash_Product-Brand-1-Bartlett-Pear-min.webp"
-        className="rounded-md"
+        className="rounded-md h-screen object-cover"
     />
 
     <div className="absolute bottom-0 left-0 p-4 text-white">
