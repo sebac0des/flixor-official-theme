@@ -8,6 +8,8 @@ import { small } from '@/app/fonts'
 // Components
 import Wrapper from "../wrapper";
 import { SimpleTitle } from "../simple-title";
+import { Button } from "../button";
+
 
 import {
     Carousel,
@@ -16,8 +18,11 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+
+// Utils
 import { cn } from "@/lib/utils";
-import { Button } from "../button";
+
+// Icons
 import { Eye } from "lucide-react";
 
 
@@ -64,9 +69,11 @@ function ProductCard() {
 
             <div className="flex justify-between items-center">
                 <span className={cn(small.className, "text-lg")}>$20.00</span>
-                <Button variant="accent">
+                <Button asChild variant="accent" size="sm">
+                    <Link href="">
                     <Eye className="w-4 h-4 mr-2" />
                     Ver producto
+                    </Link>
                 </Button>
             </div>
         </div>
