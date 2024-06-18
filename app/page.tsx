@@ -34,6 +34,7 @@ import benefits from "@/data/benefits";
 
 // Mock data
 import videos from "@/data/videos";
+import Footer from "@/components/footer";
 
 export default async function Page() {
 
@@ -111,6 +112,8 @@ export default async function Page() {
         sectionTitle="¿Tienes dudas? ¡Te las aclaramos! 👇"
         data={faq}
       />
+
+      <Footer/>
     </main>
   );
 }
