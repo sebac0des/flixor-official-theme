@@ -14,7 +14,7 @@ interface Props {
 export function SimpleTitle(props: Props) {
   return (
     <div className={cn("text-center md:text-left",props.containerClassName)}>
-      <small className={cn(small.className,"text-inherit inline-block mb-2 text-base")}>{props.smallText}</small>
+      <small className={cn(small.className,"text-inherit inline-block text-base")}>{props.smallText}</small>
       <h2 className="text-2xl md:text-4xl font-semibold">{props.titleText}</h2>
       <p className={small.className}>{props.description}</p>
     </div>
