@@ -7,6 +7,7 @@ import { small } from '@/app/fonts'
 // Components
 import Wrapper from "../wrapper";
 import { Button } from "../button";
+import Link from "next/link";
 
 
 
@@ -31,7 +32,9 @@ function ProductCard() {
         <div className="absolute bottom-0 left-0 p-4 text-white">
             <span className={small.className}>Say 👋🏻 new formula!</span>
             <h3 className="text-2xl font-medium tracking-wider">Product title</h3>
-            <Button variant="secondary" className="mt-3.5">Mas info</Button>
+            <Button variant="secondary" className="mt-3">
+                <Link href="">Mas info</Link>
+            </Button>
         </div>
     </div>
 }
