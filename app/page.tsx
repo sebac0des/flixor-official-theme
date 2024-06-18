@@ -24,6 +24,7 @@ import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
+import ComboShowcase from '@/sections/products/combo-showcase'
 
 // Data
 import settings from "@/data/settings";
@@ -74,6 +75,8 @@ export default async function Page() {
       <FeaturedProducts/>
 
       <MostPopularProducts/>
+
+      <ComboShowcase/>
 
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
