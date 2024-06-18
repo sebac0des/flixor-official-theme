@@ -3,7 +3,6 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { MegaTitle } from "@/components/ui/mega-title";
 import Wrapper from "@/components/ui/wrapper";
 
 // Next js
@@ -20,15 +19,17 @@ import { Star } from "lucide-react";
 
 // Utils
 import { cn } from "@/lib/utils";
+import { SimpleTitle } from "@/components/ui/simple-title";
 
 const Testimonials = () => {
   return (
     <Wrapper container="stretch" className="text-primary bg-[#fbfbfb]">
-      <MegaTitle
-        smallText="Resultados reales"
-        beforeTextTitle="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
-        containerClassName="mb-2.5 lg:mb-5"
+      <SimpleTitle
+      smallText="Resultados reales"
+      titleText="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
+      containerClassName="mb-2.5 lg:mb-5"
       />
+      
       <Carousel
         opts={{
           loop: true,

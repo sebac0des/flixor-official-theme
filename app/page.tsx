@@ -16,6 +16,7 @@ import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider
 
 // Products components
 import {FeaturedProducts} from '@/components/ui/products/featured-products'
+import {MostPopularProducts} from '@/components/ui/products/most-popular-products'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -71,6 +72,8 @@ export default async function Page() {
       />
 
       <FeaturedProducts/>
+
+      <MostPopularProducts/>
 
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"

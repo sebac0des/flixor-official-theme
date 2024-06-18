@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 // Components
-import { MegaTitle } from "@/components/ui/mega-title";
 import Wrapper from "@/components/ui/wrapper";
+import { SimpleTitle } from "@/components/ui/simple-title";
 
 interface Props {
   sectionSmallText: string;
@@ -24,10 +24,10 @@ export function TargetAudience({
 }: Props) {
   return (
     <Wrapper container="stretch" className="flex flex-col">
-      <MegaTitle
-        containerClassName="mb-10 xl:mb-20"
+      <SimpleTitle
+      containerClassName="mb-10 xl:mb-20"
         smallText={sectionSmallText}
-        beforeTextTitle={sectionTitle}
+        titleText={sectionTitle}
       />
 
       <ul className="grid md:grid-cols-2 gap-10 xl:gap-5">

@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { MegaTitle } from "@/components/ui/mega-title";
+import { SimpleTitle } from "@/components/ui/simple-title";
 import Wrapper from "@/components/ui/wrapper";
 
 // Types
@@ -24,11 +24,8 @@ export default function Questions({
 }: Props) {
   return (
     <Wrapper container="stretch" className="flex flex-col gap-6">
-      <MegaTitle
-        smallText={sectionSmallText}
-        beforeTextTitle={sectionTitle}
-        containerClassName="mb-10"
-      />
+      <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10" />
+      
       <Accordion type="single" collapsible className="w-full">
         {data.map((item) => (
           <AccordionItem key={item.id} value={item.title}>
