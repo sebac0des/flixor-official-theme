@@ -7,7 +7,6 @@ import { small } from '@/app/fonts'
 
 // Components
 import Wrapper from "../wrapper";
-import { Button } from "../button";
 import { SimpleTitle } from "../simple-title";
 
 import {
@@ -17,6 +16,9 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { cn } from "@/lib/utils";
+import { Button } from "../button";
+import { Eye } from "lucide-react";
 
 
 export function MostPopularProducts() {
@@ -47,21 +49,28 @@ export function MostPopularProducts() {
 }
 
 function ProductCard() {
-    return <div className="relative">
+    return <div className="relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden">
+
         <Image
             width={1080}
             height={1080}
             alt=""
             src="/images/hero-section-background.webp"
-            className="rounded-md"
         />
 
-        <div className="absolute bottom-0 left-0 p-4 text-white">
-            <span className={small.className}>Say 👋🏻 new formula!</span>
-            <h3 className="text-2xl font-medium tracking-wider">Product title</h3>
-            <Button variant="secondary" className="mt-3">
-                <Link href="">Mas info</Link>
-            </Button>
+        <div className="p-4 text-primary bg-white">
+            <h3 className={cn(small.className, "text-2xl mb-1")}>Barlett Pear Bundle</h3>
+            <p className={cn(small.className, "text-sm mb-8")}>Bartlett Pear Bundle is an effective skin care product that has been created as a result of extensive research into the properties of pears.</p>
+
+            <div className="flex justify-between items-center">
+                <span className={cn(small.className, "text-lg")}>$20.00</span>
+                <Button variant="accent">
+                    <Eye className="w-4 h-4 mr-2" />
+                    Ver producto
+                </Button>
+            </div>
         </div>
+
+
     </div>
 }
