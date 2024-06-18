@@ -23,22 +23,23 @@ import { cn } from "@/lib/utils";
 
 interface ContactPopOverProps {
   children: React.ReactNode
-  dispatchWindowTime: number;
+  dispatchWindowTime?: number;
   image: string;
 }
 
 export default function ContactPopOver({
   image,
-  dispatchWindowTime = 10000,
+  dispatchWindowTime = 0,
   children,
 
 }: ContactPopOverProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const autoOpen = setTimeout(() => setOpen(true), dispatchWindowTime);
-
-    return () => clearTimeout(autoOpen);
+    if(dispatchWindowTime > 0){
+      const autoOpen = setTimeout(() => setOpen(true), dispatchWindowTime);
+      return () => clearTimeout(autoOpen);
+    }    
   }, [dispatchWindowTime]);
 
   return (

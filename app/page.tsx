@@ -41,7 +41,6 @@ export default async function Page() {
     <main className="min-h-screen bg-[#fcfcfc]">
       <ContactPopOver
         image="\images\sebas-call-me.webp"
-        dispatchWindowTime={7000}
       >
         <ContactPopOverTitle>¿Tenes una pregunta? ¡Escríbínos!
         </ContactPopOverTitle>
