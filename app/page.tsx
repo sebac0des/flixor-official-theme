@@ -1,10 +1,9 @@
-// Components
-import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
+// Navigation Components
 import Header from "@/components/header";
 import Topbar from "@/components/topbar";
 
+// Content components
 import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
-
 
 import {
   MessageBox,
@@ -12,6 +11,11 @@ import {
   MessageBoxSmallMessage,
   MessageBoxLink,
 } from "@/components/ui/message-box";
+
+import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
+
+// Products components
+import {FeaturedProducts} from '@/components/ui/products/featured-products'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -49,6 +53,8 @@ export default async function Page() {
       </ContactPopOver>
 
       <Navigation />
+
+      
       <BenefitsVerticalSlider data={benefits} />
       <Hero
         title="¡Mira la lista de precios!"
@@ -63,6 +69,8 @@ export default async function Page() {
         buttonText="Ver lista de precios 🔥"
         buttonUrl={settings.price_list.complete}
       />
+
+      <FeaturedProducts/>
 
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"

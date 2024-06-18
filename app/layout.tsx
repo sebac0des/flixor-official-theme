@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 // Fonts
-import { small } from "./fonts";
+import { body } from "./fonts";
 
 // Styles
 import "./globals.css";
@@ -25,7 +25,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={small.className}>
+      <body className={body.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
        
       </body>
