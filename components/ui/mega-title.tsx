@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { body } from "@/app/fonts";
+import { small } from "@/app/fonts";
 
 interface Props {
   beforeTextTitle?: string;
@@ -15,7 +15,7 @@ export function MegaTitle(props: Props) {
     <div className={cn("text-center md:text-left", props.containerClassName)}>
       <small
         className={cn(
-          body.className,
+          small.className,
           "text-inherit inline-block mb-2 text-base"
         )}
       >

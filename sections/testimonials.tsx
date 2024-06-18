@@ -10,7 +10,7 @@ import Wrapper from "@/components/ui/wrapper";
 import Image from "next/image";
 
 // Fonts
-import { body } from "@/app/fonts";
+import { small } from "@/app/fonts";
 
 // Data
 import data from "@/data/testimonials";
@@ -62,14 +62,14 @@ const Testimonials = () => {
                 </div>
                 <p
                   className={cn(
-                    body.className,
+                    small.className,
                     "text-primary text-center"
                   )}
                 >
                   {item.content}
                 </p>
 
-                <h4 className={cn(body.className, "text-center")}>
+                <h4 className={cn(small.className, "text-center")}>
                   - {item.name}
                 </h4>
               </CarouselItem>

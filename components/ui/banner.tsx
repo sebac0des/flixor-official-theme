@@ -1,4 +1,4 @@
-import { body } from "@/app/fonts";
+import { small } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -23,7 +23,7 @@ const Banner = (props: Props) => {
         props.backgroundImage
       )}
     >
-      <span className={body.className}>{props.smallText}</span>
+      <span className={small.className}>{props.smallText}</span>
       <h2 className="text-xl xl:text-2xl font-semibold">{props.title}</h2>
     </div>
   );

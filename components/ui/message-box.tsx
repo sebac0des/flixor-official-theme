@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // Fonts
-import { body } from "@/app/fonts";
+import { small } from "@/app/fonts";
 
 // Next js
 import Link from "next/link";
@@ -53,7 +53,7 @@ const MessageBoxSmallMessage = React.forwardRef<
 >(({ children, ...props }, ref) => (
   <span
     ref={ref}
-    className={cn(body.className, "text-sm xl:text-base")}
+    className={cn(small.className, "text-sm xl:text-base")}
     {...props}
   >
     {children}
