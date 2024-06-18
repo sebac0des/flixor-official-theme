@@ -69,7 +69,7 @@ function ProductCard() {
 
             <div className="flex justify-between items-center">
                 <span className={cn(small.className, "text-lg")}>$20.00</span>
-                <Button asChild variant="accent" size="sm">
+                <Button asChild variant="accent" size="sm" className="hover:bg-transparent hover:text-accent border hover:border-accent">
                     <Link href="">
                     <Eye className="w-4 h-4 mr-2" />
                     Ver producto
