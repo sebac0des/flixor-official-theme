@@ -1,5 +1,6 @@
 // Next js
 import Image from "next/image";
+import Link from "next/link";
 
 // Fonts
 import { small } from '@/app/fonts'
@@ -7,13 +8,9 @@ import { small } from '@/app/fonts'
 // Components
 import Wrapper from "../wrapper";
 import { Button } from "../button";
-import Link from "next/link";
-
-
 
 export function FeaturedProducts() {
     return <Wrapper className="grid md:grid-cols-2 gap-5" container="stretch" >
-        <ProductCard />
         <ProductCard />
         <ProductCard />
     </Wrapper>
