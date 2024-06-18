@@ -22,7 +22,7 @@ function ProductCard() {
             width={1080}
             height={1080}
             alt=""
-            src="/images/hero-section-background.webp"
+            src="/images/Body-Wash_Product-Brand-1-Bartlett-Pear-min.webp"
             className="rounded-md"
         />
 
