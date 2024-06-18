@@ -14,8 +14,12 @@ import { Button } from "../button";
 // Icons
 import { Eye } from "lucide-react";
 
-export function ProductCard() {
-    return <div className="relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden">
+interface Props {
+    className?:string
+}
+
+export function ProductCard(props:Props) {
+    return <div className={cn(props.className, 'relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden')}>
 
         <Image
             width={1080}

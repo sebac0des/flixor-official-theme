@@ -7,9 +7,14 @@ import { small } from '@/app/fonts'
 
 // Components
 import { Button } from "../button";
+import { cn } from "@/lib/utils";
 
-export function ProductVideoCard() {
-    return <div className="relative">
+interface Props {
+    className?:string
+}
+
+export function ProductVideoCard(props:Props) {
+    return <div className={cn(props.className, 'relative')}>
     <Image
         width={1080}
         height={1080}

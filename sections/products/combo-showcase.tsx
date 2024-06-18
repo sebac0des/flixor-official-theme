@@ -1,6 +1,7 @@
 // Components
 import Wrapper from "@/components/ui/wrapper";
-import {ProductVideoCard} from '@/components/ui/products/product-video-card'
+import {ProductVideoCard as VideoCard} from '@/components/ui/products/product-video-card'
+import {ProductCard as ShopCard} from '@/components/ui/products/product-card'
 import { SimpleTitle } from "@/components/ui/simple-title";
 
 export default function ComboShowcase(){
@@ -11,7 +12,10 @@ export default function ComboShowcase(){
         "
         titleText="Bundle & Save 🤑"
         />
-
-        <ProductVideoCard/>
+        <div className="flex flex-col md:flex-row gap-2">
+        <VideoCard className="md:w-8/12"/>
+        <ShopCard className="w-full md:w-4/12"/>
+        </div>
+        
     </Wrapper>
 }
