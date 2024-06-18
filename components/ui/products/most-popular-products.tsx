@@ -60,7 +60,7 @@ function ProductCard() {
             width={1080}
             height={1080}
             alt=""
-            src="/images/hero-section-background.webp"
+            src="/images/Collection_Product-Brand-Bartlett-Pear-min.webp"
         />
 
         <div className="p-4 text-primary bg-white">
