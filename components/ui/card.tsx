@@ -17,14 +17,16 @@ interface Props {
 }
 
 export function Card({title,buttonText,buttonUrl,image,smallText}:Props) {
-  return <div className="relative">
+  return <div className="rounded-md relative overflow-hidden">
       <Image
           width={1080}
           height={1080}
           alt={title}
           src={image}
-          className="rounded-md h-screen object-cover"
+          className="h-screen object-cover"
       />
+
+      <Overlay/>
 
       <div className="absolute bottom-0 left-0 p-4 text-white">
           <span className={small.className}>{smallText}</span>
@@ -36,3 +38,6 @@ export function Card({title,buttonText,buttonUrl,image,smallText}:Props) {
   </div>
 }
 
+function Overlay(){
+    return <div className="block bg-black/40 absolute top-0 left-0 w-full h-full"></div>
+}

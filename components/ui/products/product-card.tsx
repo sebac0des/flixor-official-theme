@@ -21,12 +21,15 @@ import { Product } from "@/types";
 interface Props {
     className?: string
     product: Product
+   
 }
 
 export function ProductCard({product,className}: Props) {
 
 
     if(product) return <div className={cn(className, 'relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden')}>
+
+
 
     <Image
         width={1080}
@@ -53,3 +56,4 @@ export function ProductCard({product,className}: Props) {
 
 </div>
 }
+
