@@ -80,7 +80,7 @@ export default async function Page() {
         buttonUrl="#"
       />
 
-      <FeaturedProducts/>
+      <FeaturedProducts data={featured_products}/>
 
       <MostPopularProducts data={popular_products}/>
 
