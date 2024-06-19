@@ -23,24 +23,24 @@ interface Props {
     product: Product
 }
 
-export function ProductCard(props: Props) {
+export function ProductCard({product,className}: Props) {
 
 
-    if(props.product) return <div className={cn(props.className, 'relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden')}>
+    if(product) return <div className={cn(className, 'relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden')}>
 
     <Image
         width={1080}
         height={1080}
-        alt=""
-        src="/images/Collection_Product-Brand-Bartlett-Pear-min.webp"
+        alt={product.name}
+        src={product.cover_image}
     />
 
     <div className="p-4 text-primary bg-white">
-        <h3 className={cn(small.className, "text-2xl mb-1")}>{props.product.name}</h3>
-        <p className={cn(small.className, "text-sm mb-8")}>Bartlett Pear Bundle is an effective skin care product that has been created as a result of extensive research into the properties of pears.</p>
+        <h3 className={cn(small.className, "text-2xl mb-1")}>{product.name}</h3>
+        <p className={cn(small.className, "text-sm mb-8")}>{product.short_desc}</p>
 
         <div className="flex justify-between items-center">
-            <span className={cn(small.className, "text-lg")}>$20.00</span>
+            <span className={cn(small.className, "text-lg")}>${product.price.toFixed(2)}</span>
             <Button asChild variant="accent" size="sm" className="hover:bg-transparent hover:text-accent border hover:border-accent">
                 <Link href="">
                     <Eye className="w-4 h-4 mr-2" />
