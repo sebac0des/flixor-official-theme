@@ -8,7 +8,7 @@ import { Testimonial } from "@/types";
 import Data from '@/data/testimonials'
 
 
-// Get all products from fake API service
+// Get all testimonials from fake API service
 export const getTestimonials = cache(async ():Promise<Testimonial[]> =>  Data);
 
 

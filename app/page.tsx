@@ -28,7 +28,6 @@ import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
 // Static data
-import { homepage as faq } from "@/data/faq";
 import audience from "@/data/audience";
 import benefits from "@/data/benefits";
 
@@ -38,11 +37,13 @@ import videos from "@/data/videos";
 // Services
 import { getPopularProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
+import { getHomepageQuestions } from "@/services/faq";
 
 export default async function Page() {
 
   const popular_products = await getPopularProducts()
   const testimonials = await getTestimonials()
+  const faq = await getHomepageQuestions()
 
 
   return (
