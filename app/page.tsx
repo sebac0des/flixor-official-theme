@@ -1,5 +1,6 @@
 // Navigation Components
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
 
 // Content components
@@ -34,9 +35,14 @@ import benefits from "@/data/benefits";
 
 // Mock data
 import videos from "@/data/videos";
-import Footer from "@/components/footer";
+
+// Services
+import { getPopularProducts } from "@/services/products";
 
 export default async function Page() {
+
+  const popular_products = await getPopularProducts()
+
 
   return (
     <main className="min-h-screen bg-[#fcfcfc]">
@@ -74,7 +80,7 @@ export default async function Page() {
 
       <FeaturedProducts/>
 
-      <MostPopularProducts/>
+      <MostPopularProducts data={popular_products}/>
 
       <ComboShowcase/>
 
