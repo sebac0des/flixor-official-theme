@@ -27,7 +27,7 @@ import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
 // Services
-import { getPopularProducts } from "@/services/products";
+import { getPopularProducts,getFeaturedProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
 import {getSliderVideos} from '@/services/videos'
@@ -37,6 +37,7 @@ import {getBusinessAudience} from '@/services/audience'
 
 export default async function Page() {
 
+  const featured_products = await getFeaturedProducts()
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
   const benefits = await getBusinessBenefits()
@@ -75,7 +76,7 @@ export default async function Page() {
           "Cosmetología.",
           "Pedicuria.",
         ]}
-        buttonText="Ver lista de precios 🔥"
+        buttonText="Ver lista de precios🔥"
         buttonUrl="#"
       />
 

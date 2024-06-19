@@ -5,11 +5,11 @@ import { cache } from "react";
 import { Product } from "@/types";
 
 // Fake data
-import { Products, PopularProducts } from '@/data/products'
+import { FeaturedProducts, PopularProducts } from '@/data/products'
 
 
 // Get all products from fake API service
-export const getAllProducts = cache(async ():Promise<Product[]> =>  Products);
+export const getFeaturedProducts = cache(async ():Promise<Product[]> =>  FeaturedProducts);
 
 // Get popular products from fake API service
 export const getPopularProducts = cache(async ():Promise<Product[]> =>  PopularProducts);
