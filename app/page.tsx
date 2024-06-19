@@ -39,9 +39,9 @@ import {getSliderVideos} from '@/services/videos'
 export default async function Page() {
 
   const popular_products = await getPopularProducts()
+  const slider_videos = await getSliderVideos()
   const testimonials = await getTestimonials()
   const faq = await getHomepageQuestions()
-  const videos = await getSliderVideos()
 
 
   return (
@@ -87,7 +87,7 @@ export default async function Page() {
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
         sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
-        data={videos}
+        data={slider_videos}
       />
 
       <TargetAudience
