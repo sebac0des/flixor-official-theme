@@ -4,8 +4,6 @@ import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
 
 // Content components
-import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
-
 import {
   MessageBox,
   MessageBoxTitle,
@@ -13,9 +11,10 @@ import {
   MessageBoxLink,
 } from "@/components/ui/message-box";
 
+import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
+
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
-// Products components
 import {FeaturedProducts} from '@/components/ui/products/featured-products'
 import {MostPopularProducts} from '@/components/ui/products/most-popular-products'
 
@@ -27,23 +26,22 @@ import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
-// Static data
 import audience from "@/data/audience";
 import benefits from "@/data/benefits";
-
-// Mock data
-import videos from "@/data/videos";
 
 // Services
 import { getPopularProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
+import {getSliderVideos} from '@/services/videos'
+
 
 export default async function Page() {
 
   const popular_products = await getPopularProducts()
   const testimonials = await getTestimonials()
   const faq = await getHomepageQuestions()
+  const videos = await getSliderVideos()
 
 
   return (
