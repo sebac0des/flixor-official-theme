@@ -26,14 +26,13 @@ import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
-import audience from "@/data/audience";
-
 // Services
 import { getPopularProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
 import {getSliderVideos} from '@/services/videos'
 import {getBusinessBenefits} from '@/services/benefits'
+import {getBusinessAudience} from '@/services/audience'
 
 
 export default async function Page() {
@@ -43,6 +42,7 @@ export default async function Page() {
   const benefits = await getBusinessBenefits()
   const testimonials = await getTestimonials()
   const faq = await getHomepageQuestions()
+  const audience = await getBusinessAudience()
 
 
   return (

@@ -11,6 +11,15 @@ export interface VideoSliderItem {
   title: string;
 }
 
+export interface AudienceItem {
+  
+    id: number,
+    iconImageUrl: string,
+    title: string,
+    desc: string,
+  
+}
+
 export interface Settings {
   social: SocialSettings
 }
