@@ -27,19 +27,20 @@ import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
 import audience from "@/data/audience";
-import benefits from "@/data/benefits";
 
 // Services
 import { getPopularProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
 import {getSliderVideos} from '@/services/videos'
+import {getBusinessBenefits} from '@/services/benefits'
 
 
 export default async function Page() {
 
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
+  const benefits = await getBusinessBenefits()
   const testimonials = await getTestimonials()
   const faq = await getHomepageQuestions()
 
