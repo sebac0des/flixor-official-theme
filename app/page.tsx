@@ -27,8 +27,7 @@ import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
-// Data
-import settings from "@/data/settings";
+// Static data
 import { homepage as faq } from "@/data/faq";
 import audience from "@/data/audience";
 import benefits from "@/data/benefits";
@@ -77,7 +76,7 @@ export default async function Page() {
           "Pedicuria.",
         ]}
         buttonText="Ver lista de precios 🔥"
-        buttonUrl={settings.price_list.complete}
+        buttonUrl="#"
       />
 
       <FeaturedProducts/>
@@ -130,10 +129,10 @@ function Navigation() {
   return (
     <div className="sticky top-0 z-50">
       <Topbar
-        url={settings.price_list.complete}
+        url="#"
         message="🔥 Descarga la lista de precios vigente →"
       />
-      <Header buttonText="Lista de precios" buttonUrl={settings.price_list.complete} />
+      <Header buttonText="Lista de precios" buttonUrl="#" />
     </div>
   );
 }

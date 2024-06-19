@@ -11,6 +11,17 @@ export interface VideoSliderItem {
   title: string;
 }
 
+export interface Settings {
+  social: SocialSettings
+}
+
+export interface SocialSettings {
+    username: string;
+    instagram: string;
+    facebook: string;
+    tiktok: string;
+}
+
 export interface Testimonial {
   id: number;
   name: string;
