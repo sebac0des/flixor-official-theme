@@ -4,24 +4,22 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Wrapper from "@/components/ui/wrapper";
-
-// Next js
-import Image from "next/image";
+import { SimpleTitle } from "@/components/ui/simple-title";
 
 // Fonts
 import { small } from "@/app/fonts";
-
-// Data
-import data from "@/data/testimonials";
 
 // Icons
 import { Star } from "lucide-react";
 
 // Utils
 import { cn } from "@/lib/utils";
-import { SimpleTitle } from "@/components/ui/simple-title";
 
-const Testimonials = () => {
+// Types
+import { Testimonial } from "@/types";
+
+
+const Testimonials = ({data}:{data:Testimonial[]}) => {
   return (
     <Wrapper container="stretch" className="text-primary bg-[#fbfbfb]">
       <SimpleTitle

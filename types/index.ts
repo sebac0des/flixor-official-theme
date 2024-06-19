@@ -11,6 +11,14 @@ export interface VideoSliderItem {
   title: string;
 }
 
+export interface Testimonial {
+  id: number;
+  name: string;
+  reviewFont: string;
+  content: string;
+  image: string;
+}
+
 export interface BenefitItem {
   id: number;
   title: string;

@@ -38,10 +38,12 @@ import videos from "@/data/videos";
 
 // Services
 import { getPopularProducts } from "@/services/products";
+import { getTestimonials } from "@/services/testimonials";
 
 export default async function Page() {
 
   const popular_products = await getPopularProducts()
+  const testimonials = await getTestimonials()
 
 
   return (
@@ -111,7 +113,7 @@ export default async function Page() {
         </MessageBoxTitle>
       </MessageBox>
 
-      <Testimonials />
+      <Testimonials data={testimonials}/>
 
       <Questions
         sectionSmallText="Preguntas frecuentes"
