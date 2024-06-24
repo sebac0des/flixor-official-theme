@@ -27,8 +27,8 @@ export const AddToCart = (props:HeaderCartProps)=>{
   onClick={()=>addItem(props.product)}
   className={cn("relative w-fit",props.className)} 
    variant='secondary' >
-  Add to cart
-  <ShoppingCart className='w-4 h-4 ml-2'/>
+  <span className='hidden md:mr-2 md:inline-block'>Add to cart</span>
+  <ShoppingCart className='w-4 h-4'/>
 </Button>
 }
 
