@@ -5,15 +5,13 @@ import {forwardRef} from "react";
 import Link from "next/link";
 
 // Components
-import Logo from "./logo";
+import Logo from "@/components/logo";
 
-import { Button } from "./ui/button";
+import { ShoppingCart } from "@/components/ui/shopping-cart";
+import { Button } from "@/components/ui/button";
 
 // Utils
 import { cn } from "@/lib/utils";
-
-// Icons
-import { ShoppingCart } from "./ui/shopping-cart";
 
 interface HeaderButtonProps {
   buttonText: string;
