@@ -32,7 +32,6 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
             {children}
         </Suspense>
-
       </body>
     </html>
   );
