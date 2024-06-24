@@ -7,10 +7,12 @@ import {useCart} from 'react-use-cart'
 import { Button } from "./button";
 
 // Icons
-import { ShoppingBasket, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 
 // Utils
 import { cn } from "@/lib/utils";
+
+// Types
 import { Product } from '@/types';
 
 

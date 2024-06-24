@@ -47,7 +47,8 @@ export default async function Page() {
 
 
   return (
-    <main className="min-h-screen bg-[#fcfcfc]">
+  
+      <main className="min-h-screen bg-[#fcfcfc]">
       <ContactPopOver
         image="\images\sebas-call-me.webp"
       >
@@ -123,6 +124,7 @@ export default async function Page() {
 
       <Footer />
     </main>
+   
   );
 }
 
