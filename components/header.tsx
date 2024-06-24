@@ -1,17 +1,15 @@
-// React
-import {forwardRef} from "react";
-
-// next js
+// React and next js
+import { forwardRef } from "react";
 import Link from "next/link";
+
+// Utilities
+import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-
 import { ShoppingCart } from "@/components/ui/shopping-cart";
 import { Button } from "@/components/ui/button";
 
-// Utils
-import { cn } from "@/lib/utils";
 
 interface HeaderButtonProps {
   buttonText: string;
@@ -44,7 +42,6 @@ const Header = ({ className, children, ...props }: HeaderProps) => (
     {children}
   </header>
 );
-Header.displayName = "Header";
 
 const HeaderActionElements = ({ className, children, ...props }: HeaderActionElementsProps) => (
   <div
@@ -57,7 +54,6 @@ const HeaderActionElements = ({ className, children, ...props }: HeaderActionEle
     {children}
   </div>
 );
-HeaderActionElements.displayName = "HeaderActionElements";
 
 const HeaderButton = forwardRef<
   HTMLButtonElement,
@@ -67,13 +63,9 @@ const HeaderButton = forwardRef<
     <Link href={props.buttonUrl}>{props.buttonText}</Link>
   </Button>
 ));
-HeaderButton.displayName = "HeaderButton";
 
 const HeaderCart = (props:HeaderCartProps)=> <ShoppingCart {...props}/>
-HeaderCart.displayName = "HeaderCart";
 
 const HeaderLogo = ()=> <Logo/>
-HeaderLogo.displayName = "HeaderLogo";
 
 export { Header, HeaderButton, HeaderLogo, HeaderCart, HeaderActionElements }
-
