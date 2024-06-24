@@ -13,7 +13,6 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 // Icons
-import { ShoppingBasket } from "lucide-react";
 import { ShoppingCart } from "./ui/shopping-cart";
 
 interface HeaderButtonProps {
@@ -44,7 +43,7 @@ const Header = ({ className, children, ...props }: HeaderProps) => (
 );
 Header.displayName = "Header";
 
-const HeaderCallToAction = forwardRef<
+const HeaderButton = forwardRef<
   HTMLButtonElement,
   HeaderButtonProps
 >(({ className, ...props }, ref) => (
@@ -52,7 +51,7 @@ const HeaderCallToAction = forwardRef<
     <Link href={props.buttonUrl}>{props.buttonText}</Link>
   </Button>
 ));
-HeaderCallToAction.displayName = "HeaderCallToAction";
+HeaderButton.displayName = "HeaderButton";
 
 const HeaderCart = (props:HeaderCartProps)=> <ShoppingCart {...props}/>
 HeaderCart.displayName = "HeaderCart";
@@ -60,5 +59,5 @@ HeaderCart.displayName = "HeaderCart";
 const HeaderLogo = ()=> <Logo/>
 HeaderLogo.displayName = "HeaderLogo";
 
-export { Header, HeaderCallToAction, HeaderLogo, HeaderCart }
+export { Header, HeaderButton, HeaderLogo, HeaderCart }
 
