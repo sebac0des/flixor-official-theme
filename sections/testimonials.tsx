@@ -7,7 +7,7 @@ import Wrapper from "@/components/ui/wrapper";
 import { SimpleTitle } from "@/components/ui/simple-title";
 
 // Fonts
-import { small } from "@/app/fonts";
+import { fontMono } from "@/app/fonts";
 
 // Icons
 import { Star } from "lucide-react";
@@ -61,14 +61,14 @@ const Testimonials = ({data}:{data:Testimonial[]}) => {
                 </div>
                 <p
                   className={cn(
-                    small.className,
+                    fontMono.className,
                     "text-primary text-center"
                   )}
                 >
                   {item.content}
                 </p>
 
-                <h4 className={cn(small.className, "text-center")}>
+                <h4 className={cn(fontMono.className, "text-center")}>
                   - {item.name}
                 </h4>
               </CarouselItem>

@@ -2,11 +2,15 @@
 import type { Metadata } from "next";
 
 // Fonts
-import { body } from "./fonts";
+import { fontSans } from "./fonts";
 
 // Styles
 import "./globals.css";
+
+// React
 import { Suspense } from "react";
+
+// Loading UI component
 import Loading from "./loading";
 
 
@@ -25,9 +29,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={body.className}>
+      <body className={fontSans.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
-       
       </body>
     </html>
   );

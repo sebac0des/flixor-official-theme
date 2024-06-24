@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Fonts
-import { small } from '@/app/fonts'
+import { fontMono } from '@/app/fonts'
 
 // Components
 import { Button } from "../button";
@@ -24,7 +24,7 @@ export function ProductVideoCard(props:Props) {
     />
 
     <div className="absolute bottom-0 left-0 p-4 text-white">
-        <span className={small.className}>Say 👋🏻 new formula!</span>
+        <span className={fontMono.className}>Say 👋🏻 new formula!</span>
         <h3 className="text-2xl font-medium tracking-wider">Product title</h3>
         <Button variant="secondary" className="mt-3">
             <Link href="">Mas info</Link>

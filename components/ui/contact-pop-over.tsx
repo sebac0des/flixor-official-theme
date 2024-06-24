@@ -16,7 +16,7 @@ import { Button } from "./button";
 import Link from "next/link";
 
 // Fonts
-import { small } from '@/app/fonts'
+import { fontMono } from '@/app/fonts'
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -65,7 +65,7 @@ const ContactPopOverTitle = ({children}:{children:React.ReactNode}) => {
 }
 
 const ContactPopOverMessage = ({children}:{children:React.ReactNode}) => {
-  return <p className={cn(small.className, "text-primary text-sm w-full")}>
+  return <p className={cn(fontMono.className, "text-primary text-sm w-full")}>
     {children}
   </p>
 }
@@ -85,7 +85,7 @@ const ContactPopOverButton = ({children,href}:{children:React.ReactNode, href:st
 }
 
 const ContactPopOverSmallMessage = ({children}:{children:React.ReactNode}) => {
-  return <small className={cn(small.className, 'block text-center text-xs mt-1 text-gray-400')}>
+  return <small className={cn(fontMono.className, 'block text-center text-xs mt-1 text-gray-400')}>
   {children}
 </small>
 }

@@ -6,7 +6,7 @@ import { CarouselItem } from "../carousel";
 import { Button } from "../button";
 
 // Fonts
-import { small } from "@/app/fonts";
+import { fontMono } from "@/app/fonts";
 
 // Icons
 import { Play } from "lucide-react";
@@ -38,7 +38,7 @@ export default function VideoItem(props: VideoSliderItem) {
       <div className="absolute bottom-0 left-0 p-2 bg-gradient-to-t from-black w-full">
         <h4
           className={cn(
-            small.className,
+            fontMono.className,
             "text-white text-lg font-semibold"
           )}
         >

@@ -1,5 +1,5 @@
 // Fonts
-import { small } from "@/app/fonts";
+import { fontMono } from "@/app/fonts";
 
 // Next
 import Link from "next/link";
@@ -20,7 +20,7 @@ const Topbar = ({ message, url,className }: Props) => {
   return (
     <div
       className={cn(
-        small.className,
+        fontMono.className,
         "bg-white border-b border-primary/20 py-2",
         className
       )}

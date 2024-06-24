@@ -4,7 +4,7 @@
 import {useCart} from 'react-use-cart'
 
 // Fonts
-import {small} from '@/app/fonts'
+import {fontMono} from '@/app/fonts'
 
 // Components
 import { Button } from "./button";
@@ -34,5 +34,5 @@ const ProuductIndicator = ()=>{
   const {items} = useCart()
   
 
-  return <div className={cn(small.className,"absolute top-0 right-0 bg-soft h-5 w-5 rounded-full flex justify-center items-center text-inherit text-xs font-semibold")}>{items.length}</div>
+  return <div className={cn(fontMono.className,"absolute top-0 right-0 bg-soft h-5 w-5 rounded-full flex justify-center items-center text-inherit text-xs font-semibold")}>{items.length}</div>
 }

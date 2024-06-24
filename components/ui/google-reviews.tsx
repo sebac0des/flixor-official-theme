@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Fonts
-import { small } from "@/app/fonts";
+import { fontMono } from "@/app/fonts";
 
 // Components
 import { Button } from "./button";
@@ -37,7 +37,7 @@ export default function GoogleReviews() {
         <div className="bg-white rounded-full p-1 w-fit">
           <Image width={15} height={15} alt="" src="/icons/google.webp" />
         </div>
-        <span className={small.className}>
+        <span className={fontMono.className}>
           5 estrellas en Google Maps
         </span>
       </Link>
