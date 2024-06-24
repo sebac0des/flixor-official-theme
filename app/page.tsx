@@ -1,7 +1,7 @@
 // Navigation Components
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
-import {Header,HeaderCallToAction,HeaderLogo} from '@/components/header'
+import {Header,HeaderCallToAction,HeaderLogo, HeaderCart} from '@/components/header'
 
 // Content components
 import {
@@ -135,7 +135,11 @@ function Navigation() {
       />
       <Header>
         <HeaderLogo/>
+  
+        <HeaderCart/>
         <HeaderCallToAction buttonText="dsada" buttonUrl="#"/>
+       
+     
       </Header>
     </div>
   );

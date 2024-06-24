@@ -12,10 +12,17 @@ import { Button } from "./ui/button";
 // Utils
 import { cn } from "@/lib/utils";
 
+// Icons
+import { ShoppingBasket } from "lucide-react";
+
 interface HeaderButtonProps {
   buttonText: string;
   buttonUrl: string;
   className?: string;
+}
+
+interface HeaderCartProps {
+  className?:string
 }
 
 interface HeaderProps {
@@ -46,8 +53,18 @@ const HeaderCallToAction = forwardRef<
 ));
 HeaderCallToAction.displayName = "HeaderCallToAction";
 
+const HeaderCart = forwardRef<
+  HTMLButtonElement,
+  HeaderCartProps
+>(({ className, ...props }, ref) => (
+  <Button size="icon" variant='ghost' {...props} ref={ref} >
+    <ShoppingBasket/>
+  </Button>
+));
+HeaderCallToAction.displayName = "HeaderCart";
+
 const HeaderLogo = ()=> <Logo/>
 HeaderLogo.displayName = "HeaderLogo";
 
-export { Header, HeaderCallToAction, HeaderLogo }
+export { Header, HeaderCallToAction, HeaderLogo, HeaderCart }
 
