@@ -25,10 +25,10 @@ export const AddToCart = (props:HeaderCartProps)=>{
 
   return <Button 
   onClick={()=>addItem(props.product)}
-  className={cn("relative",props.className)} 
-  size="icon" variant='ghost' >
-  Add
-  <ShoppingCart className='w-4 h-4'/>
+  className={cn("relative w-fit",props.className)} 
+   variant='secondary' >
+  Add to cart
+  <ShoppingCart className='w-4 h-4 ml-2'/>
 </Button>
 }
 

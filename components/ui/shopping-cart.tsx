@@ -32,7 +32,7 @@ export const ShoppingCart = (props:HeaderCartProps)=>{
 const ProuductIndicator = ()=>{
 
   const {items} = useCart()
-  
+
 
   return <div className={cn(fontMono.className,"absolute top-0 right-0 bg-soft h-5 w-5 rounded-full flex justify-center items-center text-inherit text-xs font-semibold")}>{items.length}</div>
 }
