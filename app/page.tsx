@@ -1,7 +1,7 @@
 // Navigation Components
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
-import {Header,HeaderButton,HeaderLogo, HeaderCart} from '@/components/header'
+import { Header, HeaderActionElements, HeaderButton, HeaderLogo, HeaderCart } from '@/components/header'
 
 // Content components
 import {
@@ -15,8 +15,8 @@ import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPop
 
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
-import {FeaturedProducts} from '@/components/ui/products/featured-products'
-import {MostPopularProducts} from '@/components/ui/products/most-popular-products'
+import { FeaturedProducts } from '@/components/ui/products/featured-products'
+import { MostPopularProducts } from '@/components/ui/products/most-popular-products'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -27,12 +27,12 @@ import Testimonials from "@/sections/testimonials";
 import ComboShowcase from '@/sections/products/combo-showcase'
 
 // Services
-import { getPopularProducts,getFeaturedProducts } from "@/services/products";
+import { getPopularProducts, getFeaturedProducts } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
-import {getSliderVideos} from '@/services/videos'
-import {getBusinessBenefits} from '@/services/benefits'
-import {getBusinessAudience} from '@/services/audience'
+import { getSliderVideos } from '@/services/videos'
+import { getBusinessBenefits } from '@/services/benefits'
+import { getBusinessAudience } from '@/services/audience'
 
 
 export default async function Page() {
@@ -64,7 +64,7 @@ export default async function Page() {
 
       <Navigation />
 
-      
+
       <BenefitsVerticalSlider data={benefits} />
       <Hero
         title="¡Mira la lista de precios!"
@@ -80,11 +80,11 @@ export default async function Page() {
         buttonUrl="#"
       />
 
-      <FeaturedProducts data={featured_products}/>
+      <FeaturedProducts data={featured_products} />
 
-      <MostPopularProducts data={popular_products}/>
+      <MostPopularProducts data={popular_products} />
 
-      <ComboShowcase/>
+      <ComboShowcase />
 
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
@@ -113,7 +113,7 @@ export default async function Page() {
         </MessageBoxTitle>
       </MessageBox>
 
-      <Testimonials data={testimonials}/>
+      <Testimonials data={testimonials} />
 
       <Questions
         sectionSmallText="Preguntas frecuentes"
@@ -121,7 +121,7 @@ export default async function Page() {
         data={faq}
       />
 
-      <Footer/>
+      <Footer />
     </main>
   );
 }
@@ -134,12 +134,11 @@ function Navigation() {
         message="🔥 Descarga la lista de precios vigente →"
       />
       <Header>
-        <HeaderLogo/>
-  
-        <HeaderCart/>
-        <HeaderButton buttonText="dsada" buttonUrl="#"/>
-       
-     
+        <HeaderLogo />
+        <HeaderActionElements>
+          <HeaderCart />
+          <HeaderButton className="hidden md:inline-block" buttonText="dsada" buttonUrl="#" />
+        </HeaderActionElements>
       </Header>
     </div>
   );

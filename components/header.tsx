@@ -25,6 +25,11 @@ interface HeaderCartProps {
   className?:string
 }
 
+interface HeaderActionElementsProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 interface HeaderProps {
   children: React.ReactNode;
   className?: string;
@@ -43,11 +48,24 @@ const Header = ({ className, children, ...props }: HeaderProps) => (
 );
 Header.displayName = "Header";
 
+const HeaderActionElements = ({ className, children, ...props }: HeaderActionElementsProps) => (
+  <div
+    className={cn(
+      "flex items-center gap-3",
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+);
+HeaderActionElements.displayName = "HeaderActionElements";
+
 const HeaderButton = forwardRef<
   HTMLButtonElement,
   HeaderButtonProps
 >(({ className, ...props }, ref) => (
-  <Button ref={ref} asChild>
+  <Button className={ className} ref={ref} asChild>
     <Link href={props.buttonUrl}>{props.buttonText}</Link>
   </Button>
 ));
@@ -59,5 +77,5 @@ HeaderCart.displayName = "HeaderCart";
 const HeaderLogo = ()=> <Logo/>
 HeaderLogo.displayName = "HeaderLogo";
 
-export { Header, HeaderButton, HeaderLogo, HeaderCart }
+export { Header, HeaderButton, HeaderLogo, HeaderCart, HeaderActionElements }
 
