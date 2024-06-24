@@ -1,7 +1,7 @@
 // Navigation Components
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
+import {Header,HeaderCallToAction,HeaderLogo} from '@/components/header'
 
 // Content components
 import {
@@ -133,7 +133,10 @@ function Navigation() {
         url="#"
         message="🔥 Descarga la lista de precios vigente →"
       />
-      <Header buttonText="Lista de precios" buttonUrl="#" />
+      <Header>
+        <HeaderLogo/>
+        <HeaderCallToAction buttonText="dsada" buttonUrl="#"/>
+      </Header>
     </div>
   );
 }
