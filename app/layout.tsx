@@ -13,6 +13,9 @@ import { Suspense } from "react";
 // Loading UI component
 import Loading from "./loading";
 
+// Shopping cart provider
+import {ShoppingCartContext} from '@/context/cart'
+
 
 export const metadata: Metadata = {
   title: "Jalf",
@@ -30,7 +33,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={fontSans.className}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Suspense fallback={<Loading />}>
+            <ShoppingCartContext>
+            {children}
+            </ShoppingCartContext>
+          </Suspense>
       </body>
     </html>
   );
