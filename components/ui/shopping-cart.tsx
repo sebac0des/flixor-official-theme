@@ -1,5 +1,9 @@
 'use client'
 
+// Shopping cart state management
+import {useCart} from 'react-use-cart'
+
+// Fonts
 import {small} from '@/app/fonts'
 
 // Components
@@ -26,5 +30,9 @@ export const ShoppingCart = (props:HeaderCartProps)=>{
 }
 
 const ProuductIndicator = ()=>{
-  return <div className={cn(small.className,"absolute top-0 right-0 bg-soft h-5 w-5 rounded-full flex justify-center items-center text-inherit text-xs font-semibold")}>1</div>
+
+  const {items} = useCart()
+  
+
+  return <div className={cn(small.className,"absolute top-0 right-0 bg-soft h-5 w-5 rounded-full flex justify-center items-center text-inherit text-xs font-semibold")}>{items.length}</div>
 }
