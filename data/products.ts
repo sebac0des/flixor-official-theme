@@ -25,7 +25,7 @@ export const Products: Product[] = [
     brand: "Adidas",
     size: "42",
     description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",
-    short_desc: "Zapatos urbanos Adidas",
+    short_desc: "Bartlett Pear Bundle is an effective skin care product that has been created as a result of extensive research into the properties of pears. The pear extract is used in conjunction with other",
     audience: "Unisex",
     price: 79.99,
     cover_image: "/images/Collection_Product-Brand-Bartlett-Pear-min.webp",

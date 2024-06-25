@@ -1,5 +1,4 @@
 // Next js
-import Link from "next/link";
 import Image from "next/image";
 
 // Utils
@@ -7,12 +6,6 @@ import { cn } from "@/lib/utils";
 
 // Fonts
 import { fontMono } from "@/app/fonts";
-
-// Components
-import { Button } from "../button";
-
-// Icons
-import { Eye } from "lucide-react";
 
 // Types
 import { Product } from "@/types";
@@ -33,6 +26,7 @@ export function ProductCard({ product, className }: Props) {
             height={1080}
             alt={product.name}
             src={product.cover_image}
+            className="object-cover h-96"
         />
 
         <div className="p-4 text-primary bg-white">

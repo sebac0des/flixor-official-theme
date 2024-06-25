@@ -11,6 +11,9 @@ import { Button } from "./button";
 import Link from "next/link";
 import Image from "next/image";
 
+// Utils
+import { cn } from "@/lib/utils";
+
 
 interface CardButtonProps {
     children: ReactNode;
@@ -24,10 +27,10 @@ interface CardButtonProps {
     alt:string
   }
 
-const Card = ({ ...props }) => (
+const Card = (props:{children:ReactNode,className?:string}) => (
     <div
-      className="rounded-md relative overflow-hidden"
-      {...props}
+      className={cn("rounded-md relative overflow-hidden",props.className)}
+      
     >
       {props.children}
     </div>

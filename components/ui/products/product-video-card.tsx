@@ -6,10 +6,11 @@ interface Props {
 }
 
 export function ProductVideoCard(props:Props) {
-    return <Card>
+
+    return <Card className={props.className}>
     <CardOverlay/>
     <CardImage
-    className="object-cover h-full"
+    className="object-cover h-screen"
     image="/images/placeholder-image-one-compressed.webp"
     alt=""
     />
