@@ -34,9 +34,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator />gi
+                <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="/components">Shop</BreadcrumbLink>
+                    <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
