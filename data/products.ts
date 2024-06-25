@@ -28,7 +28,7 @@ export const Products: Product[] = [
     short_desc: "Zapatos urbanos Adidas",
     audience: "Unisex",
     price: 79.99,
-    cover_image: "/images/placeholder-image-two-compressed.webp",
+    cover_image: "/images/Collection_Product-Brand-Bartlett-Pear-min.webp",
     images: ["/images/zapatos-adidas-2.jpg"],
     videos: ["/videos/zapatos-adidas.mp4"],
     stock: 12,
