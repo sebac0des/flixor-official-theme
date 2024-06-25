@@ -22,7 +22,6 @@ import { AddToCart } from "../add-to-cart";
 interface Props {
     className?: string
     product: Product
-
 }
 
 export function ProductCard({ product, className }: Props) {

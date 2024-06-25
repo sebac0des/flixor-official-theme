@@ -96,8 +96,8 @@ export default async function Page() {
           titleText="Bundle & Save 🤑"
         />
         <ComboShowcaseContent >
-          <ComboShoppingCard product={combo}/>
-          <ComboVideoCard/>
+          <ComboVideoCard className="md:w-2/3"/>
+          <ComboShoppingCard  product={combo}/>
         </ComboShowcaseContent>
       </ComboShowcase>
 

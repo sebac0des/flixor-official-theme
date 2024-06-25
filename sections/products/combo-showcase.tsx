@@ -51,9 +51,9 @@ const ComboShowcaseContent = ({ className, children, ...props }: ComboShowcaseCo
   </div>
 );
 
-const ComboShoppingCard = ({ className, product, ...props }: ComboShoppingCardProps) => <ProductCard product={product} {...props} />
+const ComboShoppingCard = ({  product, ...props }: ComboShoppingCardProps) => <ProductCard product={product} {...props} />
 
-const ComboVideoCard = ({ className, ...props }: ComboVideoCardProps) => <ProductVideoCard {...props}/>
+const ComboVideoCard = ({ ...props }: ComboVideoCardProps) => <ProductVideoCard {...props}/>
 
 export { ComboShowcase,ComboShowcaseContent, ComboShoppingCard, ComboVideoCard }
 
