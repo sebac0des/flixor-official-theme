@@ -20,8 +20,8 @@ export function ProductVideoCard(props:Props) {
     />
     <CardContent>
         <CardSmallText>Product tagline here 🚀</CardSmallText>
-        <CardTitle>321</CardTitle>
-        <CardButton buttonUrl="" className="mt-3">Mas info</CardButton>
+        <CardTitle>Video del combo</CardTitle>
+        <CardButton buttonUrl="/shop/name-here" className="mt-3">Mas info</CardButton>
     </CardContent>
 </Card>
 }
