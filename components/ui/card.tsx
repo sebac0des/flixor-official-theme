@@ -19,6 +19,7 @@ interface CardButtonProps {
   }
 
   interface CardImageProps {
+    className?:string
     image:string
     alt:string
   }
@@ -41,12 +42,12 @@ const CardContent = ({ ...props }) => (
     </div>
   );
 
-const CardImage = ({alt,image}:CardImageProps) => <Image
+const CardImage = ({alt,image,className}:CardImageProps) => <Image
   width={1080}
   height={1080}
   alt={alt}
   src={image}
-  className="h-screen object-cover"
+  className={className}
 />
 
 const CardSmallText = ({children}:{children:ReactNode}) => <span className={fontMono.className}>{children}</span>
