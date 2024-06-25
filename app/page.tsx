@@ -29,7 +29,7 @@ import Testimonials from "@/sections/testimonials";
 import { ComboShowcase, ComboShowcaseContent, ComboShoppingCard,ComboVideoCard } from '@/sections/products/combo-showcase'
 
 // Services
-import { getPopularProducts, getFeaturedProducts, getProductById } from "@/services/products";
+import { getPopularProducts, getFeaturedProducts, getProductBySlug } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
@@ -40,7 +40,7 @@ import { getBusinessAudience } from '@/services/audience'
 export default async function Page() {
 
   const featured_products = await getFeaturedProducts()
-  const combo = await getProductById('b2c3z4e5-f678-9012-3256-7890abcdef1')
+  const combo = await getProductBySlug('b2c3z4e5-f678-9012-3256-7890abcdef1')
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
   const benefits = await getBusinessBenefits()

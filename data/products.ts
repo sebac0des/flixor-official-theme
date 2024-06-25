@@ -5,7 +5,7 @@ export const Products: Product[] = [
   {
     id: "b2c3d4e5-f678-9012-3456-7890abcdef1",
     name: "Zapatos Urbanos Confort",
-    slug:'',
+    slug:'zapatos-urbanos-confort',
     tagline:'',
     brand: "Adidas",
     size: "42",
@@ -23,9 +23,9 @@ export const Products: Product[] = [
   },
   {
     id: "b2c3z4e5-f678-9012-3256-7890abcdef1",
-    name: "Zapatos Urbanos",
+    name: "Zapatos Urbanos Loki",
     brand: "Adidas",
-        slug:'',
+        slug:'zapatos-urbanos-loki',
     tagline:'',
     size: "42",
     description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",
@@ -42,9 +42,9 @@ export const Products: Product[] = [
   },
   {
     id: "b2c324e5-f178-9012-3256-7890abcdef1",
-    name: "Zapatos Urbanos",
+    name: "Zapatos Minecraft Urbanos",
     brand: "Adidas",
-        slug:'',
+        slug:'zapatos-minecraft-urbanos',
     tagline:'',
     size: "42",
     description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",
