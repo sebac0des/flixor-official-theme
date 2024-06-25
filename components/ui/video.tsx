@@ -10,12 +10,12 @@ export function Video({ ...props }: React.VideoHTMLAttributes<HTMLVideoElement>)
 
         if (!videoElement) return;
 
-        const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+        const handleIntersection = (entries: IntersectionObserverEntry[]) => 
             entries.forEach(entry => {
                 if (entry.isIntersecting) videoElement.play();
                 else videoElement.pause();
             });
-        };
+        
 
         const observer = new IntersectionObserver(handleIntersection, {
             threshold: 0.5, 
