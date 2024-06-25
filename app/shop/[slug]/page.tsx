@@ -1,3 +1,3 @@
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: { slug: string } }) {
     return <div>My Post: {params.slug}</div>
   }

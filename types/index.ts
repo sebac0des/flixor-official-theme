@@ -62,6 +62,8 @@ export interface Product {
   name: string;
   brand: string;
   size: string;
+  slug:string
+  tagline:string
   description?: string;
   short_desc?: string;
   audience: string;
