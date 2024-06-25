@@ -40,14 +40,13 @@ import { getBusinessAudience } from '@/services/audience'
 export default async function Page() {
 
   const featured_products = await getFeaturedProducts()
-  const combo = await getProductBySlug('b2c3z4e5-f678-9012-3256-7890abcdef1')
+  const combo = await getProductBySlug('zapatos-urbanos-confort')
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
   const benefits = await getBusinessBenefits()
   const testimonials = await getTestimonials()
   const faq = await getHomepageQuestions()
   const audience = await getBusinessAudience()
-
 
   return (
 
