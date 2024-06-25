@@ -1,7 +1,7 @@
 // Navigation Components
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
-import { Header, HeaderActionElements, HeaderButton, HeaderLogo, HeaderCart } from '@/components/header'
+import { Header, HeaderActionElements, HeaderButton, HeaderLogo } from '@/components/header'
 
 // Content components
 import {
@@ -152,7 +152,6 @@ function Navigation() {
       <Header>
         <HeaderLogo />
         <HeaderActionElements>
-          <HeaderCart />
           <HeaderButton className="hidden md:inline-block" buttonText="dsada" buttonUrl="#" />
         </HeaderActionElements>
       </Header>

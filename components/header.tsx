@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import { ShoppingCart } from "@/components/ui/shopping-cart";
 import { Button } from "@/components/ui/button";
 
 
@@ -64,8 +63,7 @@ const HeaderButton = forwardRef<
   </Button>
 ));
 
-const HeaderCart = (props:HeaderCartProps)=> <ShoppingCart {...props}/>
 
 const HeaderLogo = ()=> <Logo/>
 
-export { Header, HeaderButton, HeaderLogo, HeaderCart, HeaderActionElements }
+export { Header, HeaderButton, HeaderLogo, HeaderActionElements }

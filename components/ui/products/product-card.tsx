@@ -9,7 +9,7 @@ import { fontMono } from "@/app/fonts";
 
 // Types
 import { Product } from "@/types";
-import { AddToCart } from "../add-to-cart";
+
 
 
 interface Props {
@@ -35,7 +35,6 @@ export function ProductCard({ product, className }: Props) {
 
             <div className="flex justify-between items-center">
                 <span className={cn(fontMono.className, "text-lg")}>${product.price.toFixed(2)}</span>
-                <AddToCart product={product}/>
             </div>
         </div>
 
