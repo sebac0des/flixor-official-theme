@@ -2,7 +2,7 @@
 import Wrapper from "../wrapper";
 
 import { Product } from "@/types";
-import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/ui/card copy'
+import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/ui/card'
 
 interface Props {
     data:Product[]
