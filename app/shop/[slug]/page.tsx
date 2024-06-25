@@ -1,10 +1,21 @@
 // Navigation components
-import Topbar from "@/components/topbar";
-import { Header, HeaderActionElements, HeaderButton, HeaderLogo } from "@/components/header";
+import { Header, HeaderLogo } from "@/components/header"; 
+import Topbar from "@/components/topbar"; 
+
+// Components
+import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";  
+
+// Services
+import { getBusinessBenefits } from "@/services/benefits"; 
+
 
 export default async function Page({ params }: { params: { slug: string } }) {
+
+    const benefits = await getBusinessBenefits()
+
     return <main>
       <Navigation />
+      <BenefitsVerticalSlider data={benefits} />
     </main>
   }
 
@@ -17,9 +28,6 @@ function Navigation() {
         />
         <Header>
           <HeaderLogo />
-          <HeaderActionElements>
-            <HeaderButton className="hidden md:inline-block" buttonText="dsada" buttonUrl="#" />
-          </HeaderActionElements>
         </Header>
       </div>
     );
