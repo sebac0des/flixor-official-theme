@@ -11,6 +11,8 @@ import {
   MessageBoxLink,
 } from "@/components/ui/message-box";
 
+import { SimpleTitle } from "@/components/ui/simple-title";
+
 import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
 
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
@@ -24,10 +26,10 @@ import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
-import ComboShowcase from '@/sections/products/combo-showcase'
+import { ComboShowcase, ComboShowcaseContent, ComboShoppingCard,ComboVideoCard } from '@/sections/products/combo-showcase'
 
 // Services
-import { getPopularProducts, getFeaturedProducts } from "@/services/products";
+import { getPopularProducts, getFeaturedProducts, getProductById } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
 import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
@@ -38,6 +40,7 @@ import { getBusinessAudience } from '@/services/audience'
 export default async function Page() {
 
   const featured_products = await getFeaturedProducts()
+  const combo = await getProductById('b2c3z4e5-f678-9012-3256-7890abcdef1')
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
   const benefits = await getBusinessBenefits()
@@ -47,8 +50,8 @@ export default async function Page() {
 
 
   return (
-  
-      <main className="min-h-screen bg-[#fcfcfc]">
+
+    <main className="min-h-screen bg-[#fcfcfc]">
       <ContactPopOver
         image="\images\sebas-call-me.webp"
       >
@@ -85,7 +88,18 @@ export default async function Page() {
 
       <MostPopularProducts data={popular_products} />
 
-      <ComboShowcase />
+      <ComboShowcase >
+        <SimpleTitle
+          containerClassName="text-left mb-4"
+          smallText="Best treat for your skin
+        "
+          titleText="Bundle & Save 🤑"
+        />
+        <ComboShowcaseContent >
+          <ComboShoppingCard product={combo}/>
+          <ComboVideoCard/>
+        </ComboShowcaseContent>
+      </ComboShowcase>
 
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
@@ -124,7 +138,7 @@ export default async function Page() {
 
       <Footer />
     </main>
-   
+
   );
 }
 
