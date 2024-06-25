@@ -9,13 +9,14 @@ export function ProductVideoCard(props:Props) {
 
     return <Card className={props.className}>
     <CardOverlay/>
-    <CardVideo
-    className="h-96 w-full"
-    src="https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"
+    <CardVideo   
     autoPlay
     muted
     loop
     playsInline
+    className="h-96 w-full"
+    src="https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"
+    preload="metadata"
     />
     <CardContent>
         <CardSmallText>Product tagline here 🚀</CardSmallText>
