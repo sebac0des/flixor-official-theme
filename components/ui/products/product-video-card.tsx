@@ -1,5 +1,5 @@
 // Components
-import { Card, CardButton, CardContent, CardImage, CardOverlay, CardSmallText, CardTitle } from "../card";
+import { Card, CardButton, CardContent, CardVideo, CardOverlay, CardSmallText, CardTitle } from "../card";
 
 interface Props {
     className?:string
@@ -9,10 +9,12 @@ export function ProductVideoCard(props:Props) {
 
     return <Card className={props.className}>
     <CardOverlay/>
-    <CardImage
-    className="object-cover h-screen"
-    image="/images/placeholder-image-one-compressed.webp"
-    alt=""
+    <CardVideo
+    className=""
+    src="https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"
+    autoPlay
+    muted
+    loop
     />
     <CardContent>
         <CardSmallText>Product tagline here 🚀</CardSmallText>

@@ -4,6 +4,7 @@ export interface HomepageFormSchema {
   phone_number?: string;
   message?: string;
 }
+
 export interface VideoSliderItem {
   id: number;
   posterUrl: string;
@@ -12,12 +13,10 @@ export interface VideoSliderItem {
 }
 
 export interface AudienceItem {
-  
     id: number,
     iconImageUrl: string,
     title: string,
     desc: string,
-  
 }
 
 export interface Settings {
