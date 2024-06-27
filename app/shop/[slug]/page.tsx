@@ -25,11 +25,13 @@ import { getBusinessBenefits } from "@/services/benefits";
 import Wrapper from '@/components/ui/wrapper';
 
 // Mock data
-import { Products } from '@/data/products'
+import { getProductBySlug } from '@/services/products';
 
-const mock_product = Products[0]
+
 
 export default async function Page({ params }: { params: { slug: string } }) {
+
+    const product = await getProductBySlug(params.slug)
 
     const benefits = await getBusinessBenefits()
 
@@ -61,11 +63,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
         {/* Show product gallery */}
         <CardsGallery>
             <CardsGalleryFeaturedImage
-                alt={mock_product.name}
-                src={mock_product.images[0]}
+                alt={product.name}
+                src={product.images[0]}
             />
-            <CardsGalleryGridVideos videosUrls={mock_product.videos}/>
-            <CardsGalleryGridImages imagesUrls={mock_product.images}/>
+            <CardsGalleryGridVideos videosUrls={product.videos}/>
+            <CardsGalleryGridImages imagesUrls={product.images}/>
         </CardsGallery>
         </Wrapper>
 

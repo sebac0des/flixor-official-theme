@@ -1,15 +1,13 @@
 // Components
 import Wrapper from "@/components/ui/wrapper";
-
 import {ProductVideoCard} from '@/components/ui/products/product-video-card'
 import {ProductCard} from '@/components/ui/products/product-card'
-
 
 // Utils
 import { cn } from "@/lib/utils";
 
 // Types
-import { Product } from "@/types";
+import { Product } from "@/types/product";
 
 interface ComboShowcaseProps {
     children: React.ReactNode;
@@ -28,6 +26,7 @@ interface ComboShowcaseContentProps {
 
   interface ComboVideoCardProps {
     className?: string;
+    product:Product
   }
 
 const ComboShowcase = ({ className, children, ...props }: ComboShowcaseProps) => (
@@ -53,7 +52,7 @@ const ComboShowcaseContent = ({ className, children, ...props }: ComboShowcaseCo
 
 const ComboShoppingCard = ({  product, ...props }: ComboShoppingCardProps) => <ProductCard product={product} {...props} />
 
-const ComboVideoCard = ({ ...props }: ComboVideoCardProps) => <ProductVideoCard {...props}/>
+const ComboVideoCard = ({ product,...props }: ComboVideoCardProps) => <ProductVideoCard product={product} {...props}/>
 
 export { ComboShowcase,ComboShowcaseContent, ComboShoppingCard, ComboVideoCard }
 

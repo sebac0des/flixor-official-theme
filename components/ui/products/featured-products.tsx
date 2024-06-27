@@ -1,7 +1,7 @@
 // Components
 import Wrapper from "../wrapper";
 
-import { Product } from "@/types";
+import { Product } from "@/types/product";
 import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/ui/card'
 
 interface Props {
@@ -14,7 +14,7 @@ export function FeaturedProducts({data}:Props) {
             return        <Card>
             <CardOverlay/>
             <CardImage
-            image={item.cover_image}
+            src={item.cover_image}
             alt={item.name}
             />
             <CardContent>

@@ -2,7 +2,7 @@
 import { cache } from "react";
 
 // Types
-import { Product } from "@/types";
+import { Product } from "@/types/product";
 
 // Fake data
 import { FeaturedProducts, PopularProducts, Products } from '@/data/products'

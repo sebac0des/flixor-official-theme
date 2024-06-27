@@ -59,7 +59,7 @@ height={1080}
 
 const CardVideo = ({...props}:React.VideoHTMLAttributes<HTMLVideoElement>) => <Video {...props}/>
 
-const CardSmallText = ({children}:{children:ReactNode}) => <span className={fontMono.className}>{children}</span>
+const CardSmallText = ({children}:{children:ReactNode}) => <span className={cn(fontMono.className,'text-sm md:text-base')}>{children}</span>
   
 const CardTitle = ({children}:{children:ReactNode}) => <h3 className="text-2xl font-medium tracking-wider">{children}</h3>
 

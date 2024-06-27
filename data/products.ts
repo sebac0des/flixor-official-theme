@@ -5,7 +5,7 @@ export const Products: Product[] = [
     id: "b2c3d4e5-f678-8062-1456-7890abcdef1",
     name: "Combo sueros faciales biobellus",
     slug:'combo-sueros-faciales-biobellus',
-    tagline:'',
+    tagline:'Con envio gratis 🍐',
     brand: "Biobellus",
     size: "42",
     description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",

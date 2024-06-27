@@ -1,13 +1,20 @@
+
 // Components
 import { Card, CardButton, CardContent, CardVideo, CardOverlay, CardSmallText, CardTitle } from "../card";
 
+// Types
+import { Product } from "@/types/product";
+
 interface Props {
     className?:string
+    product:Product
 }
 
-export function ProductVideoCard(props:Props) {
+export function ProductVideoCard({product,className}:Props) {
 
-    return <Card className={props.className}>
+
+
+    return <Card className={className}>
     <CardOverlay/>
     <CardVideo   
     autoPlay
@@ -15,13 +22,13 @@ export function ProductVideoCard(props:Props) {
     loop
     playsInline
     className="h-96 w-full"
-    src="https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"
+    src={product.videos[0]}
     preload="metadata"
     />
     <CardContent>
-        <CardSmallText>Product tagline here 🚀</CardSmallText>
-        <CardTitle>Video del combo</CardTitle>
-        <CardButton buttonUrl="/shop/name-here" className="mt-3">Mas info</CardButton>
+        <CardSmallText>{product.tagline}</CardSmallText>
+        <CardTitle>{product.name}</CardTitle>
+        <CardButton buttonUrl={product.slug} className="mt-3">Mas info</CardButton>
     </CardContent>
 </Card>
 }

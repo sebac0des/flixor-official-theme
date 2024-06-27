@@ -40,7 +40,7 @@ import { getBusinessAudience } from '@/services/audience'
 export default async function Page() {
 
   const featured_products = await getFeaturedProducts()
-  const combo = await getProductBySlug('zapatos-urbanos-confort')
+  const combo = await getProductBySlug('combo-sueros-faciales-biobellus')
   const popular_products = await getPopularProducts()
   const slider_videos = await getSliderVideos()
   const benefits = await getBusinessBenefits()
@@ -102,7 +102,7 @@ export default async function Page() {
           titleText="Bundle & Save 🤑"
         />
         <ComboShowcaseContent >
-          <ComboVideoCard/>
+          <ComboVideoCard product={combo}/>
           <ComboShoppingCard className="md:w-2/5" product={combo}/>
         </ComboShowcaseContent>
       </ComboShowcase>
