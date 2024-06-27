@@ -16,11 +16,11 @@ export const getPopularProducts = cache(async ():Promise<Product[]> =>  PopularP
 
 // Get single product by id from fake API service
 export const getProductBySlug = cache(async (slug: string): Promise<Product> => {
-    const findProductById = Products.find(product => product.slug === slug);
+    const findProductBySlug = Products.find(product => product.slug === slug);
     
-    if (!findProductById) {
+    if (!findProductBySlug) {
         throw new Error(`Product with slug ${slug} not found`);
     }
 
-    return findProductById;
+    return findProductBySlug;
 });
