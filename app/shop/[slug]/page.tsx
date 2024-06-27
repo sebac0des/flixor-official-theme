@@ -1,5 +1,5 @@
 // Fonts
-import {fontMono} from '@/app/fonts'
+import { fontMono } from '@/app/fonts'
 
 // Navigation components
 import { Header, HeaderLogo } from "@/components/header";
@@ -8,7 +8,9 @@ import Topbar from "@/components/topbar";
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
-import {CardsGallery, CardsGalleryFeaturedImage,CardsGalleryGridImages,CardsGalleryGridVideos} from '@/components/ui/cards-gallery'
+import { ProductGalleryCarousel } from '@/components/ui/products/product-gallery-carousel'
+
+import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/ui/cards-gallery'
 
 import {
     Breadcrumb,
@@ -19,10 +21,12 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
+import Wrapper from '@/components/ui/wrapper';
+
+
 
 // Services
 import { getBusinessBenefits } from "@/services/benefits";
-import Wrapper from '@/components/ui/wrapper';
 
 // Mock data
 import { getProductBySlug } from '@/services/products';
@@ -58,16 +62,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </Breadcrumb>
 
         <Wrapper container='stretch' className='py-2'>
-        {/* Show product gallery on desktop screens*/}
-        <CardsGallery className="hidden md:grid">
-            <CardsGalleryFeaturedImage
-                alt={product.name}
-                src={product.images[0]}
-            />
-            <CardsGalleryGridVideos videosUrls={product.videos}/>
-            <CardsGalleryGridImages imagesUrls={product.images}/>
-        </CardsGallery>
+            {/* Show product gallery on desktop screens*/}
+            <CardsGallery className="hidden md:grid">
+                <CardsGalleryFeaturedImage
+                    alt={product.name}
+                    src={product.images[0]}
+                />
+                <CardsGalleryGridVideos videosUrls={product.videos} />
+                <CardsGalleryGridImages imagesUrls={product.images} />
+            </CardsGallery>
+
+            {/* Show product gallery carousel on responsive screens */}
+            <ProductGalleryCarousel />
         </Wrapper>
+
 
 
 
