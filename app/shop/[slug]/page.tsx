@@ -25,7 +25,7 @@ import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import { Benefit, BenefitTitle, BenefitDescription, BenefitItem } from '@/components/ui/benefit'
+import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
 
 
 // Product service
@@ -86,12 +86,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
                 {/* Show business benefits */}
-                <Benefit className='flex items-center gap-3 mt-5'>
-                    <Shield className='w-5 h-5'/>
-                    <BenefitItem>
-                        <BenefitTitle>Secure shipping</BenefitTitle>
-                        <BenefitDescription>(5830 E 2nd St #96683, Casper)
-                            Usually ready in 24 hours</BenefitDescription>
+                <Benefit className='flex flex-col gap-2 mt-5'>
+                    <BenefitItem className='flex items-center gap-3'>
+                        <Shield className='w-5 h-5' />
+                        <BenefitContent>
+                            <BenefitTitle>Secure shipping</BenefitTitle>
+                            <BenefitDescription>(5830 E 2nd St #96683, Casper)
+                                Usually ready in 24 hours</BenefitDescription>
+                        </BenefitContent>
+                    </BenefitItem>
+
+                    <BenefitItem className='flex items-center gap-3'>
+                        <Shield className='w-5 h-5' />
+                        <BenefitContent>
+                            <BenefitTitle>Secure shipping</BenefitTitle>
+                            <BenefitDescription>(5830 E 2nd St #96683, Casper)
+                                Usually ready in 24 hours</BenefitDescription>
+                        </BenefitContent>
                     </BenefitItem>
                 </Benefit>
 

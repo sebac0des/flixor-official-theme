@@ -14,17 +14,21 @@ interface Props {
 }
 
 function Benefit({ className, children }: Props) {
-    return <div className={cn("border-b border-soft pb-2",className)}>
+    return <div className={className}>
         {children}
     </div>
 }
 
-function BenefitItem({children,...props}:Props){
-    return <div {...props}>{children}</div>
+function BenefitItem({children,className}:Props){
+    return <div className={cn("border-b border-soft pb-2",className)}>{children}</div>
 }
 
 function BenefitTitle({children}:{children:ReactNode}){
     return <h4 className={cn(fontMono.className,"text-sm font-bold")}>{children}</h4>
+}
+
+function BenefitContent({children}:{children:ReactNode}){
+    return <div className=''>{children}</div> 
 }
 
 function BenefitDescription({children}:{children:ReactNode}){
@@ -35,4 +39,4 @@ function BenefitLink({children}:Props){
     return <Link href="#" className={cn("text-xs underline", fontMono.className)}>{children}</Link> 
 }
 
-export {Benefit,BenefitItem,BenefitTitle,BenefitDescription,BenefitLink}
+export {Benefit,BenefitItem,BenefitTitle,BenefitDescription,BenefitLink, BenefitContent}
