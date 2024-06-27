@@ -1,10 +1,12 @@
+// React
+import { ReactNode } from 'react'
+
 // Components
 import { Card, CardImage, CardVideo } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 
 // Next js
 import { ImageProps } from 'next/image'
-import { ReactNode } from 'react'
 
 interface CardsGalleryProps {
     children:ReactNode
