@@ -14,7 +14,7 @@ export const Products: Product[] = [
     price: 79.99,
     cover_image: "/images/placeholder-image-one-compressed.webp",
     images: ["/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp"],
-    videos: ["https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4","https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4","https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"],
+    videos: ["https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"],
     stock: 12,
     categories: ["Calzado", "Urbano", "Unisex"],
     created_at: new Date(),

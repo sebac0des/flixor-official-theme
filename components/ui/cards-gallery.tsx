@@ -1,56 +1,52 @@
 // Components
-import {Card,CardImage,CardVideo} from '@/components/ui/card'
+import { Card, CardImage, CardVideo } from '@/components/ui/card'
 
-// Mock data
-import {Products} from '@/data/products'
+// Next js
+import { ImageProps } from 'next/image'
 
-const mock_product = Products[0]
-
-export function CardsGallery(){
-    return <ul className='grid grid-cols-4 gap-4'>
-    <CardsGalleryFeaturedElement/>
-    <CardsGalleryGridVideos/>
-    <CardsGalleryGridImages/>
+function CardsGallery({ ...props }) {
+    return <ul className='grid grid-cols-4 gap-2'>
+        {props.children}
     </ul>
 }
 
-export function CardsGalleryFeaturedElement({}){
+function CardsGalleryFeaturedImage({ ...props }: ImageProps) {
     return <Card className='col-span-4'>
-    <CardImage
-    alt=''
-    image='/images/placeholder-image-one-compressed.webp'/>
-</Card>
-}
-
-
-export function CardsGalleryGridImages(){
-    return mock_product.images?.map(item=>{
-        return <Card className='col-span-2'>
         <CardImage
-        alt=''
-        image={item}/>
+            {...props} />
     </Card>
+}
+
+function CardsGalleryGridImages({imagesUrls}:{imagesUrls:string[]}) {
+    return imagesUrls.map(item => {
+        return <Card className='col-span-2'>
+            <CardImage
+                alt={item}
+                src={item} />
+        </Card>
     })
 }
 
-export function CardsGalleryGridVideos(){
-    return mock_product.videos?.map((item,index)=>{
-        if(index === 0) return <Card className='col-span-2'>
-        <CardVideo
-        src={item}
-        controls
-        autoPlay
-        playsInline
-        muted
-        />
-    </Card>
+function CardsGalleryGridVideos({videosUrls}:{videosUrls:string[]}) {
+    return videosUrls.map((item, index) => {
+        if (index === 0) return <Card className='col-span-2'>
+            <CardVideo
+                src={item}
+                controls
+                autoPlay
+                playsInline
+                muted
+            />
+        </Card>
 
-    return <Card className='col-span-2'>
-    <CardVideo
-    src={item}
-    playsInline
-    autoPlay={false}
-    />
-</Card>
+        return <Card className='col-span-2'>
+            <CardVideo
+                src={item}
+                playsInline
+                autoPlay={false}
+            />
+        </Card>
     })
 }
+
+export {CardsGallery,CardsGalleryFeaturedImage,CardsGalleryGridImages,CardsGalleryGridVideos}

@@ -7,7 +7,8 @@ import Topbar from "@/components/topbar";
 
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
-import {CardsGallery} from '@/components/ui/cards-gallery'
+
+import {CardsGallery, CardsGalleryFeaturedImage,CardsGalleryGridImages,CardsGalleryGridVideos} from '@/components/ui/cards-gallery'
 
 import {
     Breadcrumb,
@@ -23,6 +24,10 @@ import {
 import { getBusinessBenefits } from "@/services/benefits";
 import Wrapper from '@/components/ui/wrapper';
 
+// Mock data
+import { Products } from '@/data/products'
+
+const mock_product = Products[0]
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
@@ -54,7 +59,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
         <Wrapper container='stretch' className='py-2'>
         {/* Show product gallery */}
-        <CardsGallery/>
+        <CardsGallery>
+            <CardsGalleryFeaturedImage
+                alt={mock_product.name}
+                src={mock_product.images[0]}
+            />
+            <CardsGalleryGridVideos videosUrls={mock_product.videos}/>
+            <CardsGalleryGridImages imagesUrls={mock_product.images}/>
+        </CardsGallery>
         </Wrapper>
 
 

@@ -15,6 +15,9 @@ import Image from "next/image";
 // Utils
 import { cn } from "@/lib/utils";
 
+// Types
+import {ImageProps} from 'next/image'
+
 
 interface CardButtonProps {
     children: ReactNode;
@@ -47,12 +50,11 @@ const CardContent = ({ ...props }) => (
     </div>
   );
 
-const CardImage = ({alt,image,className}:CardImageProps) => <Image
-  width={1080}
-  height={1080}
-  alt={alt}
-  src={image}
-  className={className}
+const CardImage = ({...props}:ImageProps) => 
+<Image
+width={1080}
+height={1080}
+  {...props}
 />
 
 const CardVideo = ({...props}:React.VideoHTMLAttributes<HTMLVideoElement>) => <Video {...props}/>

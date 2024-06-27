@@ -12,8 +12,8 @@ export interface Product {
     discount?: number;
     ingredients?: string[];
     cover_image: string;
-    images?: string[];
-    videos?: string[];
+    images: string[];
+    videos: string[];
     stock: number;
     categories?: string[];
     created_at?: Date;
