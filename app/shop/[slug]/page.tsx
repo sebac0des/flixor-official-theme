@@ -89,7 +89,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
 
             {/* Show product info on accordion items */}
-            <Accordion type="single" collapsible className="w-full mt-10 flex flex-col gap-3">
+            <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>Ingredientes</AccordionTrigger>
                     <AccordionContent>

@@ -19,7 +19,7 @@ function ProductInfo({ className, children }: Props) {
 }
 
 function ProductInfoTitle({children}:{children:ReactNode}){
-    return <h2 className="text-2xl md:text-4xl font-medium">{children}</h2>
+    return <h2 className="text-2xl md:text-3xl font-medium">{children}</h2>
 }
 
 function ProductInfoPrice({children}:{children:ReactNode}){
