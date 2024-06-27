@@ -6,8 +6,6 @@ import { Header, HeaderLogo } from "@/components/header";
 import Topbar from "@/components/topbar";
 
 // Components
-import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
-
 import { ProductGalleryCarousel } from '@/components/ui/product/product-gallery-carousel'
 
 import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/ui/cards-gallery'
@@ -25,25 +23,26 @@ import Wrapper from '@/components/ui/wrapper';
 
 import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/ui/product/product-info';
 
-// Services
-import { getBusinessBenefits } from "@/services/benefits";
-
-// Mock data
-import { getProductBySlug } from '@/services/products';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+import { Benefit, BenefitTitle, BenefitDescription, BenefitItem } from '@/components/ui/benefit'
+
+
+// Product service
+import { getProductBySlug } from '@/services/products';
+import { Shield } from 'lucide-react';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const product = await getProductBySlug(params.slug)
-    const benefits = await getBusinessBenefits()
+
 
     return <main className='bg-[#fefefe]'>
         {/* Show navigation with topbar and header components */}
         <Navigation />
 
-        {/* Show vertical benefits slider */}
-        <BenefitsVerticalSlider data={benefits} />
+
 
         {/* Show shop breadcrum */}
         <Breadcrumb className={fontMono.className}>
@@ -86,24 +85,32 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
+                {/* Show business benefits */}
+                <Benefit className='flex items-center gap-3 mt-5'>
+                    <Shield className='w-5 h-5'/>
+                    <BenefitItem>
+                        <BenefitTitle>Secure shipping</BenefitTitle>
+                        <BenefitDescription>(5830 E 2nd St #96683, Casper)
+                            Usually ready in 24 hours</BenefitDescription>
+                    </BenefitItem>
+                </Benefit>
 
+                {/* Show product info on accordion items */}
+                <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Ingredientes</AccordionTrigger>
+                        <AccordionContent>
+                            {product.ingredients}
+                        </AccordionContent>
+                    </AccordionItem>
 
-            {/* Show product info on accordion items */}
-            <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>Ingredientes</AccordionTrigger>
-                    <AccordionContent>
-                        {product.ingredients}
-                    </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>Modo de uso</AccordionTrigger>
-                    <AccordionContent>
-                        {product.ingredients}
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>Modo de uso</AccordionTrigger>
+                        <AccordionContent>
+                            {product.ingredients}
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
 
 
             </ProductInfo>
