@@ -20,7 +20,7 @@ export function FeaturedProducts({data}:Props) {
             <CardContent>
                 <CardSmallText>Product tagline here 🚀</CardSmallText>
                 <CardTitle>{item.name}</CardTitle>
-                <CardButton buttonUrl="" className="mt-3">Mas info</CardButton>
+                <CardButton buttonUrl={`/shop/${item.slug}`} className="mt-3">Mas info</CardButton>
             </CardContent>
         </Card>
         })}
