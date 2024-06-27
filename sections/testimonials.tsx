@@ -25,7 +25,7 @@ const Testimonials = ({data}:{data:Testimonial[]}) => {
       <SimpleTitle
       smallText="Resultados reales"
       titleText="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
-      containerClassName="mb-2.5 lg:mb-5"
+      containerClassName="mb-2.5 lg:mb-5 text-left"
       />
       
       <Carousel

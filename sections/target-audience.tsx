@@ -25,7 +25,7 @@ export function TargetAudience({
   return (
     <Wrapper container="stretch" className="flex flex-col">
       <SimpleTitle
-      containerClassName="mb-10 xl:mb-20"
+      containerClassName="text-left mb-10 xl:mb-20"
         smallText={sectionSmallText}
         titleText={sectionTitle}
       />

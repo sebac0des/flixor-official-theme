@@ -24,9 +24,9 @@ export default function Questions({
 }: Props) {
   return (
     <Wrapper container="stretch" className="flex flex-col gap-6">
-      <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10" />
+      <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10 text-left" />
       
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full flex flex-col gap-3">
         {data.map((item) => (
           <AccordionItem key={item.id} value={item.title}>
             <AccordionTrigger>{item.title}</AccordionTrigger>

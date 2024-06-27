@@ -18,8 +18,8 @@ export default function FAQWithVideoSlider({
   data,
 }: Props) {
   return (
-    <Wrapper container="stretch" className=" flex flex-col gap-5 lg:gap-10">
-      <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle}/>
+    <Wrapper container="stretch" className="flex flex-col gap-5 lg:gap-10">
+      <SimpleTitle containerClassName="text-left" smallText={sectionSmallText} titleText={sectionTitle}/>
       <VideoSlider data={data} />
     </Wrapper>
   );
