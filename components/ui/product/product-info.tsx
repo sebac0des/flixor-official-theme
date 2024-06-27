@@ -6,7 +6,6 @@ import { fontMono } from '@/app/fonts'
 
 // Utils
 import { cn } from '@/lib/utils'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../accordion'
 
 interface Props {
     children?: ReactNode
@@ -24,7 +23,7 @@ function ProductInfoTitle({children}:{children:ReactNode}){
 }
 
 function ProductInfoPrice({children}:{children:ReactNode}){
-    return <span className={cn("text-lg", fontMono.className)}>${children}</span>
+    return <span className={cn("text-lg lg:text-xl", fontMono.className)}>${children}</span>
 }
 
 function ProductInfoDescription({children}:{children:ReactNode}){

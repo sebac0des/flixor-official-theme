@@ -86,8 +86,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
+
+
             {/* Show product info on accordion items */}
-            <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
+            <Accordion type="single" collapsible className="w-full mt-10 flex flex-col gap-3">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>Ingredientes</AccordionTrigger>
                     <AccordionContent>
@@ -102,6 +104,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
+
+
             </ProductInfo>
 
 
