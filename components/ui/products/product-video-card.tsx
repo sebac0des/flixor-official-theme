@@ -12,8 +12,6 @@ interface Props {
 
 export function ProductVideoCard({product,className}:Props) {
 
-
-
     return <Card className={className}>
     <CardOverlay/>
     <CardVideo   

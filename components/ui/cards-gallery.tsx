@@ -1,12 +1,19 @@
 // Components
 import { Card, CardImage, CardVideo } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 
 // Next js
 import { ImageProps } from 'next/image'
+import { ReactNode } from 'react'
 
-function CardsGallery({ ...props }) {
-    return <ul className='grid grid-cols-4 gap-2'>
-        {props.children}
+interface CardsGalleryProps {
+    children:ReactNode
+    className?:string
+}
+
+function CardsGallery({ children,className }:CardsGalleryProps) {
+    return <ul className={cn("grid grid-cols-4 gap-2",className)}>
+        {children}
     </ul>
 }
 

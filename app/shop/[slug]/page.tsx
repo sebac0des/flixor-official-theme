@@ -28,11 +28,9 @@ import Wrapper from '@/components/ui/wrapper';
 import { getProductBySlug } from '@/services/products';
 
 
-
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const product = await getProductBySlug(params.slug)
-
     const benefits = await getBusinessBenefits()
 
     return <main>
@@ -54,14 +52,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbPage>Producto de ejemplo</BreadcrumbPage>
+                    <BreadcrumbPage>{product.name}</BreadcrumbPage>
                 </BreadcrumbItem>
             </BreadcrumbList>
         </Breadcrumb>
 
         <Wrapper container='stretch' className='py-2'>
-        {/* Show product gallery */}
-        <CardsGallery>
+        {/* Show product gallery on desktop screens*/}
+        <CardsGallery className="hidden md:grid">
             <CardsGalleryFeaturedImage
                 alt={product.name}
                 src={product.images[0]}
