@@ -7,7 +7,7 @@ import Topbar from "@/components/topbar";
 
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
-import {CardsMultimediaGallery} from '@/components/ui/cards-multimedia-gallery'
+import {CardsGallery} from '@/components/ui/cards-gallery'
 
 import {
     Breadcrumb,
@@ -54,7 +54,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
         <Wrapper container='stretch' className='py-2'>
         {/* Show product gallery */}
-        <CardsMultimediaGallery/>
+        <CardsGallery/>
         </Wrapper>
 
 

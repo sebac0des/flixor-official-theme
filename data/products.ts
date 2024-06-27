@@ -1,7 +1,25 @@
-import { Product } from "@/types"
+import { Product } from "@/types/product"
 
 export const Products: Product[] = [
-
+  {
+    id: "b2c3d4e5-f678-8062-1456-7890abcdef1",
+    name: "Combo sueros faciales biobellus",
+    slug:'combo-sueros-faciales-biobellus',
+    tagline:'',
+    brand: "Biobellus",
+    size: "42",
+    description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",
+    short_desc: "Zapatos urbanos Adidas",
+    audience: "Unisex",
+    price: 79.99,
+    cover_image: "/images/placeholder-image-one-compressed.webp",
+    images: ["/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp"],
+    videos: ["https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4","https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4","https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"],
+    stock: 12,
+    categories: ["Calzado", "Urbano", "Unisex"],
+    created_at: new Date(),
+    updated_at: new Date()
+  },
   {
     id: "b2c3d4e5-f678-9012-3456-7890abcdef1",
     name: "Zapatos Urbanos Confort",

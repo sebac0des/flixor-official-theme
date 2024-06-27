@@ -1,8 +1,11 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export function Video({ ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) {
+   
+    const [showControls,setShowControls] = useState(false)
+   
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -12,7 +15,7 @@ export function Video({ ...props }: React.VideoHTMLAttributes<HTMLVideoElement>)
 
         const handleIntersection = (entries: IntersectionObserverEntry[]) => 
             entries.forEach(entry => {
-                if (entry.isIntersecting) videoElement.play();
+                if (entry.isIntersecting && props.autoPlay) videoElement.play();
                 else videoElement.pause();
             });
         
@@ -26,5 +29,8 @@ export function Video({ ...props }: React.VideoHTMLAttributes<HTMLVideoElement>)
         return () => observer.unobserve(videoElement);
     }, []);
 
-    return <video ref={videoRef} {...props}></video>;
+    return <video controls={showControls} 
+    onMouseEnter={()=>setShowControls(true)} 
+    onMouseLeave={()=>setShowControls(false)}
+    ref={videoRef} {...props}></video>;
 }
