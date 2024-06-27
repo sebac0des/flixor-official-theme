@@ -28,7 +28,7 @@ export function ProductVideoCard({product,className}:Props) {
     <CardContent>
         <CardSmallText>{product.tagline}</CardSmallText>
         <CardTitle>{product.name}</CardTitle>
-        <CardButton buttonUrl={product.slug} className="mt-3">Mas info</CardButton>
+        <CardButton buttonUrl={`/shop/${product.slug}`} className="mt-3">Mas info</CardButton>
     </CardContent>
 </Card>
 }
