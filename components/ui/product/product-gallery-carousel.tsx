@@ -9,7 +9,7 @@ import { Card, CardImage, CardVideo } from '@/components/ui/card'
 import { ImageProps } from 'next/image'
 
 function ProductGalleryCarousel() {
-    return <Carousel className="w-full block md:hidden">
+    return <Carousel className="w-full block lg:hidden">
     <CarouselContent>
       {Array.from({ length: 5 }).map((_, index) => (
         <CarouselItem key={index}>

@@ -26,6 +26,7 @@ import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
+import { Button } from '@/components/ui/button';
 
 
 // Product service
@@ -63,9 +64,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </BreadcrumbList>
         </Breadcrumb>
 
-        <Wrapper container='stretch' className='flex flex-col md:gap-10 md:flex-row py-2'>
+        <Wrapper container='stretch' className='flex flex-col md:gap-10 lg:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
-            <CardsGallery className="hidden md:grid">
+            <CardsGallery className="hidden lg:grid">
                 <CardsGalleryFeaturedImage
                     className='w-full'
                     alt={product.name}
@@ -86,6 +87,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoTitle>{product.name}</ProductInfoTitle>
                 <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
+
+                {/* Show shop action buttons */}
+                <Button variant="accent" className='my-8 w-full py-8' size="lg">Buy now</Button>
 
                 {/* Show business benefits */}
                 <Benefit className='flex flex-col gap-2 mt-5'>
