@@ -25,7 +25,7 @@ const config = {
         body: "#272727",
         accent: "#57573D",
         accentTwo: "#009d43",
-        soft: "#fbeedd",
+        soft: "#e7e5dc",
       },
       keyframes: {
         "accordion-down": {

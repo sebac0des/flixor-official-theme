@@ -6,6 +6,9 @@ import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+// Fonts
+import {fontMono} from '@/app/fonts'
+
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
@@ -14,7 +17,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b", className)}
+    className={cn("border border-soft rounded-md bg-white", className)}
     {...props}
   />
 ));
@@ -28,7 +31,8 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "text-left px-2 hover:border-l-4 border-accent flex flex-1 items-center justify-between py-4 font-semibold transition-all [&[data-state=open]>svg]:rotate-180 data-[state=open]:border-l-4 text-primary",
+        fontMono.className,
+        "text-left hover:text-accent px-4 text-lg flex flex-1 items-center justify-between py-4 transition-all [&[data-state=open]>svg]:rotate-180 text-primary",
         className
       )}
       {...props}
@@ -46,7 +50,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="p-2 overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:border-l-4 border-accent data-[state=open]:animate-accordion-down whitespace-pre-line"
+    className={cn(fontMono.className,"p-2 overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down whitespace-pre-line")}
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>

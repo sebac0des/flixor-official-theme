@@ -6,6 +6,7 @@ import { fontMono } from '@/app/fonts'
 
 // Utils
 import { cn } from '@/lib/utils'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../accordion'
 
 interface Props {
     children?: ReactNode

@@ -23,13 +23,14 @@ import {
 
 import Wrapper from '@/components/ui/wrapper';
 
-import { ProductInfo, ProductInfoTitle, ProductInfoDescription,ProductInfoPrice } from '@/components/ui/product/product-info';
+import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/ui/product/product-info';
 
 // Services
 import { getBusinessBenefits } from "@/services/benefits";
 
 // Mock data
 import { getProductBySlug } from '@/services/products';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -37,7 +38,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const product = await getProductBySlug(params.slug)
     const benefits = await getBusinessBenefits()
 
-    return <main>
+    return <main className='bg-[#fefefe]'>
         {/* Show navigation with topbar and header components */}
         <Navigation />
 
@@ -78,13 +79,25 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <ProductGalleryCarousel />
 
             {/* Show the product info as title, desc, price, etc */}
-            <ProductInfo 
-            className='mt-5 md:mt-0 md:w-11/12'
+            <ProductInfo
+                className='mt-5 md:mt-0 md:w-11/12'
             >
                 <ProductInfoTitle>{product.name}</ProductInfoTitle>
                 <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
+
+            {/* Show product info on accordion items */}
+            <Accordion type="single" collapsible className="w-full mt-5">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                    <AccordionContent>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
             </ProductInfo>
+
+
         </Wrapper>
 
 
