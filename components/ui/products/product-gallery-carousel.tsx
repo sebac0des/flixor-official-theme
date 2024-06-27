@@ -1,6 +1,3 @@
-// React
-import { ReactNode } from 'react'
-
 // Fonts
 import {fontMono} from '@/app/fonts'
 
@@ -11,13 +8,8 @@ import { Card, CardImage, CardVideo } from '@/components/ui/card'
 // Next js
 import { ImageProps } from 'next/image'
 
-interface CardsGalleryProps {
-    children:ReactNode
-    className?:string
-}
-
 function ProductGalleryCarousel() {
-    return     <Carousel className="w-full">
+    return <Carousel className="w-full block md:hidden">
     <CarouselContent>
       {Array.from({ length: 5 }).map((_, index) => (
         <CarouselItem key={index}>
