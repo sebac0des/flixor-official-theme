@@ -27,8 +27,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const benefits = await getBusinessBenefits()
 
     return <main>
+        {/* Show navigation with topbar and header components */}
         <Navigation />
+
+        {/* Show vertical benefits slider */}
         <BenefitsVerticalSlider data={benefits} />
+
+        {/* Show shop breadcrum */}
         <Breadcrumb className={fontMono.className}>
             <BreadcrumbList className='w-11/12 m-auto text-primary py-3 md:text-base'>
                 <BreadcrumbItem>

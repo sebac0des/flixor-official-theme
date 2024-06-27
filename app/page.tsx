@@ -51,6 +51,9 @@ export default async function Page() {
   return (
 
     <main className="min-h-screen bg-[#fcfcfc]">
+
+      {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
+
       <ContactPopOver
         image="\images\sebas-call-me.webp"
       >
@@ -68,6 +71,7 @@ export default async function Page() {
       <Navigation />
 
 
+      {/* Show vertical slider with business benefits in loop  */}
       <BenefitsVerticalSlider data={benefits} />
       <Hero
         title="¡Mira la lista de precios!"
@@ -83,10 +87,13 @@ export default async function Page() {
         buttonUrl="#"
       />
 
+        {/* Show featured products cards */}
       <FeaturedProducts data={featured_products} />
 
+        {/* Show popular products cards */}
       <MostPopularProducts data={popular_products} />
 
+        {/* Show a combo show case with video and shopping card */}
       <ComboShowcase >
         <SimpleTitle
           containerClassName="text-left mb-4"
@@ -100,18 +107,21 @@ export default async function Page() {
         </ComboShowcaseContent>
       </ComboShowcase>
 
+{/* Show a slider with frequently asked questions about your business in video */}
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
         sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
         data={slider_videos}
       />
 
+{/* Show target audience section, use for segment your business audience */}
       <TargetAudience
         data={audience}
         sectionSmallText="¿Con quien trabajamos?"
         sectionTitle="Con estudiantes, profesionales y revendedores. ❤️"
       />
 
+{/* Show message box, use for highlight specific information */}
       <MessageBox>
         <MessageBoxSmallMessage>
           Hola, soy Sebas👋
@@ -127,6 +137,8 @@ export default async function Page() {
         </MessageBoxTitle>
       </MessageBox>
 
+
+        {/* Show testimonial carousel */}
       <Testimonials data={testimonials} />
 
       <Questions

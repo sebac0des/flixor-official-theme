@@ -34,7 +34,7 @@ export default function GoogleReviews() {
             <Star className="w-4 h-4 fill-yellow-500" strokeWidth={0} />
           </li>
         </ul>
-        <div className="bg-white rounded-full p-1 w-fit">
+        <div className="bg-white rounded-full p-1 w-5 h-5">
           <Image width={15} height={15} alt="" src="/icons/google.webp" />
         </div>
         <span className={fontMono.className}>
