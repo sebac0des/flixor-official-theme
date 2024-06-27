@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </BreadcrumbList>
         </Breadcrumb>
 
-        <Wrapper container='stretch' className='flex flex-col md:gap-10 md:flex-row'>
+        <Wrapper container='stretch' className='flex flex-col md:gap-10 md:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
             <CardsGallery className="hidden md:grid">
                 <CardsGalleryFeaturedImage
@@ -87,11 +87,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
             {/* Show product info on accordion items */}
-            <Accordion type="single" collapsible className="w-full mt-5">
+            <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                    <AccordionTrigger>Ingredientes</AccordionTrigger>
                     <AccordionContent>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        {product.ingredients}
+                    </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Modo de uso</AccordionTrigger>
+                    <AccordionContent>
+                        {product.ingredients}
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
