@@ -8,7 +8,7 @@ import Topbar from "@/components/topbar";
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
-import { ProductGalleryCarousel } from '@/components/ui/products/product-gallery-carousel'
+import { ProductGalleryCarousel } from '@/components/ui/product/product-gallery-carousel'
 
 import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/ui/cards-gallery'
 
@@ -23,7 +23,7 @@ import {
 
 import Wrapper from '@/components/ui/wrapper';
 
-
+import { ProductInfo, ProductInfoTitle, ProductInfoDescription,ProductInfoPrice } from '@/components/ui/product/product-info';
 
 // Services
 import { getBusinessBenefits } from "@/services/benefits";
@@ -61,10 +61,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </BreadcrumbList>
         </Breadcrumb>
 
-        <Wrapper container='stretch' className='py-2'>
+        <Wrapper container='stretch' className='flex flex-col md:gap-10 md:flex-row'>
             {/* Show product gallery on desktop screens*/}
             <CardsGallery className="hidden md:grid">
                 <CardsGalleryFeaturedImage
+                    className='w-full'
                     alt={product.name}
                     src={product.images[0]}
                 />
@@ -72,8 +73,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <CardsGalleryGridImages imagesUrls={product.images} />
             </CardsGallery>
 
+
             {/* Show product gallery carousel on responsive screens */}
             <ProductGalleryCarousel />
+
+            {/* Show the product info as title, desc, price, etc */}
+            <ProductInfo 
+            className='mt-5 md:mt-0 md:w-11/12'
+            >
+                <ProductInfoTitle>{product.name}</ProductInfoTitle>
+                <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
+                <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
+            </ProductInfo>
         </Wrapper>
 
 
@@ -81,6 +92,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
     </main>
 }
+
 
 function Navigation() {
     return (

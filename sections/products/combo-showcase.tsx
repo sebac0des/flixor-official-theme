@@ -1,7 +1,7 @@
 // Components
 import Wrapper from "@/components/ui/wrapper";
-import {ProductVideoCard} from '@/components/ui/products/product-video-card'
-import {ProductCard} from '@/components/ui/products/product-card'
+import {ProductVideoCard} from '@/components/ui/product/product-video-card'
+import {ProductCard} from '@/components/ui/product/product-card'
 
 // Utils
 import { cn } from "@/lib/utils";

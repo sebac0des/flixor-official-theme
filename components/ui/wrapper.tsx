@@ -8,8 +8,8 @@ interface Props {
 }
 
 const CONTAINER = {
-  fullWidth: "py-10 xl:py-20",
-  stretch: "w-11/12 m-auto py-10 xl:py-20",
+  fullWidth: "py-10",
+  stretch: "w-11/12 m-auto py-10",
   centered: "w-11/12 m-auto",
 };
 

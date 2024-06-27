@@ -17,8 +17,8 @@ import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPop
 
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
-import { FeaturedProducts } from '@/components/ui/products/featured-products'
-import { MostPopularProducts } from '@/components/ui/products/most-popular-products'
+import { FeaturedProducts } from '@/components/ui/product/featured-products'
+import { MostPopularProducts } from '@/components/ui/product/most-popular-products'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";

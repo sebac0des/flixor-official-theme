@@ -9,7 +9,7 @@ export const Products: Product[] = [
     brand: "Biobellus",
     size: "42",
     description: "Zapatos casuales con tecnología de amortiguación para máximo confort.",
-    short_desc: "Zapatos urbanos Adidas",
+    short_desc: "A rich oil blend with antioxidant properties helps protect your skin while leaving it feeling smooth and silky. This gentle formula provides deep hydration without clogging pores.",
     audience: "Unisex",
     price: 79.99,
     cover_image: "/images/placeholder-image-one-compressed.webp",
