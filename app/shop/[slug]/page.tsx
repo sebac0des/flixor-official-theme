@@ -30,7 +30,9 @@ import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent 
 
 // Product service
 import { getProductBySlug } from '@/services/products';
-import { Shield } from 'lucide-react';
+
+// Icons
+import {  Lock, Truck, Package } from 'lucide-react';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -87,23 +89,36 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
                 {/* Show business benefits */}
                 <Benefit className='flex flex-col gap-2 mt-5'>
-                    <BenefitItem className='flex items-center gap-3'>
-                        <Shield className='w-5 h-5' />
+
+                <BenefitItem className='flex items-center gap-3'>
+                        <Package className='w-5 h-5' />
                         <BenefitContent>
-                            <BenefitTitle>Secure shipping</BenefitTitle>
+                            <BenefitTitle>Free Pick Up at 5830 E 2nd St #96683</BenefitTitle>
+                            <BenefitDescription>(5830 E 2nd St #96683, Casper)
+                                Usually ready in 24 hours</BenefitDescription>
+                        </BenefitContent>
+                    </BenefitItem>
+
+
+                    <BenefitItem className='flex items-center gap-3'>
+                        <Truck className='w-5 h-5' />
+                        <BenefitContent>
+                            <BenefitTitle>Shipping Guarantee</BenefitTitle>
                             <BenefitDescription>(5830 E 2nd St #96683, Casper)
                                 Usually ready in 24 hours</BenefitDescription>
                         </BenefitContent>
                     </BenefitItem>
 
                     <BenefitItem className='flex items-center gap-3'>
-                        <Shield className='w-5 h-5' />
+                        <Lock className='w-5 h-5' />
                         <BenefitContent>
-                            <BenefitTitle>Secure shipping</BenefitTitle>
+                            <BenefitTitle>Secure checkout</BenefitTitle>
                             <BenefitDescription>(5830 E 2nd St #96683, Casper)
                                 Usually ready in 24 hours</BenefitDescription>
                         </BenefitContent>
                     </BenefitItem>
+
+                    
                 </Benefit>
 
                 {/* Show product info on accordion items */}

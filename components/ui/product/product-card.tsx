@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { fontMono } from "@/app/fonts";
 
 // Types
-import { Product } from "@/types";
+import { Product } from "@/types/product";
 
 
 

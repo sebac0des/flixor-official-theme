@@ -20,7 +20,7 @@ interface MessageBoxProps {
 const MessageBox = ({ className, children, ...props }: MessageBoxProps) => (
   <Wrapper
     className={cn(
-      "bg-soft text-center rounded-lg xl:min-h-96 place-content-center",
+      "bg-soft text-center rounded-lg xl:min-h-96 py-20 place-content-center",
       className
     )}
     container="stretch"
