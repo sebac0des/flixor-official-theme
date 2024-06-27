@@ -15,7 +15,7 @@ const CONTAINER = {
 
 const Wrapper = ({ children, className, container }: Props) => {
   return (
-    <section className={cn(className, CONTAINER[container])}>
+    <section className={cn(CONTAINER[container],className)}>
       {children}
     </section>
   );

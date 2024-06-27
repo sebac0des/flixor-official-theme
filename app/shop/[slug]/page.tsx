@@ -7,6 +7,7 @@ import Topbar from "@/components/topbar";
 
 // Components
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
+import {CardsMultimediaGallery} from '@/components/ui/cards-multimedia-gallery'
 
 import {
     Breadcrumb,
@@ -20,6 +21,7 @@ import {
 
 // Services
 import { getBusinessBenefits } from "@/services/benefits";
+import Wrapper from '@/components/ui/wrapper';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -35,7 +37,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
         {/* Show shop breadcrum */}
         <Breadcrumb className={fontMono.className}>
-            <BreadcrumbList className='w-11/12 m-auto text-primary py-3 md:text-base'>
+            <BreadcrumbList className='text-primary py-5 md:text-base w-11/12 m-auto'>
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
@@ -49,6 +51,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </BreadcrumbItem>
             </BreadcrumbList>
         </Breadcrumb>
+
+        <Wrapper container='stretch' className='py-2'>
+        {/* Show product gallery */}
+        <CardsMultimediaGallery/>
+        </Wrapper>
+
+
 
     </main>
 }
