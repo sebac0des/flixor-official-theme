@@ -96,8 +96,13 @@ export default async function Page() {
 
       {/* Show popular on product card slider */}
       <ProductCarousel>
-        <ProductCarouselContent data={popular_products} />
+        <SimpleTitle
+        titleText="Most Popular ✨"
+        description="Looking for safe skincare products that actually work? Look no further!"
+        containerClassName="mb-3 text-left"
+        />
         <ProductCarouselIndicators />
+        <ProductCarouselContent data={popular_products} />
       </ProductCarousel>
 
       {/* Show a combo show case with video and shopping card */}
