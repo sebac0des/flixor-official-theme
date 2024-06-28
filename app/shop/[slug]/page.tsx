@@ -1,3 +1,5 @@
+'use client'
+
 // Fonts
 import { fontMono } from '@/app/fonts'
 
