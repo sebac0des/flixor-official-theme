@@ -18,7 +18,7 @@ import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPop
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
 import { FeaturedProducts } from '@/components/ui/product/featured-products'
-import { ProductCarousel,ProductCarouselContent,ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
+import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -68,7 +68,7 @@ export default async function Page() {
         <ContactPopOverSmallMessage>Se abre en WhatsApp</ContactPopOverSmallMessage>
       </ContactPopOver>
 
-    {/* Show header and topbar on navigation bar */}
+      {/* Show header and topbar on navigation bar */}
       <Navigation />
 
 
@@ -91,74 +91,77 @@ export default async function Page() {
       />
 
       <Wrapper container="stretch" className="flex flex-col gap-16">
-      {/* Show featured products cards */}
-      <FeaturedProducts data={featured_products} />
+        {/* Show featured products cards */}
+        <FeaturedProducts data={featured_products} />
 
-      {/* Show popular on product card slider */}
-      <ProductCarousel>
-        <SimpleTitle
-        titleText="Most Popular ✨"
-        description="Looking for safe skincare products that actually work? Look no further!"
-        containerClassName="mb-3 text-left"
-        />
-        <ProductCarouselIndicators />
-        <ProductCarouselContent data={popular_products} />
-      </ProductCarousel>
+        {/* Show popular on product card slider */}
+        <ProductCarousel >
+          <div className="lg:flex justify-between items-center">
+            <SimpleTitle
+              titleText="Most Popular ✨"
+              description="Looking for safe skincare products that actually work? Look no further!"
+              containerClassName="mb-3 text-left"
+            />
+            <ProductCarouselIndicators />
+          </div>
 
-      {/* Show a combo show case with video and shopping card */}
-      <ComboShowcase >
-        <SimpleTitle
-          containerClassName="text-left mb-4"
-          smallText="Best treat for your skin
+          <ProductCarouselContent data={popular_products} />
+        </ProductCarousel>
+
+        {/* Show a combo show case with video and shopping card */}
+        <ComboShowcase >
+          <SimpleTitle
+            containerClassName="text-left mb-4"
+            smallText="Best treat for your skin
         "
-          titleText="Bundle & Save 🤑"
+            titleText="Bundle & Save 🤑"
+          />
+          <ComboShowcaseContent >
+            <ComboVideoCard product={combo} />
+            <ComboShoppingCard className="md:w-2/5" product={combo} />
+          </ComboShowcaseContent>
+        </ComboShowcase>
+
+        {/* Show a slider with frequently asked questions about your business in video */}
+        <FAQWithVideoSlider
+          sectionSmallText="¿Tienes dudas o preguntas?"
+          sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
+          data={slider_videos}
         />
-        <ComboShowcaseContent >
-          <ComboVideoCard product={combo} />
-          <ComboShoppingCard className="md:w-2/5" product={combo} />
-        </ComboShowcaseContent>
-      </ComboShowcase>
 
-      {/* Show a slider with frequently asked questions about your business in video */}
-      <FAQWithVideoSlider
-        sectionSmallText="¿Tienes dudas o preguntas?"
-        sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
-        data={slider_videos}
-      />
+        {/* Show target audience section, use for segment your business audience */}
+        <TargetAudience
+          data={audience}
+          sectionSmallText="¿Con quien trabajamos?"
+          sectionTitle="Con estudiantes, profesionales y revendedores. ❤️"
+        />
 
-      {/* Show target audience section, use for segment your business audience */}
-      <TargetAudience
-        data={audience}
-        sectionSmallText="¿Con quien trabajamos?"
-        sectionTitle="Con estudiantes, profesionales y revendedores. ❤️"
-      />
-
-      {/* Show message box, use for highlight specific information */}
-      <MessageBox>
-        <MessageBoxSmallMessage>
-          Hola, soy Sebas👋
-        </MessageBoxSmallMessage>
-        <MessageBoxTitle>
-          Jalf es el comercio que uso para mostrar
-          <MessageBoxLink
-            className="ml-1"
-            href="https://github.com/sebac0des/flixor"
-          >
-            Flixor template.
-          </MessageBoxLink>
-        </MessageBoxTitle>
-      </MessageBox>
+        {/* Show message box, use for highlight specific information */}
+        <MessageBox>
+          <MessageBoxSmallMessage>
+            Hola, soy Sebas👋
+          </MessageBoxSmallMessage>
+          <MessageBoxTitle>
+            Jalf es el comercio que uso para mostrar
+            <MessageBoxLink
+              className="ml-1"
+              href="https://github.com/sebac0des/flixor"
+            >
+              Flixor template.
+            </MessageBoxLink>
+          </MessageBoxTitle>
+        </MessageBox>
 
 
-      {/* Show testimonial carousel */}
-      <Testimonials data={testimonials} />
+        {/* Show testimonial carousel */}
+        <Testimonials data={testimonials} />
 
         {/* Show business questions */}
-      <Questions
-        sectionSmallText="Preguntas frecuentes"
-        sectionTitle="¿Tienes dudas? ¡Te las aclaramos! 👇"
-        data={faq}
-      />
+        <Questions
+          sectionSmallText="Preguntas frecuentes"
+          sectionTitle="¿Tienes dudas? ¡Te las aclaramos! 👇"
+          data={faq}
+        />
       </Wrapper>
 
 
