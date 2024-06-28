@@ -50,7 +50,7 @@ export default async function Page() {
 
   return (
 
-    <main className="min-h-screen bg-[#fcfcfc]">
+    <main className=" min-h-screen bg-[#fcfcfc]">
 
       {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
 

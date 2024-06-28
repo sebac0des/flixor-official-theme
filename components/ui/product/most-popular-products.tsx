@@ -6,14 +6,12 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel"
 
 import { ProductCard } from "./product-card";
 
 // Types
-import { Product } from "@/types";
+import { Product } from "@/types/product";
 
 
 interface Props {
@@ -42,8 +40,7 @@ export function MostPopularProducts({ data }: Props) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            
         </Carousel>
     </Wrapper>
 }
