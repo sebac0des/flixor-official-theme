@@ -28,19 +28,20 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
 import { Button } from '@/components/ui/button';
 
-import { ProductCardSlider } from '@/components/ui/product/product-card-slider'
+import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
 
 // Product service
-import { getProductBySlug } from '@/services/products';
+import { getProductBySlug, getProductsByCategory } from '@/services/products';
 
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
+import { SimpleTitle } from '@/components/ui/simple-title';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const product = await getProductBySlug(params.slug)
-    const related_products = []
+    const related_products = await getProductsByCategory('Calzado')
 
 
     return <main className='min-h-screen bg-[#fefefe]'>
@@ -146,8 +147,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </ProductInfo>
         </Wrapper>
 
+        {/* Show related products on the same category */}
         <Wrapper container='stretch'>
-            Related products here
+            <SimpleTitle
+                titleText="You might also like"
+                containerClassName="text-left"
+            />
+            <ProductCarousel
+                opts={{
+                    align: "start",
+                    loop: true,
+                }}>
+                <ProductCarouselIndicators />
+                <ProductCarouselContent data={related_products} />
+            </ProductCarousel>
         </Wrapper>
     </main>
 }

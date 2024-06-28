@@ -18,7 +18,7 @@ import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPop
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
 import { FeaturedProducts } from '@/components/ui/product/featured-products'
-import { ProductCardSlider } from '@/components/ui/product/product-card-slider'
+import { ProductCarousel,ProductCarouselContent,ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -95,7 +95,10 @@ export default async function Page() {
       <FeaturedProducts data={featured_products} />
 
       {/* Show popular on product card slider */}
-      <ProductCardSlider data={popular_products} />
+      <ProductCarousel>
+        <ProductCarouselContent data={popular_products} />
+        <ProductCarouselIndicators />
+      </ProductCarousel>
 
       {/* Show a combo show case with video and shopping card */}
       <ComboShowcase >
