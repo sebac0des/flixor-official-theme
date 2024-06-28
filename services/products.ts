@@ -26,12 +26,12 @@ export const getProductBySlug = cache(async (slug: string): Promise<Product> => 
 });
 
 // Get single product by category from fake API service
-export const getProductByCategory = cache(async (slug: string): Promise<Product> => {
-    const findProductBySlug = Products.find(product => product.slug === slug);
+export const getProductByCategory = cache(async (category: string): Promise<Product> => {
+    const findProductByCategory = Products.find(product => product.category === category);
     
-    if (!findProductBySlug) {
-        throw new Error(`Product with slug ${slug} not found`);
+    if (!findProductByCategory) {
+        throw new Error(`Product with category ${category} not found`);
     }
 
-    return findProductBySlug;
+    return findProductByCategory;
 });
