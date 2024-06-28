@@ -18,16 +18,15 @@ interface MessageBoxProps {
 }
 
 const MessageBox = ({ className, children, ...props }: MessageBoxProps) => (
-  <Wrapper
+  <div
     className={cn(
       "bg-soft text-center rounded-lg xl:min-h-96 py-20 place-content-center",
       className
     )}
-    container="stretch"
     {...props}
   >
     <div className="w-11/12 m-auto">{children}</div>
-  </Wrapper>
+  </div>
 );
 MessageBox.displayName = "MessageBox";
 

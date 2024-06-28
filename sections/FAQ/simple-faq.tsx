@@ -6,7 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SimpleTitle } from "@/components/ui/simple-title";
-import Wrapper from "@/components/ui/wrapper";
 
 // Types
 import { QuestionItem } from "@/types";
@@ -23,7 +22,7 @@ export default function Questions({
   data,
 }: Props) {
   return (
-    <Wrapper container="stretch" className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
       <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10 text-left" />
       
       <Accordion type="single" collapsible className="w-full flex flex-col gap-3">
@@ -36,6 +35,6 @@ export default function Questions({
           </AccordionItem>
         ))}
       </Accordion>
-    </Wrapper>
+    </div>
   );
 }

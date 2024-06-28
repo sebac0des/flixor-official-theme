@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function FeaturedProducts({data}:Props) {
-    return <Wrapper className="grid md:grid-cols-2 gap-5" container="stretch" >
+    return <div className="grid md:grid-cols-2 gap-5" >
         {data.map(item=>{
             return        <Card>
             <CardOverlay/>
@@ -25,6 +25,6 @@ export function FeaturedProducts({data}:Props) {
         </Card>
         })}
  
-    </Wrapper>
+    </div>
 }
 

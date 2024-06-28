@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 // Components
-import Wrapper from "@/components/ui/wrapper";
 import { SimpleTitle } from "@/components/ui/simple-title";
 
 interface Props {
@@ -23,7 +22,7 @@ export function TargetAudience({
   data,
 }: Props) {
   return (
-    <Wrapper container="stretch" className="flex flex-col">
+    <div  className="flex flex-col">
       <SimpleTitle
       containerClassName="text-left mb-10 xl:mb-20"
         smallText={sectionSmallText}
@@ -48,6 +47,6 @@ export function TargetAudience({
           </li>
         ))}
       </ul>
-    </Wrapper>
+    </div>
   );
 }

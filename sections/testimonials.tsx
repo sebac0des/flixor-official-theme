@@ -21,7 +21,7 @@ import { Testimonial } from "@/types";
 
 const Testimonials = ({data}:{data:Testimonial[]}) => {
   return (
-    <Wrapper container="stretch" className="text-primary bg-[#fbfbfb]">
+    <div  className="text-primary bg-[#fbfbfb]">
       <SimpleTitle
       smallText="Resultados reales"
       titleText="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
@@ -76,7 +76,7 @@ const Testimonials = ({data}:{data:Testimonial[]}) => {
           })}
         </CarouselContent>
       </Carousel>
-    </Wrapper>
+    </div>
   );
 };
 

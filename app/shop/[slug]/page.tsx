@@ -28,6 +28,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
 import { Button } from '@/components/ui/button';
 
+import { ProductCardSlider } from '@/components/ui/product/product-card-slider'
 
 // Product service
 import { getProductBySlug } from '@/services/products';
@@ -141,33 +142,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
-
-                                {/* Show product info on accordion items */}
-                                <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>Ingredientes</AccordionTrigger>
-                        <AccordionContent>
-                            {product.ingredients}
-                        </AccordionContent>
-                    </AccordionItem>
-
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger>Modo de uso</AccordionTrigger>
-                        <AccordionContent>
-                            {product.ingredients}
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-
-
             </ProductInfo>
-
-
         </Wrapper>
 
-
-
-
+        <Wrapper container='stretch'>
+            Related products here
+        </Wrapper>
     </main>
 }
 

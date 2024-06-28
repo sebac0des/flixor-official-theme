@@ -20,7 +20,7 @@ interface Props {
 
 export function ProductCard({ product, className }: Props) {
 
-    if (product) return <div className={cn(className, 'relative border border-[#e8e6df] rounded-t-md rounded-b-md overflow-hidden')}>
+    if (product) return <div className={cn(className, 'relative border border-soft rounded-t-md rounded-b-md overflow-hidden')}>
 
         <Image
             width={1080}

@@ -18,9 +18,9 @@ interface Props {
     data: Product[]
 }
 
-export function MostPopularProducts({ data }: Props) {
+export function ProductCardSlider({ data }: Props) {
 
-    return <Wrapper container="stretch" >
+    return <div  >
         <SimpleTitle
             titleText="Most Popular ✨"
             description="Looking for safe skincare products that actually work? Look no further!"
@@ -42,6 +42,6 @@ export function MostPopularProducts({ data }: Props) {
             </CarouselContent>
             
         </Carousel>
-    </Wrapper>
+    </div>
 }
 

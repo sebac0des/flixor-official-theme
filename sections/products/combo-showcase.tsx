@@ -1,5 +1,4 @@
 // Components
-import Wrapper from "@/components/ui/wrapper";
 import {ProductVideoCard} from '@/components/ui/product/product-video-card'
 import {ProductCard} from '@/components/ui/product/product-card'
 
@@ -30,12 +29,11 @@ interface ComboShowcaseContentProps {
   }
 
 const ComboShowcase = ({ className, children, ...props }: ComboShowcaseProps) => (
-    <Wrapper
-        container="stretch"
+    <div
         {...props}
     >
         {children}
-    </Wrapper>
+    </div>
 );
 
 const ComboShowcaseContent = ({ className, children, ...props }: ComboShowcaseContentProps) => (

@@ -18,7 +18,7 @@ import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPop
 import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
 
 import { FeaturedProducts } from '@/components/ui/product/featured-products'
-import { MostPopularProducts } from '@/components/ui/product/most-popular-products'
+import { ProductCardSlider } from '@/components/ui/product/product-card-slider'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -26,7 +26,7 @@ import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
-import { ComboShowcase, ComboShowcaseContent, ComboShoppingCard,ComboVideoCard } from '@/sections/products/combo-showcase'
+import { ComboShowcase, ComboShowcaseContent, ComboShoppingCard, ComboVideoCard } from '@/sections/products/combo-showcase'
 
 // Services
 import { getPopularProducts, getFeaturedProducts, getProductBySlug } from "@/services/products";
@@ -35,6 +35,7 @@ import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
 import { getBusinessBenefits } from '@/services/benefits'
 import { getBusinessAudience } from '@/services/audience'
+import Wrapper from "@/components/ui/wrapper";
 
 
 export default async function Page() {
@@ -53,7 +54,6 @@ export default async function Page() {
     <main className=" min-h-screen bg-[#fcfcfc]">
 
       {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
-
       <ContactPopOver
         image="\images\sebas-call-me.webp"
       >
@@ -68,11 +68,14 @@ export default async function Page() {
         <ContactPopOverSmallMessage>Se abre en WhatsApp</ContactPopOverSmallMessage>
       </ContactPopOver>
 
+    {/* Show header and topbar on navigation bar */}
       <Navigation />
 
 
       {/* Show vertical slider with business benefits in loop  */}
       <BenefitsVerticalSlider data={benefits} />
+
+      {/* Show hero section */}
       <Hero
         title="¡Mira la lista de precios!"
         beforeText="Tenemos los productos mas vendidos de cada rubro."
@@ -87,13 +90,14 @@ export default async function Page() {
         buttonUrl="#"
       />
 
-        {/* Show featured products cards */}
+      <Wrapper container="stretch" className="flex flex-col gap-16">
+      {/* Show featured products cards */}
       <FeaturedProducts data={featured_products} />
 
-        {/* Show popular products cards */}
-      <MostPopularProducts data={popular_products} />
+      {/* Show popular on product card slider */}
+      <ProductCardSlider data={popular_products} />
 
-        {/* Show a combo show case with video and shopping card */}
+      {/* Show a combo show case with video and shopping card */}
       <ComboShowcase >
         <SimpleTitle
           containerClassName="text-left mb-4"
@@ -102,26 +106,26 @@ export default async function Page() {
           titleText="Bundle & Save 🤑"
         />
         <ComboShowcaseContent >
-          <ComboVideoCard product={combo}/>
-          <ComboShoppingCard className="md:w-2/5" product={combo}/>
+          <ComboVideoCard product={combo} />
+          <ComboShoppingCard className="md:w-2/5" product={combo} />
         </ComboShowcaseContent>
       </ComboShowcase>
 
-{/* Show a slider with frequently asked questions about your business in video */}
+      {/* Show a slider with frequently asked questions about your business in video */}
       <FAQWithVideoSlider
         sectionSmallText="¿Tienes dudas o preguntas?"
         sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
         data={slider_videos}
       />
 
-{/* Show target audience section, use for segment your business audience */}
+      {/* Show target audience section, use for segment your business audience */}
       <TargetAudience
         data={audience}
         sectionSmallText="¿Con quien trabajamos?"
         sectionTitle="Con estudiantes, profesionales y revendedores. ❤️"
       />
 
-{/* Show message box, use for highlight specific information */}
+      {/* Show message box, use for highlight specific information */}
       <MessageBox>
         <MessageBoxSmallMessage>
           Hola, soy Sebas👋
@@ -138,14 +142,18 @@ export default async function Page() {
       </MessageBox>
 
 
-        {/* Show testimonial carousel */}
+      {/* Show testimonial carousel */}
       <Testimonials data={testimonials} />
 
+        {/* Show business questions */}
       <Questions
         sectionSmallText="Preguntas frecuentes"
         sectionTitle="¿Tienes dudas? ¡Te las aclaramos! 👇"
         data={faq}
       />
+      </Wrapper>
+
+
 
       <Footer />
     </main>
