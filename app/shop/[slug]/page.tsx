@@ -33,7 +33,7 @@ import { Button } from '@/components/ui/button';
 import { getProductBySlug } from '@/services/products';
 
 // Icons
-import {  Lock, Truck, Package } from 'lucide-react';
+import { Lock, Truck, Package } from 'lucide-react';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const product = await getProductBySlug(params.slug)
 
 
-    return <main className='bg-[#fefefe]'>
+    return <main className='min-h-screen bg-[#fefefe]'>
         {/* Show navigation with topbar and header components */}
         <Navigation />
 
@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
             {/* Show the product info as title, desc, price, etc */}
             <ProductInfo
-                className='mt-5 md:mt-0 md:w-11/12'
+                className='mt-5 md:mt-0 md:w-11/12 h-fit md:sticky top-0'
             >
                 <ProductInfoTitle>{product.name}</ProductInfoTitle>
                 <ProductInfoPrice >{product.price.toFixed(2)}</ProductInfoPrice>
@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 {/* Show business benefits */}
                 <Benefit className='flex flex-col gap-2 mt-5'>
 
-                <BenefitItem className='flex items-center gap-3'>
+                    <BenefitItem className='flex items-center gap-3'>
                         <Package className='w-5 h-5' />
                         <BenefitContent>
                             <BenefitTitle>Free Pick Up at 5830 E 2nd St #96683</BenefitTitle>
@@ -122,11 +122,28 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         </BenefitContent>
                     </BenefitItem>
 
-                    
+
                 </Benefit>
 
                 {/* Show product info on accordion items */}
                 <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Ingredientes</AccordionTrigger>
+                        <AccordionContent>
+                            {product.ingredients}
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>Modo de uso</AccordionTrigger>
+                        <AccordionContent>
+                            {product.ingredients}
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+
+                                {/* Show product info on accordion items */}
+                                <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Ingredientes</AccordionTrigger>
                         <AccordionContent>
