@@ -14,8 +14,19 @@ export const getFeaturedProducts = cache(async ():Promise<Product[]> =>  Feature
 // Get popular products from fake API service
 export const getPopularProducts = cache(async ():Promise<Product[]> =>  PopularProducts);
 
-// Get single product by id from fake API service
+// Get single product by slug from fake API service
 export const getProductBySlug = cache(async (slug: string): Promise<Product> => {
+    const findProductBySlug = Products.find(product => product.slug === slug);
+    
+    if (!findProductBySlug) {
+        throw new Error(`Product with slug ${slug} not found`);
+    }
+
+    return findProductBySlug;
+});
+
+// Get single product by category from fake API service
+export const getProductByCategory = cache(async (slug: string): Promise<Product> => {
     const findProductBySlug = Products.find(product => product.slug === slug);
     
     if (!findProductBySlug) {

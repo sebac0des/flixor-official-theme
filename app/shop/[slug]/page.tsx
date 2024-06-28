@@ -40,6 +40,7 @@ import { Lock, Truck, Package } from 'lucide-react';
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const product = await getProductBySlug(params.slug)
+    const related_products = []
 
 
     return <main className='min-h-screen bg-[#fefefe]'>
