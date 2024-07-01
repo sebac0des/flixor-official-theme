@@ -13,7 +13,7 @@ export const Products: Product[] = [
     audience: "Unisex",
     price: 79.99,
     cover_image: "/images/placeholder-image-one-compressed.webp",
-    images: ["/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp","/images/placeholder-image-one-compressed.webp"],
+    images: ["/images/Collection_Product-Brand-Bartlett-Pear-min.webp","/images/placeholder-image-one-compressed.webp","/images/Collection_Product-Brand-Bartlett-Pear-min.webp"],
     videos: ["https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"],
     stock: 12,
     category: "Calzado",

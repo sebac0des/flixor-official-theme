@@ -8,9 +8,9 @@ import { Header, HeaderLogo } from "@/components/header";
 import Topbar from "@/components/topbar";
 
 // Components
-import { ProductGalleryCarousel } from '@/components/flixor/product/product-gallery-carousel'
-
 import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery'
+
+import { CardCarousel, CardCarouselImages,CardCarouselSingleImage,CardCarouselSingleVideo,CardCarouselVideos } from '@/components/flixor/cards-carousel';
 
 import {
     Breadcrumb,
@@ -41,6 +41,7 @@ import { cn } from '@/lib/utils';
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
 import { SimpleTitle } from '@/components/flixor/simple-title';
+
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -84,7 +85,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
 
             {/* Show product gallery carousel on responsive screens */}
-            <ProductGalleryCarousel />
+            <CardCarousel
+            className='md:hidden'
+            >
+                <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image}/>
+                <CardCarouselSingleVideo src={product.videos[0]}/>
+                <CardCarouselImages images={product.images}/>
+            </CardCarousel>
 
             {/* Show the product info as title, desc, price, etc */}
             <ProductInfo
