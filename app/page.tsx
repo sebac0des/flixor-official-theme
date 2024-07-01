@@ -22,7 +22,7 @@ import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } fr
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
-import FAQWithVideoSlider from "@/sections/FAQ/faq-with-video-slider";
+import FAQWithVideoCarousel from "@/sections/FAQ/faq-with-video-carousel";
 import Hero from "@/sections/Hero/HeroSimple";
 import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
@@ -123,7 +123,7 @@ export default async function Page() {
         </ComboShowcase>
 
         {/* Show a slider with frequently asked questions about your business in video */}
-        <FAQWithVideoSlider
+        <FAQWithVideoCarousel
           sectionSmallText="¿Tienes dudas o preguntas?"
           sectionTitle="Te las aclaramos en tu formato favorito, en video ✨"
           data={slider_videos}

@@ -10,14 +10,14 @@ import {
   CarouselPrevious,
 } from "@/components/shadcn/carousel";
 
-import { VideoSliderItem } from "../../../types";
+import { VideoSliderItem } from "../../types";
 import { Card, CardTitle, CardVideo, CardContent } from '@/components/flixor/card'
 
 interface Props {
   data: VideoSliderItem[];
 }
 
-export default function VideoSlider({ data }: Props) {
+export default function VideoCarousel({ data }: Props) {
 
   return (
     <Carousel
