@@ -41,6 +41,8 @@ function CardCarouselImages({images}:{images:string[]}) {
 
 function CardCarouselSingleVideo({ src }: {src:string}) {
 
+    if(src.length === 0) return null
+
     return <CarouselItem className="md:basis-1/2 lg:basis-1/3">
         <Card >
             <CardVideo

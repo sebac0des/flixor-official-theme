@@ -14,7 +14,7 @@ export const Products: Product[] = [
     price: 79.99,
     cover_image: "/images/placeholder-image-one-compressed.webp",
     images: ["/images/Collection_Product-Brand-Bartlett-Pear-min.webp","/images/placeholder-image-one-compressed.webp","/images/Collection_Product-Brand-Bartlett-Pear-min.webp"],
-    videos: ["https://jalfvideos.s3.sa-east-1.amazonaws.com/HACEN+ENVIOS.mp4"],
+    videos: [""],
     stock: 12,
     category: "Calzado",
     ingredients:[],
