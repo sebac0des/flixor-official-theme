@@ -5,7 +5,7 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious
-} from "@/components/ui/carousel"
+} from "@/components/shadcn/carousel"
 
 import { ProductCard } from "./product-card";
 

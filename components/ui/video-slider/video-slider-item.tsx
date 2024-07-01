@@ -2,8 +2,8 @@
 import { useRef, useState } from "react";
 
 // Components
-import { CarouselItem } from "../carousel";
-import { Button } from "../button";
+import { CarouselItem } from "@/components/shadcn/carousel";
+import { Button } from "@/components/shadcn/button";
 
 // Fonts
 import { fontMono } from "@/app/fonts";
@@ -12,7 +12,7 @@ import { fontMono } from "@/app/fonts";
 import { Play } from "lucide-react";
 
 // Types
-import { VideoSliderItem } from "../../../types";
+import { VideoSliderItem } from "@/types";
 import { cn } from "@/lib/utils";
 
 export default function VideoItem(props: VideoSliderItem) {

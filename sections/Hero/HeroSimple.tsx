@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // Components
 import GoogleReviews from "@/components/ui/google-reviews";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn/button";
 
 // Typed js
 import Typed from "typed.js";

@@ -2,7 +2,7 @@
 import {fontMono} from '@/app/fonts'
 
 // Components
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../carousel'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/shadcn/carousel'
 import { Card, CardImage, CardVideo } from '@/components/ui/card'
 
 // Next js

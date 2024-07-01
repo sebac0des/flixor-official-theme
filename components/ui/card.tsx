@@ -5,7 +5,7 @@ import {ReactNode} from "react";
 import { fontMono } from "@/app/fonts";
 
 // Components
-import { Button } from "./button";
+import { Button } from "../shadcn/button";
 import { Video } from "./video";
 
 // Next js

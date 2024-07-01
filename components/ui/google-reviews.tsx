@@ -5,7 +5,7 @@ import Image from "next/image";
 import { fontMono } from "@/app/fonts";
 
 // Components
-import { Button } from "./button";
+import { Button } from "../shadcn/button";
 
 // Icons
 import { Star } from "lucide-react";

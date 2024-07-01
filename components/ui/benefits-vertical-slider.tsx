@@ -1,7 +1,7 @@
 "use client";
 
 // Carousel imports
-import { Carousel, CarouselContent, CarouselItem } from "./carousel";
+import { Carousel, CarouselContent, CarouselItem } from "../shadcn/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 // Icons

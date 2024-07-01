@@ -19,16 +19,16 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/shadcn/breadcrumb"
 
 import Wrapper from '@/components/ui/wrapper';
 
 import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/ui/product/product-info';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/shadcn/accordion';
 
 import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/shadcn/button';
 
 import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
 

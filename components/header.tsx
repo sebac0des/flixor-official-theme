@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn/button";
 
 
 interface HeaderButtonProps {

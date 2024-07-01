@@ -18,10 +18,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+} from "../shadcn/form";
+import { Button } from "../shadcn/button";
+import { Input } from "../shadcn/input";
+import { Label } from "../shadcn/label";
 
 // Icons
 import { Loader } from "lucide-react";
@@ -38,7 +38,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "../shadcn/select";
 
 // Data
 import settings from "@/data/settings";

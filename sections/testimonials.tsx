@@ -2,7 +2,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
+} from "@/components/shadcn/carousel";
 import Wrapper from "@/components/ui/wrapper";
 import { SimpleTitle } from "@/components/ui/simple-title";
 

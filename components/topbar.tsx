@@ -5,7 +5,7 @@ import { fontMono } from "@/app/fonts";
 import Link from "next/link";
 
 // Components
-import { Button } from "./ui/button";
+import { Button } from "./shadcn/button";
 
 // Utils
 import { cn } from "@/lib/utils";

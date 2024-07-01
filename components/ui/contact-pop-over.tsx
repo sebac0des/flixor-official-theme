@@ -8,9 +8,9 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { Avatar, AvatarImage } from "./avatar";
-import { Button } from "./button";
+} from "@/components/shadcn/popover";
+import { Avatar, AvatarImage } from "../shadcn/avatar";
+import { Button } from "../shadcn/button";
 
 // Next js
 import Link from "next/link";
