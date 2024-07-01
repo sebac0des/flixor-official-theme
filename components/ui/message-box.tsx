@@ -4,20 +4,21 @@ import * as React from "react";
 import { fontMono } from "@/app/fonts";
 
 // Next js
-import Link from "next/link";
+import Link, {LinkProps} from "next/link";
 
 // Utils
 import { cn } from "@/lib/utils";
 
-// Components
-import Wrapper from "./wrapper";
 
+// Types
 interface MessageBoxProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const MessageBox = ({ className, children, ...props }: MessageBoxProps) => (
+interface MessageBoxLinkProps extends LinkProps, MessageBoxProps  {}
+
+const MessageBox = ({ className,children,...props }: MessageBoxProps) => (
   <div
     className={cn(
       "bg-soft text-center rounded-lg xl:min-h-96 py-20 place-content-center",
@@ -25,68 +26,40 @@ const MessageBox = ({ className, children, ...props }: MessageBoxProps) => (
     )}
     {...props}
   >
-    <div className="w-11/12 m-auto">{children}</div>
+    {children}
   </div>
 );
-MessageBox.displayName = "MessageBox";
 
-interface MessageBoxSmallMessageProps {
-  className?: string;
-  children: React.ReactNode;
-}
 
-interface MessageBoxTitleProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-interface MessageBoxLinkProps {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
-}
-
-const MessageBoxSmallMessage = React.forwardRef<
-  HTMLSpanElement,
-  MessageBoxSmallMessageProps
->(({ children, ...props }, ref) => (
+const MessageBoxSmallMessage = ({ children, ...props }:MessageBoxProps) => (
   <span
-    ref={ref}
     className={cn(fontMono.className, "text-sm xl:text-base")}
     {...props}
   >
     {children}
   </span>
-));
-MessageBoxSmallMessage.displayName = "MessageBoxSmallMessage";
+);
 
-const MessageBoxTitle = React.forwardRef<
-  HTMLHeadingElement,
-  MessageBoxTitleProps
->(({ className, children, ...props }, ref) => (
+const MessageBoxTitle = ({ children, className,...props }:MessageBoxProps) => (
   <h4
-    ref={ref}
-    className={cn("text-xl xl:text-2xl font-regular mt-0.5", className)}
-    {...props}
-  >
-    {children}
-  </h4>
-));
-MessageBoxTitle.displayName = "MessageBoxTitle";
+  className={cn("text-xl xl:text-2xl font-regular mt-0.5", className)}
+  {...props}
+>
+  {children}
+</h4>
+);
+
 
 const MessageBoxLink = React.forwardRef<HTMLAnchorElement, MessageBoxLinkProps>(
-  ({ href, className, children, ...props }, ref) => (
+  ({ href, className, children, ...props }) => (
     <Link
       {...props}
       className={cn("border-b border-primary", className)}
       href={href}
-      passHref
-      ref={ref}
     >
       {children}
     </Link>
   )
 );
-MessageBoxLink.displayName = "MessageBoxLink";
 
 export { MessageBox, MessageBoxSmallMessage, MessageBoxTitle, MessageBoxLink };
