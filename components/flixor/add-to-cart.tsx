@@ -1,3 +1,11 @@
+'use client'
+
+// React
+import { ReactNode } from 'react';
+
+// Cart State
+import useCartStore from "@/zustand/cart";
+
 // Components
 import { Button } from "@/components/shadcn/button";
 
@@ -9,7 +17,6 @@ import { cn } from "@/lib/utils";
 
 // Types
 import { Product } from '@/types/product';
-import { ReactNode } from 'react';
 
 
 type AddToCartButtonProps = React.ComponentProps<typeof Button> & {
@@ -17,8 +24,9 @@ type AddToCartButtonProps = React.ComponentProps<typeof Button> & {
 };
 
 const AddToCartButton = ({children,className, ...props}:AddToCartButtonProps)=>{
-  
-  return <Button 
+  const {addItem} = useCartStore()
+  return <Button
+  onClick={()=>addItem(props.cartItem)} 
   className={cn(className)} 
   {...props}
   >

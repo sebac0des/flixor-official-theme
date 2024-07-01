@@ -1,5 +1,8 @@
 'use client'
 
+// Cart store 
+import useCartStore from '@/zustand/cart'
+
 // Fonts
 import { fontMono } from '@/app/fonts'
 
@@ -18,16 +21,18 @@ interface HeaderCartProps {
 
 export const ShoppingCart = (props: HeaderCartProps) => {
 
+  const {getItems} = useCartStore()
+
   return <Button
     className={cn("relative", props.className)}
     size="icon" variant='ghost' >
-    <ProuductIndicator />
+    <ProuductIndicator items={getItems().length}/>
    <ShoppingBasket />
   </Button>
 }
 
-const ProuductIndicator = () => {
+const ProuductIndicator = ({items}:{items:number}) => {
 
-  return <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>0</span>
+  return <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{items}</span>
 
 }
