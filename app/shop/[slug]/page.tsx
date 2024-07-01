@@ -1,17 +1,15 @@
-'use client'
-
 // Fonts
-import { fontMono } from '@/app/fonts'
+import { fontMono } from '@/app/fonts' // Font imports
 
 // Navigation components
-import { Header, HeaderLogo } from "@/components/header";
-import Topbar from "@/components/topbar";
+import { Header, HeaderLogo } from "@/components/header"; // Header components
+import Topbar from "@/components/topbar"; // Topbar component
 
 // Components
-import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery'
+import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' // Cards gallery components
+import { CardCarousel, CardCarouselImages,CardCarouselSingleImage,CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; // Cards carousel components
 
-import { CardCarousel, CardCarouselImages,CardCarouselSingleImage,CardCarouselSingleVideo,CardCarouselVideos } from '@/components/flixor/cards-carousel';
-
+// Breadcrumb components
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -21,15 +19,22 @@ import {
     BreadcrumbSeparator,
 } from "@/components/shadcn/breadcrumb"
 
+// Wrapper component
 import Wrapper from '@/components/flixor/wrapper';
 
+// Product info components
 import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/flixor/product/product-info';
 
+// Accordion components
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/shadcn/accordion';
 
+// Benefit components
 import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/flixor/benefit'
+
+// Button component
 import { Button } from '@/components/shadcn/button';
 
+// Product carousel components
 import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
 
 // Product service
@@ -40,7 +45,10 @@ import { cn } from '@/lib/utils';
 
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
+
+// Simple title component
 import { SimpleTitle } from '@/components/flixor/simple-title';
+
 
 
 
