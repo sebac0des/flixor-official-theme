@@ -1,7 +1,7 @@
 // Navigation Components
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
-import { Header, HeaderActionElements, HeaderButton, HeaderLogo } from '@/components/header'
+import { Header } from '@/components/header'
 
 // Content components
 import {
@@ -179,12 +179,7 @@ function Navigation() {
         url="#"
         message="🔥 Descarga la lista de precios vigente →"
       />
-      <Header>
-        <HeaderLogo />
-        <HeaderActionElements>
-          <HeaderButton className="hidden md:inline-block" buttonText="dsada" buttonUrl="#" />
-        </HeaderActionElements>
-      </Header>
+      <Header/>
     </div>
   );
 }

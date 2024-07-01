@@ -7,7 +7,7 @@ import Topbar from "@/components/topbar"; // Topbar component
 
 // Components
 import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' // Cards gallery components
-import { CardCarousel, CardCarouselImages,CardCarouselSingleImage,CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; // Cards carousel components
+import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; // Cards carousel components
 
 // Breadcrumb components
 import {
@@ -48,15 +48,13 @@ import { Lock, Truck, Package } from 'lucide-react';
 
 // Simple title component
 import { SimpleTitle } from '@/components/flixor/simple-title';
-
-
+import { AddToCartButton,AddToCartButtonText,AddToCartButtonIcon } from '@/components/flixor/add-to-cart';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const product = await getProductBySlug(params.slug)
     const related_products = await getProductsByCategory('Calzado')
-
 
     return <main className='min-h-screen bg-[#fefefe]'>
         {/* Show navigation with topbar and header components */}
@@ -95,9 +93,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {/* Show product gallery carousel on responsive screens */}
             <CardCarousel
             >
-                <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image}/>
-                <CardCarouselSingleVideo src={product.videos[0]}/>
-                <CardCarouselImages images={product.images}/>
+                <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image} />
+                <CardCarouselSingleVideo src={product.videos[0]} />
+                <CardCarouselImages images={product.images} />
             </CardCarousel>
 
             {/* Show the product info as title, desc, price, etc */}
@@ -109,7 +107,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
                 {/* Show shop action buttons */}
-                <Button variant="accent" className='my-8 w-full py-8' size="lg">Buy now</Button>
+                <AddToCartButton variant="secondary" className='w-full py-8 mb-1 mt-8' cartItem={product}>
+                    <AddToCartButtonIcon className='w-5 h-5 mr-2'/>
+                    <AddToCartButtonText>Agregar al carrito</AddToCartButtonText>
+                </AddToCartButton>
+                
+
+                <Button variant="accent" className='mb-8 w-full py-8' size="lg">Buy now</Button>
+             
+
 
                 {/* Show business benefits */}
                 <Benefit className='flex flex-col gap-2 mt-5'>
@@ -146,7 +152,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </Benefit>
 
                 {/* Show product info on accordion items */}
-                <Accordion type="single" collapsible className={cn(fontMono.className,"w-full mt-5 flex flex-col gap-3")}>
+                <Accordion type="single" collapsible className={cn(fontMono.className, "w-full mt-5 flex flex-col gap-3")}>
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Ingredientes</AccordionTrigger>
                         <AccordionContent>
