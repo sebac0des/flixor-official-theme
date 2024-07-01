@@ -1,6 +1,6 @@
 // Components
-import {ProductVideoCard} from '@/components/shadcn/product/product-video-card'
-import {ProductCard} from '@/components/shadcn/product/product-card'
+import {ProductVideoCard} from '@/components/ui/product/product-video-card'
+import {ProductCard} from '@/components/ui/product/product-card'
 
 // Utils
 import { cn } from "@/lib/utils";
