@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/shadcn/accordion";
-import { SimpleTitle } from "@/components/ui/simple-title";
+import { SimpleTitle } from "@/components/flixor/simple-title";
 
 // Types
 import { QuestionItem } from "@/types";

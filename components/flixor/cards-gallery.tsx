@@ -2,7 +2,7 @@
 import { ReactNode } from 'react'
 
 // Components
-import { Card, CardImage, CardVideo } from '@/components/ui/card'
+import { Card, CardImage, CardVideo } from '@/components/flixor/card'
 import { cn } from '@/lib/utils'
 
 // Next js

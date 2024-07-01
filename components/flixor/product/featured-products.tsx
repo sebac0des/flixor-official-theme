@@ -2,7 +2,7 @@
 import Wrapper from "../wrapper";
 
 import { Product } from "@/types/product";
-import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/ui/card'
+import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/flixor/card'
 
 interface Props {
     data:Product[]

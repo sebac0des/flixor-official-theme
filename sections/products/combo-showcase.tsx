@@ -1,6 +1,6 @@
 // Components
-import {ProductVideoCard} from '@/components/ui/product/product-video-card'
-import {ProductCard} from '@/components/ui/product/product-card'
+import {ProductVideoCard} from '@/components/flixor/product/product-video-card'
+import {ProductCard} from '@/components/flixor/product/product-card'
 
 // Utils
 import { cn } from "@/lib/utils";

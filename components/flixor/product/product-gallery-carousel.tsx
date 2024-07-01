@@ -3,7 +3,7 @@ import {fontMono} from '@/app/fonts'
 
 // Components
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/shadcn/carousel'
-import { Card, CardImage, CardVideo } from '@/components/ui/card'
+import { Card, CardImage, CardVideo } from '@/components/flixor/card'
 
 // Next js
 import { ImageProps } from 'next/image'

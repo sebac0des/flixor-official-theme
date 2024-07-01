@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Components
-import { SimpleTitle } from "@/components/ui/simple-title";
+import { SimpleTitle } from "@/components/flixor/simple-title";
 
 interface Props {
   sectionSmallText: string;

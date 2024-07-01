@@ -3,8 +3,8 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/shadcn/carousel";
-import Wrapper from "@/components/ui/wrapper";
-import { SimpleTitle } from "@/components/ui/simple-title";
+import Wrapper from "@/components/flixor/wrapper";
+import { SimpleTitle } from "@/components/flixor/simple-title";
 
 // Fonts
 import { fontMono } from "@/app/fonts";

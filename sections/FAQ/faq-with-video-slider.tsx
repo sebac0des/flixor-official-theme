@@ -1,6 +1,6 @@
 // Components
-import { SimpleTitle } from "@/components/ui/simple-title";
-import VideoSlider from "@/components/ui/video-slider/";
+import { SimpleTitle } from "@/components/flixor/simple-title";
+import VideoSlider from "@/components/flixor/video-slider";
 
 // Types
 import { QuestionVideoItem } from "@/types";

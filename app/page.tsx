@@ -9,16 +9,16 @@ import {
   MessageBoxTitle,
   MessageBoxSmallMessage,
   MessageBoxLink,
-} from "@/components/ui/message-box";
+} from "@/components/flixor/message-box";
 
-import { SimpleTitle } from "@/components/ui/simple-title";
+import { SimpleTitle } from "@/components/flixor/simple-title";
 
-import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/ui/contact-pop-over'
+import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/flixor/contact-pop-over'
 
-import { BenefitsVerticalSlider } from "@/components/ui/benefits-vertical-slider";
+import { BenefitsVerticalSlider } from "@/components/flixor/benefits-vertical-slider";
 
-import { FeaturedProducts } from '@/components/ui/product/featured-products'
-import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
+import { FeaturedProducts } from '@/components/flixor/product/featured-products'
+import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -35,7 +35,7 @@ import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
 import { getBusinessBenefits } from '@/services/benefits'
 import { getBusinessAudience } from '@/services/audience'
-import Wrapper from "@/components/ui/wrapper";
+import Wrapper from "@/components/flixor/wrapper";
 
 
 export default async function Page() {

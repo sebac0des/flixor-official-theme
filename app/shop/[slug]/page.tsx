@@ -8,9 +8,9 @@ import { Header, HeaderLogo } from "@/components/header";
 import Topbar from "@/components/topbar";
 
 // Components
-import { ProductGalleryCarousel } from '@/components/ui/product/product-gallery-carousel'
+import { ProductGalleryCarousel } from '@/components/flixor/product/product-gallery-carousel'
 
-import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/ui/cards-gallery'
+import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery'
 
 import {
     Breadcrumb,
@@ -21,16 +21,16 @@ import {
     BreadcrumbSeparator,
 } from "@/components/shadcn/breadcrumb"
 
-import Wrapper from '@/components/ui/wrapper';
+import Wrapper from '@/components/flixor/wrapper';
 
-import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/ui/product/product-info';
+import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/flixor/product/product-info';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/shadcn/accordion';
 
-import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/ui/benefit'
+import { Benefit, BenefitTitle, BenefitDescription, BenefitItem, BenefitContent } from '@/components/flixor/benefit'
 import { Button } from '@/components/shadcn/button';
 
-import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/ui/product/product-carousel'
+import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
 
 // Product service
 import { getProductBySlug, getProductsByCategory } from '@/services/products';
@@ -40,7 +40,7 @@ import { cn } from '@/lib/utils';
 
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
-import { SimpleTitle } from '@/components/ui/simple-title';
+import { SimpleTitle } from '@/components/flixor/simple-title';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
