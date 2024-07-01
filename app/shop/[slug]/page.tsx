@@ -86,7 +86,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
             {/* Show product gallery carousel on responsive screens */}
             <CardCarousel
-            className='md:hidden'
             >
                 <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image}/>
                 <CardCarouselSingleVideo src={product.videos[0]}/>
