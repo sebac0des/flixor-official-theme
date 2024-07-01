@@ -6,8 +6,7 @@ import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-// Fonts
-import {fontMono} from '@/app/fonts'
+
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -31,7 +30,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        fontMono.className,
+        className,
         "text-left hover:text-accent px-4 text-lg flex flex-1 items-center justify-between py-4 transition-all [&[data-state=open]>svg]:rotate-180 text-primary",
         className
       )}
@@ -50,7 +49,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className={cn(fontMono.className,"p-2 overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down whitespace-pre-line")}
+    className={cn(className,"p-2 overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down whitespace-pre-line")}
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>

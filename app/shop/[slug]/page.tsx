@@ -35,6 +35,9 @@ import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } fr
 // Product service
 import { getProductBySlug, getProductsByCategory } from '@/services/products';
 
+// Utils
+import { cn } from '@/lib/utils';
+
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
 import { SimpleTitle } from '@/components/ui/simple-title';
@@ -49,8 +52,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return <main className='min-h-screen bg-[#fefefe]'>
         {/* Show navigation with topbar and header components */}
         <Navigation />
-
-
 
         {/* Show shop breadcrum */}
         <Breadcrumb className={fontMono.className}>
@@ -131,7 +132,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </Benefit>
 
                 {/* Show product info on accordion items */}
-                <Accordion type="single" collapsible className="w-full mt-5 flex flex-col gap-3">
+                <Accordion type="single" collapsible className={cn(fontMono.className,"w-full mt-5 flex flex-col gap-3")}>
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Ingredientes</AccordionTrigger>
                         <AccordionContent>

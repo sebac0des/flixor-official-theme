@@ -10,6 +10,10 @@ import { SimpleTitle } from "@/components/ui/simple-title";
 // Types
 import { QuestionItem } from "@/types";
 
+// Fonts
+import {fontMono} from '@/app/fonts'
+import { cn } from "@/lib/utils";
+
 interface Props {
   sectionSmallText: string;
   sectionTitle: string;
@@ -25,7 +29,7 @@ export default function Questions({
     <div className="flex flex-col gap-6">
       <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10 text-left" />
       
-      <Accordion type="single" collapsible className="w-full flex flex-col gap-3">
+      <Accordion type="single" collapsible className={cn(fontMono.className,"w-full flex flex-col gap-3")}>
         {data.map((item) => (
           <AccordionItem key={item.id} value={item.title}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
