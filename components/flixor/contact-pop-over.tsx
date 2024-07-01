@@ -72,7 +72,7 @@ const ContactPopOverMessage = ({children}:{children:React.ReactNode}) => {
 
 const ContactPopOverButton = ({children,href}:{children:React.ReactNode, href:string})=>{
   return  <Button
-  variant="accent"
+  variant="default"
   asChild
   className="w-full rounded-none mt-4 mb-1.5"
   size="icon"
