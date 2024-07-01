@@ -21,7 +21,7 @@ const Topbar = ({ message, url,className }: Props) => {
     <div
       className={cn(
         fontMono.className,
-        "bg-white border-b border-primary/20 py-2",
+        "bg-white border-b border-primary/20 py-2 text-center md:text-left",
         className
       )}
     >
