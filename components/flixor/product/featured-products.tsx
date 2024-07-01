@@ -1,6 +1,3 @@
-// Components
-import Wrapper from "../wrapper";
-
 import { Product } from "@/types/product";
 import {Card,CardTitle, CardSmallText, CardContent, CardImage, CardOverlay, CardButton } from '@/components/flixor/card'
 

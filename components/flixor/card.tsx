@@ -19,20 +19,24 @@ import { cn } from "@/lib/utils";
 import {ImageProps} from 'next/image'
 
 
-interface CardButtonProps {
-    children: ReactNode;
+interface CardProps {
+  children:ReactNode
+  className?:string
+}
+
+type CardVideoProps = React.ComponentProps<typeof Video>;
+
+interface CardButtonProps extends CardProps {
     buttonUrl:string
-    className?: string;
   }
 
-  interface CardImageProps {
-    className?:string
+interface CardImageProps extends CardProps {
     image:string
     alt:string
   }
 
 
-const Card = (props:{children:ReactNode,className?:string}) => (
+const Card = (props:CardProps) => (
     <div
       className={cn("rounded-md relative overflow-hidden",props.className)}
       
@@ -41,12 +45,11 @@ const Card = (props:{children:ReactNode,className?:string}) => (
     </div>
   );
 
-const CardContent = ({ ...props }) => (
+const CardContent = ({ className, children }:CardProps) => (
     <div
-      className="absolute bottom-0 left-0 p-4 text-white"
-      {...props}
+      className={cn("absolute bottom-0 left-0 p-4 text-white", className)}
     >
-      {props.children}
+      {children}
     </div>
   );
 
@@ -57,11 +60,12 @@ height={1080}
   {...props}
 />
 
-const CardVideo = ({...props}:React.VideoHTMLAttributes<HTMLVideoElement>) => <Video {...props}/>
+const CardVideo = ({...props}:CardVideoProps) => <Video {...props}/>
 
-const CardSmallText = ({children}:{children:ReactNode}) => <span className={cn(fontMono.className,'text-sm md:text-base')}>{children}</span>
+
+const CardSmallText = ({children, className}:CardProps) => <span className={cn(fontMono.className,'text-sm md:text-base', className)}>{children}</span>
   
-const CardTitle = ({children}:{children:ReactNode}) => <h3 className="text-2xl font-medium tracking-wider">{children}</h3>
+const CardTitle = ({children, className}:CardProps) => <h3 className={cn("text-2xl font-medium tracking-wider",className)}>{children}</h3>
 
 const CardButton = ({className,buttonUrl,children}:CardButtonProps) => <Button variant="secondary" className={className}>
     <Link href={buttonUrl}>{children}</Link>
