@@ -19,6 +19,7 @@ export function ProductVideoCard({product,className}:Props) {
     muted
     loop
     playsInline
+    intersectionMode={true}
     className="h-96 w-full"
     src={product.videos[0]}
     preload="metadata"
