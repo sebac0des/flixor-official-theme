@@ -1,13 +1,13 @@
 // Fonts
-import { fontMono } from '@/app/fonts' // Font imports
+import { fontMono } from '@/app/fonts' 
 
 // Navigation components
-import { Header, HeaderLogo } from "@/components/header"; // Header components
-import Topbar from "@/components/topbar"; // Topbar component
+import { Header } from "@/components/header"; 
+import Topbar from "@/components/topbar"; 
 
 // Components
-import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' // Cards gallery components
-import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; // Cards carousel components
+import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' 
+import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; 
 
 // Breadcrumb components
 import {
@@ -196,9 +196,7 @@ function Navigation() {
                 url="#"
                 message="🔥 Descarga la lista de precios vigente →"
             />
-            <Header>
-                <HeaderLogo />
-            </Header>
+            <Header/>
         </div>
     );
 }
