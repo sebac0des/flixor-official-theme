@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import { ShoppingCart } from '@/components/flixor/shopping-cart';
+import ShoppingCart from '@/components/flixor/shopping-cart';
 
 
 interface HeaderProps {
@@ -21,20 +21,12 @@ const Header = ({ className}:HeaderProps) => (
     )}
   >
     <Logo/>
-    <HeaderContent/>
+    <ShoppingCart cartItems={5}/>
   </header>
 );
 
-const HeaderContent = () => (
-  <div
-    className={cn(
-      "flex items-center gap-3",
-    )}
-  >
-    <ShoppingCart/>
-  </div>
-);
 
 
 
-export { Header, HeaderContent }
+
+export default Header

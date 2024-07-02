@@ -2,7 +2,7 @@
 import { fontMono } from '@/app/fonts' 
 
 // Navigation components
-import { Header } from "@/components/header"; 
+import Header  from "@/components/header"; 
 import Topbar from "@/components/topbar"; 
 
 // Components
