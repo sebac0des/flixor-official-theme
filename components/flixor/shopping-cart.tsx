@@ -71,7 +71,7 @@ const ShoppingCartItems = ({ items }: ShoppingCartItems) => {
   return <div className='flex flex-col gap-2 h-2/5 overflow-y-scroll p-4'>
     {items.map((item) => <CartItem className='relative'>
       <CartItemImage alt='' src={item.cover_image} />
-      <CartItemContent className=''>
+      <CartItemContent className='w-full'>
         <CartItemName>{item.name}</CartItemName>
         <CartItemSubtotal className='absolute bottom-0 right-0 text-center'>
           <span className='block text-xs'>Subtotal</span>
