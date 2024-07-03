@@ -15,7 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/shadcn/sheet"
 
-import { CartItem, CartItemName, CartItemContent, CartItemImage, CartItemSubtotal } from '@/components/flixor/cart-item';
+import { CartItem, CartItemName, CartItemContent, CartItemImage, CartItemSubtotal, CartItemRemove } from '@/components/flixor/cart-item';
 
 import { ListItem, ListItemTitle, ListItemContent, ListItemSmall } from '@/components/flixor/list-item'
 
@@ -68,14 +68,16 @@ const ShoppingCartItemsIndicator = ({ cartItems }: ShoppingCartItemsIndicator) =
 }
 
 const ShoppingCartItems = ({ items }: ShoppingCartItems) => {
-  return <div className='flex flex-col gap-3 h-2/5 overflow-y-scroll p-4'>
-    {items.map((item) => <CartItem>
+  return <div className='flex flex-col gap-2 h-2/5 overflow-y-scroll p-4'>
+    {items.map((item) => <CartItem className='relative'>
       <CartItemImage alt='' src={item.cover_image} />
-      <CartItemContent>
+      <CartItemContent className=''>
         <CartItemName>{item.name}</CartItemName>
-        <CartItemSubtotal>
+        <CartItemSubtotal className='absolute bottom-0 right-0 text-center'>
+          <span className='block text-xs'>Subtotal</span>
           ${item.total.toFixed(2)}</CartItemSubtotal>
       </CartItemContent>
+      <CartItemRemove className=''/>
     </CartItem>)}
   </div>
 }
@@ -96,7 +98,7 @@ const ShoppingCartFooter = ({ cartSubTotal, cartTotalItems }: ShoppingCartFooter
   return <SheetFooter className='flex-col h-3/5 gap-0'>
     <ListItem className={fontMono.className}>
       <ListItemTitle>Resumen del pedido</ListItemTitle>
-      <ListItemContent>{cartTotalItems}</ListItemContent>
+      <ListItemContent>{cartTotalItems} items</ListItemContent>
     </ListItem>
 
     <ListItem className={cn(fontMono.className, "border-none")}>

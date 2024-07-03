@@ -1,7 +1,14 @@
+// React
 import { HTMLAttributes, PropsWithChildren } from "react";
 
 // Next js
 import Image, {ImageProps} from "next/image"
+
+// Components
+import { Button } from "../shadcn/button";
+
+// Icons
+import { X } from "lucide-react";
 
 // Fonts
 import { fontMono } from '@/app/fonts'
@@ -9,8 +16,7 @@ import { fontMono } from '@/app/fonts'
 // Utils
 import { cn } from '@/lib/utils'
 
-// Types
-import { ProductInCart } from "@/store/cart"
+type Button = React.ComponentProps<typeof Button>
 
 interface CartItem extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 
@@ -19,8 +25,6 @@ interface CartItemContent extends PropsWithChildren<HTMLAttributes<HTMLDivElemen
 interface CartItemName extends PropsWithChildren<HTMLAttributes<HTMLHeadingElement>> {}
 
 interface CartItemSubtotal extends PropsWithChildren<HTMLAttributes<HTMLSpanElement>> {}
-
-
 
 
 const CartItem = ({ children, className}: CartItem) => {
@@ -37,10 +41,17 @@ const CartItemImage = ({src,alt}:ImageProps) => <Image
     height={300}
 />
 
-const CartItemContent = ({children}:CartItemContent)=> <div>{children}</div>
+const CartItemContent = ({children, className}:CartItemContent)=> <div className={className}>{children}</div>
 
-const CartItemName = ({children}:CartItemName) => <h3 className={cn(fontMono.className, "")}>{children}</h3>
+const CartItemName = ({children, className}:CartItemName) => <h3 className={cn(fontMono.className,className)}>{children}</h3>
 
-const CartItemSubtotal = ({children}:CartItemSubtotal) => <span className={cn(fontMono.className, "")}>{children}</span>
+const CartItemSubtotal = ({children, className}:CartItemSubtotal) => <span className={cn(fontMono.className, className)}>{children}</span>
 
-export {CartItem,CartItemImage,CartItemContent,CartItemName,CartItemSubtotal}
+const CartItemRemove = ({className, ...props}:Button)=> {
+    return <Button className={cn("h-fit w-fit",className)} size="icon" variant="ghost" {...props} >
+        <X className="w-4 h-4"/>
+    </Button>
+}
+
+
+export {CartItem,CartItemRemove,CartItemImage,CartItemContent,CartItemName,CartItemSubtotal}
