@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils";
 
 // Types
 import { ProductInCart } from '@/store/cart';
+import Link from 'next/link';
 
 
 type Sheet = React.ComponentProps<typeof Sheet> & ShoppingCartItemsIndicator
@@ -67,6 +68,9 @@ const ShoppingCartItemsIndicator = ({ cartItems }: ShoppingCartItemsIndicator) =
 }
 
 const ShoppingCartItems = ({ items, handleRemoveCartItem }: ShoppingCartItems) => {
+  
+  if(items.length === 0 ) return <ShoppingCartEmpty/>
+  
   return <div className='flex flex-col gap-2 h-2/5 overflow-y-scroll p-4'>
     {items.map((item) => <CartItem className='relative'>
       <CartItemImage alt='' src={item.cover_image} />
@@ -94,7 +98,7 @@ const ShoppingCartHeader = () => {
 }
 
 const ShoppingCartFooter = ({ cartSubTotal, cartTotalItems }: ShoppingCartFooter) => {
-  return <SheetFooter className='flex-col h-3/5 gap-0'>
+  return <SheetFooter className='flex-col h-3/5 gap-0 border-t border-soft'>
     <ListItem className={fontMono.className}>
       <ListItemTitle>Resumen del pedido</ListItemTitle>
       <ListItemContent>{cartTotalItems} items</ListItemContent>
@@ -108,6 +112,16 @@ const ShoppingCartFooter = ({ cartSubTotal, cartTotalItems }: ShoppingCartFooter
       <ListItemContent>${cartSubTotal.toFixed(2)}</ListItemContent>
     </ListItem>
   </SheetFooter>
+}
+
+const ShoppingCartEmpty = ()=>{
+  return <div className={cn(fontMono.className,"text-center place-content-center p-5 min-h-56")}>
+    <h5 className='text-xl font-medium'>Tu carrito esta vacio</h5>
+    <p>There are no items in your cart.</p>
+    <Button variant="secondary" className='mt-5' size="sm">
+      <Link href="/">Continuar comprando</Link>
+    </Button>
+  </div>
 }
 
 

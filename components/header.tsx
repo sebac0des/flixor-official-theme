@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import { ShoppingCart, ShoppingCartHeader, ShoppingCartItems, ShoppingCartFooter } from '@/components/flixor/shopping-cart';
+import { ShoppingCart,ShoppingCartHeader, ShoppingCartItems, ShoppingCartFooter } from '@/components/flixor/shopping-cart';
 
 interface HeaderProps {
   className?: string;
@@ -35,7 +35,6 @@ const Header = ({ className }: HeaderProps) => {
         cartTotalItems={getCartItems()} />
     </ShoppingCart>
   </header>
-  
 }
 
 
