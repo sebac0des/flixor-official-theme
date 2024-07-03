@@ -16,7 +16,7 @@ interface HeaderProps {
 
 const Header = ({ className }: HeaderProps) => {
 
-  const {cartTotal,items} = useCartStore()
+  const {cartTotal,getCartItems,items} = useCartStore()
 
   return <header
     className={cn(
@@ -30,7 +30,7 @@ const Header = ({ className }: HeaderProps) => {
       <ShoppingCartItems />
       <ShoppingCartFooter
         cartSubTotal={cartTotal}
-        cartTotalItems={5} />
+        cartTotalItems={getCartItems()} />
     </ShoppingCart>
   </header>
   
