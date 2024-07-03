@@ -53,7 +53,7 @@ const ShoppingCart = ({ cartItems, ...props }: Sheet) => {
           </SheetClose>
         </SheetHeader>
         <ShoppingCartItems />
-        <SheetFooter className='flex flex-col h-3/5 gap-0'>
+        <SheetFooter className='flex-col h-3/5 gap-0'>
           <ListItem className={fontMono.className}>
             <ListItemTitle>Resumen del pedido</ListItemTitle>
             <ListItemContent>1 item</ListItemContent>
@@ -62,7 +62,6 @@ const ShoppingCart = ({ cartItems, ...props }: Sheet) => {
           <ListItem className={cn(fontMono.className, "border-none")}>
             <ListItemTitle>Subtotal
               <ListItemSmall>Taxes and shipping calculated at checkout
-
               </ListItemSmall>
             </ListItemTitle>
             <ListItemContent>$251.22</ListItemContent>
