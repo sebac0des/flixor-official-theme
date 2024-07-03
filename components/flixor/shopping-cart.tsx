@@ -30,13 +30,18 @@ type ShoppingCartItemsIndicator = {
   cartItems: number
 }
 
+type ShoppingCartFooter = {
+  cartTotalItems:number
+  cartSubTotal:number
+}
+
 const ShoppingCart = ({ cartItems, children,...props }: Sheet) => {
 
   return (
     <Sheet {...props}>
       <SheetTrigger asChild>
         <Button
-          className="relative"g
+          className="relative"
           size="icon" variant='ghost' >
           <ShoppingCartItemsIndicator cartItems={cartItems}/>
           <ShoppingBasket />
@@ -77,11 +82,11 @@ const ShoppingCartHeader = ()=>{
 </SheetHeader>
 }
 
-const ShoppingCartFooter = ()=>{
+const ShoppingCartFooter = ({cartSubTotal,cartTotalItems}:ShoppingCartFooter)=>{
   return <SheetFooter className='flex-col h-3/5 gap-0'>
   <ListItem className={fontMono.className}>
     <ListItemTitle>Resumen del pedido</ListItemTitle>
-    <ListItemContent>1 item</ListItemContent>
+    <ListItemContent>{cartTotalItems}</ListItemContent>
   </ListItem>
 
   <ListItem className={cn(fontMono.className, "border-none")}>
@@ -89,7 +94,7 @@ const ShoppingCartFooter = ()=>{
       <ListItemSmall>Taxes and shipping calculated at checkout
       </ListItemSmall>
     </ListItemTitle>
-    <ListItemContent>$251.22</ListItemContent>
+    <ListItemContent>{cartSubTotal}</ListItemContent>
   </ListItem>
 </SheetFooter>
 }
