@@ -16,7 +16,7 @@ interface HeaderProps {
 
 const Header = ({ className }: HeaderProps) => {
 
-  const {cartTotal,getCartItems,items} = useCartStore()
+  const {cartTotal,getCartItems,items, removeItem} = useCartStore()
 
   return <header
     className={cn(
@@ -27,7 +27,9 @@ const Header = ({ className }: HeaderProps) => {
     <Logo />
     <ShoppingCart cartItems={items.length}>
       <ShoppingCartHeader />
-      <ShoppingCartItems items={items}/>
+      <ShoppingCartItems
+      handleCartRemoveItem={removeItem}
+      items={items}/>
       <ShoppingCartFooter
         cartSubTotal={cartTotal}
         cartTotalItems={getCartItems()} />
