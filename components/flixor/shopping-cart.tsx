@@ -40,7 +40,7 @@ type ShoppingCartFooter = {
 
 type ShoppingCartItems = {
   items: ProductInCart[]
-  handleCartRemoveItem: (itemId:string)=>void
+  handleRemoveCartItem: (itemId:string)=>void
 }
 
 const ShoppingCart = ({ cartItems, children, ...props }: Sheet) => {
@@ -66,7 +66,7 @@ const ShoppingCartItemsIndicator = ({ cartItems }: ShoppingCartItemsIndicator) =
   return <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{cartItems}</span>
 }
 
-const ShoppingCartItems = ({ items, handleCartRemoveItem }: ShoppingCartItems) => {
+const ShoppingCartItems = ({ items, handleRemoveCartItem }: ShoppingCartItems) => {
   return <div className='flex flex-col gap-2 h-2/5 overflow-y-scroll p-4'>
     {items.map((item) => <CartItem className='relative'>
       <CartItemImage alt='' src={item.cover_image} />
@@ -76,7 +76,7 @@ const ShoppingCartItems = ({ items, handleCartRemoveItem }: ShoppingCartItems) =
           <span className='block text-xs'>Subtotal</span>
           ${item.total.toFixed(2)}</CartItemSubtotal>
       </CartItemContent>
-      <CartItemRemove onClick={()=>handleCartRemoveItem(item.id)} className=''/>
+      <CartItemRemove onClick={()=>handleRemoveCartItem(item.id)} className=''/>
     </CartItem>)}
   </div>
 }

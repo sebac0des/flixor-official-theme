@@ -28,7 +28,7 @@ const Header = ({ className }: HeaderProps) => {
     <ShoppingCart cartItems={items.length}>
       <ShoppingCartHeader />
       <ShoppingCartItems
-      handleCartRemoveItem={removeItem}
+      handleRemoveCartItem={removeItem}
       items={items}/>
       <ShoppingCartFooter
         cartSubTotal={cartTotal}
