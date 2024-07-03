@@ -38,7 +38,6 @@ const updateItem = (items: ProductInCart[], productId: string, quantity: number)
 interface CartState {
   items: ProductInCart[];
   cartTotal: number;
-  getItems: () => ProductInCart[];
   getCartTotal: () => number;
   addItem: (product: Product) => void;
   removeItem: (productId: string) => void;
@@ -50,8 +49,6 @@ interface CartState {
 const useCartStore = create<CartState>((set, get) => ({
   items: [],
   cartTotal: 0,
-
-  getItems: () => get().items,
 
   getCartTotal: () => get().cartTotal,
 

@@ -94,7 +94,7 @@ const ShoppingCartFooter = ({cartSubTotal,cartTotalItems}:ShoppingCartFooter)=>{
       <ListItemSmall>Taxes and shipping calculated at checkout
       </ListItemSmall>
     </ListItemTitle>
-    <ListItemContent>{cartSubTotal}</ListItemContent>
+    <ListItemContent>${cartSubTotal.toFixed(2)}</ListItemContent>
   </ListItem>
 </SheetFooter>
 }

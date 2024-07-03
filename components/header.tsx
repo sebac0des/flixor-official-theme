@@ -1,3 +1,8 @@
+'use client'
+
+// Cart store
+import useCartStore from '@/zustand/cart'
+
 // Utilities
 import { cn } from "@/lib/utils";
 
@@ -9,23 +14,27 @@ interface HeaderProps {
   className?: string;
 }
 
-const Header = ({ className }: HeaderProps) => (
-  <header
+const Header = ({ className }: HeaderProps) => {
+
+  const {cartTotal,items} = useCartStore()
+
+  return <header
     className={cn(
       "bg-white p-4 flex justify-between items-center",
       className
     )}
   >
     <Logo />
-    <ShoppingCart cartItems={5}>
+    <ShoppingCart cartItems={items.length}>
       <ShoppingCartHeader />
       <ShoppingCartItems />
       <ShoppingCartFooter
-        cartSubTotal={1000}
+        cartSubTotal={cartTotal}
         cartTotalItems={5} />
     </ShoppingCart>
   </header>
-);
+  
+}
 
 
 
