@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import ShoppingCart from '@/components/flixor/shopping-cart';
+import {ShoppingCart,ShoppingCartHeader,ShoppingCartItems,ShoppingCartFooter} from '@/components/flixor/shopping-cart';
 
 
 interface HeaderProps {
@@ -21,7 +21,11 @@ const Header = ({ className}:HeaderProps) => (
     )}
   >
     <Logo/>
-    <ShoppingCart cartItems={5}/>
+    <ShoppingCart cartItems={5}>
+      <ShoppingCartHeader/>
+      <ShoppingCartItems/>
+      <ShoppingCartFooter/>
+    </ShoppingCart>
   </header>
 );
 

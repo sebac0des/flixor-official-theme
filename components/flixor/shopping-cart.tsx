@@ -24,52 +24,33 @@ import { ChevronLeft, ShoppingBasket } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 
-type Sheet = React.ComponentProps<typeof Sheet> & ShoppingCart
+type Sheet = React.ComponentProps<typeof Sheet> & ShoppingCartItemsIndicator
 
-type ShoppingCart = {
+type ShoppingCartItemsIndicator = {
   cartItems: number
 }
 
-const ShoppingCart = ({ cartItems, ...props }: Sheet) => {
+const ShoppingCart = ({ cartItems, children,...props }: Sheet) => {
 
   return (
     <Sheet {...props}>
       <SheetTrigger asChild>
         <Button
-          className="relative"
+          className="relative"g
           size="icon" variant='ghost' >
-          <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{cartItems}</span>
+          <ShoppingCartItemsIndicator cartItems={cartItems}/>
           <ShoppingBasket />
         </Button>
       </SheetTrigger>
       <SheetContent className='flex flex-col justify-start gap-0 p-0'>
-        <SheetHeader className='border-b border-primary/20'>
-          <SheetClose className='h-full text-sm' asChild>
-            <Button
-              className={cn(fontMono.className, "rounded-none bg-transparent text-primary hover:bg-transparent flex justify-start gap-2 py-4")} type="submit">
-              <ChevronLeft className='w-4 h-4' />
-              Seguir comprando
-            </Button>
-          </SheetClose>
-        </SheetHeader>
-        <ShoppingCartItems />
-        <SheetFooter className='flex-col h-3/5 gap-0'>
-          <ListItem className={fontMono.className}>
-            <ListItemTitle>Resumen del pedido</ListItemTitle>
-            <ListItemContent>1 item</ListItemContent>
-          </ListItem>
-
-          <ListItem className={cn(fontMono.className, "border-none")}>
-            <ListItemTitle>Subtotal
-              <ListItemSmall>Taxes and shipping calculated at checkout
-              </ListItemSmall>
-            </ListItemTitle>
-            <ListItemContent>$251.22</ListItemContent>
-          </ListItem>
-        </SheetFooter>
+        {children}
       </SheetContent>
     </Sheet>
   )
+}
+
+const ShoppingCartItemsIndicator = ({cartItems}:ShoppingCartItemsIndicator)=>{
+  return <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{cartItems}</span>
 }
 
 const ShoppingCartItems = () => {
@@ -84,6 +65,37 @@ const ShoppingCartItems = () => {
   </div>
 }
 
+const ShoppingCartHeader = ()=>{
+  return <SheetHeader className='border-b border-primary/20'>
+  <SheetClose className='h-full text-sm' asChild>
+    <Button
+      className={cn(fontMono.className, "rounded-none bg-transparent text-primary hover:bg-transparent flex justify-start gap-2 py-4")} type="submit">
+      <ChevronLeft className='w-4 h-4' />
+      Seguir comprando
+    </Button>
+  </SheetClose>
+</SheetHeader>
+}
 
-export default ShoppingCart
+const ShoppingCartFooter = ()=>{
+  return <SheetFooter className='flex-col h-3/5 gap-0'>
+  <ListItem className={fontMono.className}>
+    <ListItemTitle>Resumen del pedido</ListItemTitle>
+    <ListItemContent>1 item</ListItemContent>
+  </ListItem>
+
+  <ListItem className={cn(fontMono.className, "border-none")}>
+    <ListItemTitle>Subtotal
+      <ListItemSmall>Taxes and shipping calculated at checkout
+      </ListItemSmall>
+    </ListItemTitle>
+    <ListItemContent>$251.22</ListItemContent>
+  </ListItem>
+</SheetFooter>
+}
+
+
+
+
+export {ShoppingCart, ShoppingCartItems, ShoppingCartHeader, ShoppingCartFooter}
 
