@@ -1,7 +1,7 @@
 'use client'
 
 // Cart store
-import useCartStore from '@/zustand/cart'
+import useCartStore from '@/store/cart'
 
 // Utilities
 import { cn } from "@/lib/utils";
@@ -27,7 +27,7 @@ const Header = ({ className }: HeaderProps) => {
     <Logo />
     <ShoppingCart cartItems={items.length}>
       <ShoppingCartHeader />
-      <ShoppingCartItems />
+      <ShoppingCartItems items={items}/>
       <ShoppingCartFooter
         cartSubTotal={cartTotal}
         cartTotalItems={getCartItems()} />

@@ -4,7 +4,7 @@
 import { ReactNode } from 'react';
 
 // Cart State
-import useCartStore from "@/zustand/cart";
+import useCartStore from "@/store/cart";
 
 // Components
 import { Button } from "@/components/shadcn/button";
