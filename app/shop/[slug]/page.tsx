@@ -107,13 +107,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductInfoDescription >{product.short_desc}</ProductInfoDescription>
 
                 {/* Show shop action buttons */}
-                <AddToCartButton variant="secondary" className='w-full py-8 mb-1 mt-8' cartItem={product}>
-                    <AddToCartButtonIcon className='w-5 h-5 mr-2'/>
+                <AddToCartButton variant="secondary" className='w-full py-6 mb-1 mt-8' cartItem={product}>
+                    <AddToCartButtonIcon className='w-4 h-4 mr-2'/>
                     <AddToCartButtonText>Agregar al carrito</AddToCartButtonText>
                 </AddToCartButton>
                 
 
-                <Button variant="accent" className='mb-8 w-full py-8' size="lg">Buy now</Button>
+                <Button variant="accent" className='mb-8 w-full py-6' size="lg">Buy now</Button>
              
 
 
