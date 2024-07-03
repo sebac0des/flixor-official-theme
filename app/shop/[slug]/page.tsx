@@ -77,9 +77,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </BreadcrumbList>
         </Breadcrumb>
 
-        <Wrapper container='stretch' className='flex flex-col md:gap-10 lg:flex-row py-2'>
+        <Wrapper container='stretch' className='flex flex-col md:gap-10 xl:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
-            <CardsGallery className="hidden lg:grid">
+            <CardsGallery className="hidden xl:grid">
                 <CardsGalleryFeaturedImage
                     className='w-full'
                     alt={product.name}
@@ -92,6 +92,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
             {/* Show product gallery carousel on responsive screens */}
             <CardCarousel
+            className='xl:hidden'
             >
                 <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image} />
                 <CardCarouselSingleVideo src={product.videos[0]} />
