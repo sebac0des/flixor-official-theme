@@ -1,20 +1,17 @@
 // React
-import { ReactNode } from 'react'
+import React from 'react'
 
 // Components
 import { Card, CardImage, CardVideo } from '@/components/flixor/card'
 
 
 // Next js
-import { Carousel, CarouselContent, CarouselItem} from '../shadcn/carousel'
+import { Carousel, CarouselContent, CarouselItem} from '@/components/shadcn/carousel'
 
-interface CardCarouselProps {
-    children?: ReactNode
-    className?: string
-}
+type Carousel = React.ComponentProps<typeof Carousel>;
 
-function CardCarousel({ children, className }: CardCarouselProps) {
-    return <Carousel className={className}>
+function CardCarousel({ children, className, ...props }: Carousel) {
+    return <Carousel className={className} {...props}>
         <CarouselContent>
             {children}
         </CarouselContent>
