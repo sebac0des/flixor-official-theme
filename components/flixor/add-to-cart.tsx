@@ -1,8 +1,5 @@
 'use client'
 
-// React
-import { ReactNode } from 'react';
-
 // Cart State
 import useCartStore from "@/store/cart";
 
@@ -10,7 +7,7 @@ import useCartStore from "@/store/cart";
 import { Button } from "@/components/shadcn/button";
 
 // Icons
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, LucideProps } from "lucide-react";
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -19,12 +16,13 @@ import { cn } from "@/lib/utils";
 import { Product } from '@/types/product';
 
 
-type AddToCartButtonProps = React.ComponentProps<typeof Button> & {
+interface AddToCartButtonProps extends React.ComponentProps<typeof Button> {
   cartItem: Product
 };
 
 const AddToCartButton = ({children,className, ...props}:AddToCartButtonProps)=>{
   const {addItem} = useCartStore()
+
   return <Button
   onClick={()=>addItem(props.cartItem)} 
   className={cn(className)} 
@@ -34,9 +32,9 @@ const AddToCartButton = ({children,className, ...props}:AddToCartButtonProps)=>{
 </Button>
 }
 
-const AddToCartButtonText = ({children,className}:{children:ReactNode,className?:string})=> 
-<span className={className}>{children}</span>
+const AddToCartButtonText = ({children,className, ...props}: React.HTMLAttributes<HTMLSpanElement>)=> 
+<span className={className} {...props}>{children}</span>
 
-const AddToCartButtonIcon = ({className}:{className?:string})=> <ShoppingCart className={className}/>
+const AddToCartButtonIcon = ({className,...props}:LucideProps)=> <ShoppingCart className={className} {...props}/>
 
 export {AddToCartButton,AddToCartButtonText,AddToCartButtonIcon}
