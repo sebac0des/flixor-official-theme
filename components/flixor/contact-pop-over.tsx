@@ -9,8 +9,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/shadcn/popover";
-import { Avatar, AvatarImage } from "../shadcn/avatar";
-import { Button } from "../shadcn/button";
+import { Avatar, AvatarImage } from "@/components/shadcn/avatar";
+import { Button } from "@/components/shadcn/button";
 
 // Next js
 import Link from "next/link";
@@ -21,17 +21,18 @@ import { fontMono } from '@/app/fonts'
 // Utils
 import { cn } from "@/lib/utils";
 
+interface Popover extends React.ComponentProps<typeof Popover> {}
+
 interface ContactPopOverProps {
   children: React.ReactNode
-  dispatchWindowTime?: number;
   image: string;
+  dispatchWindowTime?: number;
 }
 
 export default function ContactPopOver({
   image,
   dispatchWindowTime = 0,
   children,
-
 }: ContactPopOverProps) {
   const [open, setOpen] = useState(false);
 
@@ -43,29 +44,28 @@ export default function ContactPopOver({
   }, [dispatchWindowTime]);
 
   return (
-    <div className={cn('right-0 bottom-0 fixed z-50')}>
       <Popover open={open}>
-        <PopoverTrigger onClick={() => setOpen(!open)} asChild>
+        <PopoverTrigger className="right-0 bottom-0 fixed z-50"
+        onClick={() => setOpen(!open)} asChild>
           <Avatar className="w-24 h-24 hover:cursor-pointer shadow-black/30 shadow-xl">
             <AvatarImage src={image} alt="@shadcn" />
           </Avatar>
         </PopoverTrigger>
-        <PopoverContent className="w-80 -translate-x-2 -translate-y-2">
+        <PopoverContent  className="w-80 -translate-x-2 -translate-y-2">
             {children}
         </PopoverContent>
       </Popover>
-    </div>
   );
 }
 
-const ContactPopOverTitle = ({children}:{children:React.ReactNode}) => {
-  return <h4 className="font-bold leading-none text-lg text-left mb-2">
+const ContactPopOverTitle = ({children, ...props}:React.HTMLAttributes<HTMLHeadingElement>) => {
+  return <h4 className="font-bold leading-none text-lg text-left mb-2" {...props}>
     {children}
   </h4>
 }
 
-const ContactPopOverMessage = ({children}:{children:React.ReactNode}) => {
-  return <p className={cn(fontMono.className, "text-primary text-sm w-full")}>
+const ContactPopOverMessage = ({children, ...props}:React.HTMLAttributes<HTMLParagraphElement>) => {
+  return <p className={cn(fontMono.className, "text-primary text-sm w-full")} {...props}>
     {children}
   </p>
 }
@@ -84,8 +84,8 @@ const ContactPopOverButton = ({children,href}:{children:React.ReactNode, href:st
 </Button>
 }
 
-const ContactPopOverSmallMessage = ({children}:{children:React.ReactNode}) => {
-  return <small className={cn(fontMono.className, 'block text-center text-xs mt-1 text-gray-400')}>
+const ContactPopOverSmallMessage = ({children,...props}:React.HTMLAttributes<HTMLElement>) => {
+  return <small className={cn(fontMono.className, 'block text-center text-xs mt-1 text-gray-400')} {...props}>
   {children}
 </small>
 }
