@@ -1,6 +1,3 @@
-// React
-import { HTMLAttributes, PropsWithChildren } from "react";
-
 // Next js
 import Image, {ImageProps} from "next/image"
 
@@ -18,17 +15,11 @@ import { cn } from '@/lib/utils'
 
 type Button = React.ComponentProps<typeof Button>
 
-interface CartItem extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 
-interface CartItemContent extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
-
-interface CartItemName extends PropsWithChildren<HTMLAttributes<HTMLHeadingElement>> {}
-
-interface CartItemSubtotal extends PropsWithChildren<HTMLAttributes<HTMLSpanElement>> {}
-
-
-const CartItem = ({ children, className}: CartItem) => {
-    return <div className={cn("flex gap-4",className)}>
+const CartItem = ({ children, className, ...props}: React.HTMLAttributes<HTMLDivElement>) => {
+    return <div className={cn("flex gap-4",className)}
+    {...props}
+    >
         {children}
     </div>
 }
@@ -41,14 +32,14 @@ const CartItemImage = ({src,alt}:ImageProps) => <Image
     height={300}
 />
 
-const CartItemContent = ({children, className}:CartItemContent)=> <div className={className}>{children}</div>
+const CartItemContent = ({children, className, ...props}:React.HTMLAttributes<HTMLDivElement>)=> <div className={className} {...props}>{children}</div>
 
-const CartItemName = ({children, className}:CartItemName) => <h3 className={cn(fontMono.className,className)}>{children}</h3>
+const CartItemName = ({children, className, ...props}:React.HTMLAttributes<HTMLHeadingElement>) => <h3 className={cn(fontMono.className,className)} {...props}>{children}</h3>
 
-const CartItemSubtotal = ({children, className}:CartItemSubtotal) => <span className={cn(fontMono.className, className)}>{children}</span>
+const CartItemSubtotal = ({children, className, ...props}:React.HTMLAttributes<HTMLSpanElement>) => <span className={cn(fontMono.className, className)} {...props}>{children}</span>
 
 const CartItemRemove = ({className, ...props}:Button)=> {
-    return <Button className={cn("h-fit w-fit",className)} size="icon" variant="ghost" {...props} >
+    return <Button className={cn("h-fit w-fit",className)} size="icon" variant="ghost" {...props} {...props}>
         <X className="w-4 h-4"/>
     </Button>
 }
