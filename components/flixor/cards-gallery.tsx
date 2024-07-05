@@ -1,19 +1,14 @@
-// React
-import { ReactNode } from 'react'
-
-// Components
-import { Card, CardImage, CardVideo } from '@/components/flixor/card'
-import { cn } from '@/lib/utils'
-
 // Next js
 import { ImageProps } from 'next/image'
 
-interface CardsGalleryProps {
-    children:ReactNode
-    className?:string
-}
+// Components
+import { Card, CardImage, CardVideo } from '@/components/flixor/card'
 
-function CardsGallery({ children,className }:CardsGalleryProps) {
+// Utils
+import { cn } from '@/lib/utils'
+
+
+function CardsGallery({ children,className }:React.HTMLAttributes<HTMLUListElement>) {
     return <ul className={cn("grid grid-cols-4 gap-2",className)}>
         {children}
     </ul>
