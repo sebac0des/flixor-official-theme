@@ -13,12 +13,13 @@ import {
 
 import { SimpleTitle } from "@/components/flixor/simple-title";
 
-import { ContactPopOver, ContactPopOverButton, ContactPopOverMessage, ContactPopOverSmallMessage, ContactPopOverTitle } from '@/components/flixor/contact-pop-over'
+import { FloatingPopOver, FloatingPopOverTrigger,FloatingPopOverContent } from '@/components/flixor/floating-pop-over'
 
 import { BenefitsVerticalSlider } from "@/components/flixor/benefits-vertical-slider";
 
 import { FeaturedProducts } from '@/components/flixor/product/featured-products'
 import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
+import Wrapper from "@/components/flixor/wrapper";
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -35,7 +36,7 @@ import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
 import { getBusinessBenefits } from '@/services/benefits'
 import { getBusinessAudience } from '@/services/audience'
-import Wrapper from "@/components/flixor/wrapper";
+
 
 
 export default async function Page() {
@@ -51,20 +52,15 @@ export default async function Page() {
 
   return (
 
-    <main className=" min-h-screen bg-[#fcfcfc]">
+    <main className="min-h-screen bg-[#fcfcfc]">
 
       {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
-      <ContactPopOver
-        image="\images\sebas-call-me.webp"
-      >
-        <ContactPopOverTitle>¿Tenes una pregunta? ¡Escríbínos!</ContactPopOverTitle>
-        <ContactPopOverMessage>Estamos en línea listos para responder tus dudas en WhatsApp.
-        </ContactPopOverMessage>
-        <ContactPopOverButton
-          href="https://api.whatsapp.com/send?phone=+5491130963298&text=Hola,%20mi%20nombre%20es%20....%20y%20tengo%20una%20duda!"
-        >Si, tengo preguntas</ContactPopOverButton>
-        <ContactPopOverSmallMessage>Se abre en WhatsApp</ContactPopOverSmallMessage>
-      </ContactPopOver>
+      <FloatingPopOver>
+        <FloatingPopOverTrigger >
+          <button>hello world</button>
+        </FloatingPopOverTrigger>
+        <FloatingPopOverContent>dsadassdda</FloatingPopOverContent>
+      </FloatingPopOver>
 
       {/* Show header and topbar on navigation bar */}
       <Navigation />
