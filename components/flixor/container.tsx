@@ -10,12 +10,12 @@ const containerVariants = cva(
   {
     variants: {
       variant: {
-        default:''
+        default:'',
       },
       align: {
         left:'content-start',
-        center:'place-content-center',
-        right:'place-content-end'
+        center:'content-center',
+        right:'content-end'
       },
       size: {
         "1": "max-w-md",

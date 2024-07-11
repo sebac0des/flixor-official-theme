@@ -119,7 +119,7 @@ export default async function Page() {
         buttonUrl="#"
       />
 
-      <Container size="4">
+      <Container className="px-5 py-10 flex flex-col gap-20" size="5">
         {/* Show featured products cards */}
         <FeaturedProducts data={featured_products} />
 

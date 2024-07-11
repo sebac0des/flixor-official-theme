@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Navigation />
 
         {/* Show shop breadcrum */}
-        <Container>
+        <Container size="5">
             <Breadcrumb className={fontMono.className}>
                 <BreadcrumbList className='text-primary py-5 md:text-base'>
                     <BreadcrumbItem>
@@ -80,7 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </Container>
 
 
-        <Container align="left" className='flex flex-col md:gap-10 xl:flex-row py-2'>
+        <Container size="5" align="left" className='flex flex-col md:gap-10 xl:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
             <CardsGallery className="hidden xl:grid">
                 <CardsGalleryFeaturedImage
@@ -175,7 +175,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </Container>
 
         {/* Show related products on the same category */}
-        <Container>
+        <Container size="5" className='py-10'>
             <SectionHeading className='text-left'>
                 <SectionHeadingTitle>You might also like</SectionHeadingTitle>
             </SectionHeading>
