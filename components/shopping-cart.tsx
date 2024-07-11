@@ -29,7 +29,6 @@ import useCartStore from '@/store/cart'
 // Fonts
 import { fontMono } from '@/app/fonts'
 
-
 type Sheet = React.ComponentProps<typeof Sheet>
 
 const ShoppingCart = ({...props }: Sheet) => {
