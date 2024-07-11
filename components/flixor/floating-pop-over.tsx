@@ -1,7 +1,7 @@
 "use client";
 
 // React
-import React, { useEffect, useState } from "react";
+import React, { createContext, useContext,useEffect, Provider,useState } from "react";
 
 // Radix ui
 import {PopoverTriggerProps, PopoverProps,PopoverContentProps} from "@radix-ui/react-popover"
@@ -21,10 +21,15 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 interface FloatingPopOver extends PopoverProps {
-  dispatchWindowTime?:number
+  openDelayTime?:number
 }
 
 interface FloatingPopOverTrigger extends PopoverTriggerProps,VariantProps<typeof floatingPopOverVariants>{
+}
+
+interface FloatingPopOverContext {
+  open:boolean
+  setOpen:(value:boolean)=>void
 }
 
 // Floating pop over variants
@@ -45,7 +50,7 @@ const floatingPopOverVariants = cva(
 );
 
 function FloatingPopOver({
-  dispatchWindowTime = 0,
+  openDelayTime = 0,
   children,
   ...props
 }: FloatingPopOver) {
@@ -53,21 +58,25 @@ function FloatingPopOver({
   const [open,setOpen] = useState(false)
 
   useEffect(() => {
-    if(dispatchWindowTime > 0){
-      const autoOpen = setTimeout(() => setOpen(true), dispatchWindowTime);
+    if(openDelayTime > 0){
+      const autoOpen = setTimeout(() => setOpen(true), openDelayTime);
       return () => clearTimeout(autoOpen);
     }    
-  }, [dispatchWindowTime]);
+  }, [openDelayTime]);
 
-  return (
-      <Popover {...props}>
+  return <FloatingPopOverContext.Provider value={{open,setOpen}}>
+    <Popover open={open} {...props}>
         {children}
       </Popover>
-  );
+  </FloatingPopOverContext.Provider>
 }
 
 const FloatingPopOverTrigger = ({children, className, position = 'right',...props}:FloatingPopOverTrigger)=>{
-  return <PopoverTrigger 
+  
+  const {open,setOpen} = useFloatingPopOver()
+  
+  return <PopoverTrigger
+  onClick={()=>setOpen(!open)} 
   className={cn(cva(floatingPopOverVariants({className,position})))}
   asChild
   {...props}>
@@ -83,6 +92,12 @@ const FloatingPopOverContent = ({children, className,...props}:PopoverContentPro
   {children}
 </PopoverContent>
 }
+
+const FloatingPopOverContext = createContext<FloatingPopOverContext>({
+  open:false,
+  setOpen:()=> console.warn('Floating pop over context not initialized')
+})
+const useFloatingPopOver = () => useContext(FloatingPopOverContext)
 
 // <Avatar className="w-24 h-24 hover:cursor-pointer shadow-black/30 shadow-xl">
 //       <AvatarImage src={image} alt="@shadcn" />
