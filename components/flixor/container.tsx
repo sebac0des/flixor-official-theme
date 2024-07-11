@@ -13,29 +13,29 @@ const containerVariants = cva(
         default:''
       },
       align: {
-        "1": "max-w-md",
-        "2": "max-w-2xl",
-        "3": "max-w-4xl",
-        "4": "max-w-6xl",
+        left:'content-start',
+        center:'place-content-center',
+        right:'place-content-end'
       },
       size: {
         "1": "max-w-md",
         "2": "max-w-2xl",
         "3": "max-w-4xl",
         "4": "max-w-6xl",
+        "5":'max-w-7xl'
       },
     },
     defaultVariants: {
+      align:'center',
       variant: "default",
-      align:'1',
       size: "4",
     },
   }
 );
 
-const Container = ({ size,variant,children, className }: ContainerProps) => {
+const Container = ({ align,size,variant,children, className }: ContainerProps) => {
   return (
-    <div className={cn(containerVariants({size,variant}),className)}>
+    <div className={cn(containerVariants({size,variant,align}),className)}>
       {children}
     </div>
   );

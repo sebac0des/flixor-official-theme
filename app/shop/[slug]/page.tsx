@@ -1,13 +1,13 @@
 // Fonts
-import { fontMono } from '@/app/fonts' 
+import { fontMono } from '@/app/fonts'
 
 // Navigation components
-import Header  from "@/components/header"; 
-import Topbar from "@/components/topbar"; 
+import Header from "@/components/header";
+import Topbar from "@/components/topbar";
 
 // Components
-import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' 
-import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; 
+import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery'
+import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel';
 import { SectionHeading, SectionHeadingTitle } from '@/components/flixor/section-heading';
 
 
@@ -48,7 +48,7 @@ import { cn } from '@/lib/utils';
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
 
-import { AddToCartButton,AddToCartButtonText,AddToCartButtonIcon } from '@/components/flixor/add-to-cart';
+import { AddToCartButton, AddToCartButtonText, AddToCartButtonIcon } from '@/components/flixor/add-to-cart';
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -61,23 +61,26 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Navigation />
 
         {/* Show shop breadcrum */}
-        <Breadcrumb className={fontMono.className}>
-            <BreadcrumbList className='text-primary py-5 md:text-base w-11/12 m-auto'>
-                <BreadcrumbItem>
-                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                    <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                    <BreadcrumbPage>{product.name}</BreadcrumbPage>
-                </BreadcrumbItem>
-            </BreadcrumbList>
-        </Breadcrumb>
+        <Container>
+            <Breadcrumb className={fontMono.className}>
+                <BreadcrumbList className='text-primary py-5 md:text-base'>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                        <BreadcrumbPage>{product.name}</BreadcrumbPage>
+                    </BreadcrumbItem>
+                </BreadcrumbList>
+            </Breadcrumb>
+        </Container>
 
-        <Container className='flex flex-col md:gap-10 xl:flex-row py-2'>
+
+        <Container align="left" className='flex flex-col md:gap-10 xl:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
             <CardsGallery className="hidden xl:grid">
                 <CardsGalleryFeaturedImage
@@ -92,7 +95,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
             {/* Show product gallery carousel on responsive screens */}
             <CardCarousel
-            className='xl:hidden'
+                className='xl:hidden'
             >
                 <CardCarouselSingleImage alt={product.cover_image} src={product.cover_image} />
                 <CardCarouselSingleVideo src={product.videos[0]} />
@@ -109,13 +112,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
                 {/* Show shop action buttons */}
                 <AddToCartButton variant="secondary" className='w-full py-6 mb-1 mt-8' cartItem={product}>
-                    <AddToCartButtonIcon className='w-4 h-4 mr-2'/>
+                    <AddToCartButtonIcon className='w-4 h-4 mr-2' />
                     <AddToCartButtonText>Agregar al carrito</AddToCartButtonText>
                 </AddToCartButton>
-                
+
 
                 <Button variant="accent" className='mb-8 w-full py-6' size="lg">Buy now</Button>
-             
+
 
 
                 {/* Show business benefits */}
@@ -197,7 +200,7 @@ function Navigation() {
                 url="#"
                 message="🔥 Descarga la lista de precios vigente →"
             />
-            <Header/>
+            <Header />
         </div>
     );
 }
