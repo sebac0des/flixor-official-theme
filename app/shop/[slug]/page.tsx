@@ -61,9 +61,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Navigation />
 
         {/* Show shop breadcrum */}
-        <Container size="5">
+        <Container size="5" className='px-2 py-2.5'>
             <Breadcrumb className={fontMono.className}>
-                <BreadcrumbList className='text-primary py-2.5 md:text-base'>
+                <BreadcrumbList className='text-primary md:text-base'>
                     <BreadcrumbItem>
                         <BreadcrumbLink href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
