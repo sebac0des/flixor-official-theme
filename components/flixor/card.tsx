@@ -48,7 +48,6 @@ height={1080}
 
 const CardVideo = ({...props}:CardVideoProps) => <Video {...props}/>
 
-
 const CardSmallText = ({children, className}:React.HTMLAttributes<HTMLSpanElement>) => <span className={cn(fontMono.className,'text-sm md:text-base', className)}>{children}</span>
   
 const CardTitle = ({children, className}:React.HTMLAttributes<HTMLHeadingElement>) => <h3 className={cn("text-2xl font-medium tracking-wider",className)}>{children}</h3>
@@ -58,8 +57,7 @@ const CardButton = ({children, className, buttonUrl}:CardButton) =>
     <Link href={buttonUrl}>{children}</Link>
 </Button>
 
-function CardOverlay(){
-    return <div className="block bg-black/40 absolute top-0 left-0 w-full h-full"></div>
-}
+const CardOverlay = () => <div className="block bg-black/40 absolute top-0 left-0 w-full h-full"></div>
+
 
 export {Card,CardContent,CardTitle,CardSmallText,CardButton,CardImage,CardVideo,CardOverlay}

@@ -23,7 +23,7 @@ function CardsGalleryFeaturedImage({ ...props }: ImageProps) {
 
 function CardsGalleryGridImages({imagesUrls}:{imagesUrls:string[]}) {
     return imagesUrls.map(item => {
-        return <Card className='col-span-2'>
+        return <Card key={item} className='col-span-2'>
             <CardImage
                 alt={item}
                 src={item} />
@@ -33,7 +33,7 @@ function CardsGalleryGridImages({imagesUrls}:{imagesUrls:string[]}) {
 
 function CardsGalleryGridVideos({videosUrls}:{videosUrls:string[]}) {
     return videosUrls.map((item, index) => {
-        if (index === 0) return <Card className='col-span-2'>
+        if (index === 0) return <Card key={item} className='col-span-2'>
             <CardVideo
                 src={item}
                 controls
@@ -43,7 +43,7 @@ function CardsGalleryGridVideos({videosUrls}:{videosUrls:string[]}) {
             />
         </Card>
 
-        return <Card className='col-span-2'>
+        return <Card key={item} className='col-span-2'>
             <CardVideo
                 src={item}
                 playsInline

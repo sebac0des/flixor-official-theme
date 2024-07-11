@@ -48,7 +48,7 @@ export function Video({ intersectionMode = false, playOnHoverMode = false, ...pr
             return () => observer.unobserve(videoElement);
         }
 
-    }, []);
+    }, [props.autoPlay, intersectionMode]);
 
     return <video controls={showControls}
         onMouseEnter={()=> handlePlayOnHover(true)}

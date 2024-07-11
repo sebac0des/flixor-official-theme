@@ -31,7 +31,7 @@ export default function VideoCarousel({ data }: Props) {
       <VideoCarouselIndicators />
       <CarouselContent className="gap-3">
         {data.map((item) => (
-          <CarouselItem className="md:basis-1/3 xl:basis-1/5 rounded-lg">
+          <CarouselItem key={item.id} className="md:basis-1/3 xl:basis-1/5 rounded-lg">
             <Card>
               <CardVideo 
               playOnHoverMode
