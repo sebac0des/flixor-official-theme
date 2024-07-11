@@ -1,24 +1,16 @@
-import * as React from "react";
+// Next js
+import Link, {LinkProps} from "next/link";
 
 // Fonts
 import { fontMono } from "@/app/fonts";
 
-// Next js
-import Link, {LinkProps} from "next/link";
-
 // Utils
 import { cn } from "@/lib/utils";
 
-
 // Types
-interface MessageBoxProps {
-  children: React.ReactNode;
-  className?: string;
-}
+interface MessageBoxLinkProps extends LinkProps, React.HTMLAttributes<HTMLAnchorElement> {}
 
-interface MessageBoxLinkProps extends LinkProps, MessageBoxProps  {}
-
-const MessageBox = ({ className,children,...props }: MessageBoxProps) => (
+const MessageBox = ({ className,children,...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       "bg-soft text-center rounded-lg xl:min-h-96 py-20 place-content-center",
@@ -31,7 +23,7 @@ const MessageBox = ({ className,children,...props }: MessageBoxProps) => (
 );
 
 
-const MessageBoxSmallMessage = ({ children, ...props }:MessageBoxProps) => (
+const MessageBoxSmallMessage = ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
   <span
     className={cn(fontMono.className, "text-sm xl:text-base")}
     {...props}
@@ -40,7 +32,7 @@ const MessageBoxSmallMessage = ({ children, ...props }:MessageBoxProps) => (
   </span>
 );
 
-const MessageBoxTitle = ({ children, className,...props }:MessageBoxProps) => (
+const MessageBoxTitle = ({ children, className,...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <h4
   className={cn("text-xl xl:text-2xl font-regular mt-0.5", className)}
   {...props}
@@ -50,12 +42,11 @@ const MessageBoxTitle = ({ children, className,...props }:MessageBoxProps) => (
 );
 
 
-const MessageBoxLink = React.forwardRef<HTMLAnchorElement, MessageBoxLinkProps>(
-  ({ href, className, children, ...props }) => (
+const MessageBoxLink = (({ href, children, className,...props }: MessageBoxLinkProps) => (
     <Link
-      {...props}
       className={cn("border-b border-primary", className)}
       href={href}
+      {...props}
     >
       {children}
     </Link>
