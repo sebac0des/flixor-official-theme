@@ -1,9 +1,7 @@
-// Fonts
-import { fontMono } from '@/app/fonts'
+'use client'
 
 // Components
 import { Button } from "@/components/shadcn/button";
-
 import {
   Sheet,
   SheetClose,
@@ -14,7 +12,6 @@ import {
 } from "@/components/shadcn/sheet"
 
 import { CartItem, CartItemName, CartItemContent, CartItemImage, CartItemSubtotal, CartItemRemove } from '@/components/flixor/cart-item';
-
 import { ListItem, ListItemTitle, ListItemContent, ListItemSmall } from '@/components/flixor/list-item'
 
 // Icons
@@ -24,27 +21,20 @@ import { ChevronLeft, ShoppingBasket } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Types
-import { ProductInCart } from '@/store/cart';
 import Link from 'next/link';
 
+// Store
+import useCartStore from '@/store/cart'
 
-type Sheet = React.ComponentProps<typeof Sheet> & ShoppingCartItemsIndicator
+// Fonts
+import { fontMono } from '@/app/fonts'
 
-type ShoppingCartItemsIndicator = {
-  cartItems: number
-}
 
-type ShoppingCartFooter = {
-  cartTotalItems: number
-  cartSubTotal: number
-}
+type Sheet = React.ComponentProps<typeof Sheet>
 
-type ShoppingCartItems = {
-  items: ProductInCart[]
-  handleRemoveCartItem: (itemId:string)=>void
-}
+const ShoppingCart = ({...props }: Sheet) => {
 
-const ShoppingCart = ({ cartItems, children, ...props }: Sheet) => {
+  const {items} = useCartStore()
 
   return (
     <Sheet {...props}>
@@ -52,22 +42,22 @@ const ShoppingCart = ({ cartItems, children, ...props }: Sheet) => {
         <Button
           className="relative"
           size="icon" variant='ghost' >
-          <ShoppingCartItemsIndicator cartItems={cartItems} />
+          <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{items.length}</span>
           <ShoppingBasket />
         </Button>
       </SheetTrigger>
       <SheetContent className='flex flex-col justify-start gap-0 p-0'>
-        {children}
+        <ShoppingCartHeader/>
+        <ShoppingCartItems/>
+        <ShoppingCartFooter/>
       </SheetContent>
     </Sheet>
   )
 }
 
-const ShoppingCartItemsIndicator = ({ cartItems }: ShoppingCartItemsIndicator) => {
-  return <span className={cn(fontMono.className, "absolute top-0 right-0 bg-primary h-5 w-5 rounded-full flex justify-center items-center text-secondary text-xs font-semibold")}>{cartItems}</span>
-}
+const ShoppingCartItems = () => {
 
-const ShoppingCartItems = ({ items, handleRemoveCartItem }: ShoppingCartItems) => {
+  const {items,removeItem} = useCartStore()
   
   if(items.length === 0 ) return <ShoppingCartEmpty/>
   
@@ -80,7 +70,7 @@ const ShoppingCartItems = ({ items, handleRemoveCartItem }: ShoppingCartItems) =
           <span className='block text-xs'>Subtotal</span>
           ${item.total.toFixed(2)}</CartItemSubtotal>
       </CartItemContent>
-      <CartItemRemove onClick={()=>handleRemoveCartItem(item.id)} className=''/>
+      <CartItemRemove onClick={()=>removeItem(item.id)} className=''/>
     </CartItem>)}
   </div>
 }
@@ -97,11 +87,14 @@ const ShoppingCartHeader = () => {
   </SheetHeader>
 }
 
-const ShoppingCartFooter = ({ cartSubTotal, cartTotalItems }: ShoppingCartFooter) => {
+const ShoppingCartFooter = () => {
+
+  const {getCartTotal, getCartItems} = useCartStore()
+
   return <SheetFooter className='flex-col h-3/5 gap-0 border-t border-soft'>
     <ListItem className={fontMono.className}>
       <ListItemTitle>Resumen del pedido</ListItemTitle>
-      <ListItemContent>{cartTotalItems} items</ListItemContent>
+      <ListItemContent>{getCartItems()} items</ListItemContent>
     </ListItem>
 
     <ListItem className={cn(fontMono.className, "border-none")}>
@@ -109,7 +102,7 @@ const ShoppingCartFooter = ({ cartSubTotal, cartTotalItems }: ShoppingCartFooter
         <ListItemSmall>Taxes and shipping calculated at checkout
         </ListItemSmall>
       </ListItemTitle>
-      <ListItemContent>${cartSubTotal.toFixed(2)}</ListItemContent>
+      <ListItemContent>${getCartTotal().toFixed(2)}</ListItemContent>
     </ListItem>
   </SheetFooter>
 }
@@ -124,8 +117,8 @@ const ShoppingCartEmpty = ()=>{
   </div>
 }
 
+export default ShoppingCart
 
 
 
-export { ShoppingCart, ShoppingCartItems, ShoppingCartHeader, ShoppingCartFooter }
 

@@ -1,22 +1,14 @@
-'use client'
-
-// Cart store
-import useCartStore from '@/store/cart'
-
 // Utilities
 import { cn } from "@/lib/utils";
 
 // Components
 import Logo from "@/components/logo";
-import { ShoppingCart,ShoppingCartHeader, ShoppingCartItems, ShoppingCartFooter } from '@/components/flixor/shopping-cart';
+import ShoppingCart from '@/components/shopping-cart';
+import React from "react";
 
-interface HeaderProps {
-  className?: string;
-}
 
-const Header = ({ className }: HeaderProps) => {
 
-  const {cartTotal,getCartItems,items, removeItem} = useCartStore()
+const Header = ({ className }: React.HTMLAttributes<HTMLElement>) => {
 
   return <header
     className={cn(
@@ -25,15 +17,7 @@ const Header = ({ className }: HeaderProps) => {
     )}
   >
     <Logo />
-    <ShoppingCart cartItems={items.length}>
-      <ShoppingCartHeader />
-      <ShoppingCartItems
-      handleRemoveCartItem={removeItem}
-      items={items}/>
-      <ShoppingCartFooter
-        cartSubTotal={cartTotal}
-        cartTotalItems={getCartItems()} />
-    </ShoppingCart>
+    <ShoppingCart />
   </header>
 }
 
