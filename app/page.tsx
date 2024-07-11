@@ -1,7 +1,13 @@
+// Next js
+import Link from "next/link";
+
+// Fonts
+import { fontMono } from "@/app/fonts";
+
 // Navigation Components
 import Footer from "@/components/footer";
 import Topbar from "@/components/topbar";
-import Header  from '@/components/header'
+import Header from '@/components/header'
 
 // Content components
 import {
@@ -11,15 +17,19 @@ import {
   MessageBoxLink,
 } from "@/components/flixor/message-box";
 
+import { Avatar, AvatarImage } from "@/components/shadcn/avatar";
+
 import { SimpleTitle } from "@/components/flixor/simple-title";
 
-import { FloatingPopOver, FloatingPopOverTrigger,FloatingPopOverContent } from '@/components/flixor/floating-pop-over'
+import { FloatingPopOver, FloatingPopOverTrigger, FloatingPopOverContent } from '@/components/flixor/floating-pop-over'
 
 import { BenefitsVerticalSlider } from "@/components/flixor/benefits-vertical-slider";
 
 import { FeaturedProducts } from '@/components/flixor/product/featured-products'
 import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
 import Wrapper from "@/components/flixor/wrapper";
+import { Button } from "@/components/shadcn/button";
+
 
 // Sections
 import { TargetAudience } from "@/sections/target-audience";
@@ -29,6 +39,9 @@ import Questions from "@/sections/FAQ/simple-faq";
 import Testimonials from "@/sections/testimonials";
 import { ComboShowcase, ComboShowcaseContent, ComboShoppingCard, ComboVideoCard } from '@/sections/products/combo-showcase'
 
+// Utils
+import { cn } from "@/lib/utils";
+
 // Services
 import { getPopularProducts, getFeaturedProducts, getProductBySlug } from "@/services/products";
 import { getTestimonials } from "@/services/testimonials";
@@ -36,8 +49,6 @@ import { getHomepageQuestions } from "@/services/faq";
 import { getSliderVideos } from '@/services/videos'
 import { getBusinessBenefits } from '@/services/benefits'
 import { getBusinessAudience } from '@/services/audience'
-
-
 
 export default async function Page() {
 
@@ -56,10 +67,34 @@ export default async function Page() {
 
       {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
       <FloatingPopOver>
-        <FloatingPopOverTrigger position="left">
-          <button>hello world</button>
+        <FloatingPopOverTrigger>
+          <Avatar className="w-24 h-24 hover:cursor-pointer shadow-black/30 shadow-xl">
+            <AvatarImage src="/images/sebas-call-me.webp" alt="@flixor" />
+          </Avatar>
         </FloatingPopOverTrigger>
-        <FloatingPopOverContent>dsadassdda</FloatingPopOverContent>
+        <FloatingPopOverContent>
+          <h4 className="font-bold leading-none text-lg text-left mb-2">
+            ¿Tenes una pregunta? ¡Escríbínos!
+          </h4>
+          <p className={cn(fontMono.className, "text-primary text-sm w-full")} >
+            Estamos en línea listos para responder tus dudas en WhatsApp.
+          </p>
+
+          <Button
+            variant="default"
+            asChild
+            className="w-full rounded-none mt-4 mb-1.5"
+            size="icon"
+          >
+            <Link href="https://api.whatsapp.com/send?phone=+5491130963298&text=Hola,%20mi%20nombre%20es%20....%20y%20tengo%20una%20duda!">
+              Si, tengo preguntas!
+            </Link>
+          </Button>
+
+          <small className={cn(fontMono.className, 'block text-center text-xs mt-1 text-gray-400')}>
+            Se abre en WhatsApp
+          </small>
+        </FloatingPopOverContent>
       </FloatingPopOver>
 
       {/* Show header and topbar on navigation bar */}
@@ -173,7 +208,7 @@ function Navigation() {
         url="#"
         message="🔥 Descarga la lista de precios vigente →"
       />
-      <Header/>
+      <Header />
     </div>
   );
 }
