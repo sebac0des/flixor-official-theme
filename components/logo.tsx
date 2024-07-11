@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from "./shadcn/button";
 import Link from "next/link";
 
 const Logo = () => {

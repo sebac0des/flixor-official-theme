@@ -2,18 +2,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
-import { MegaTitle } from "@/components/ui/mega-title";
-import Wrapper from "@/components/ui/wrapper";
-
-// Next js
-import Image from "next/image";
+} from "@/components/shadcn/carousel";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 // Fonts
-import { inconsolata } from "@/app/fonts";
-
-// Data
-import data from "@/data/testimonials";
+import { fontMono } from "@/app/fonts";
 
 // Icons
 import { Star } from "lucide-react";
@@ -21,14 +14,19 @@ import { Star } from "lucide-react";
 // Utils
 import { cn } from "@/lib/utils";
 
-const Testimonials = () => {
+// Types
+import { Testimonial } from "@/types";
+
+
+const Testimonials = ({ data }: { data: Testimonial[] }) => {
   return (
-    <Wrapper container="stretch" className="text-primary bg-[#fbfbfb]">
-      <MegaTitle
-        smallText="Resultados reales"
-        beforeTextTitle="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
-        containerClassName="mb-2.5 lg:mb-5"
-      />
+    <div className="text-primary bg-[#fbfbfb]">
+      <SectionHeading className="mb-2.5 lg:mb-5 text-left">
+        <SectionHeadingSmall>Resultados reales</SectionHeadingSmall>
+        <SectionHeadingTitle>Más de 20 años distribuyendo productos a profesionales de estética ✌️</SectionHeadingTitle>
+      </SectionHeading>
+
+
       <Carousel
         opts={{
           loop: true,
@@ -62,14 +60,14 @@ const Testimonials = () => {
                 </div>
                 <p
                   className={cn(
-                    inconsolata.className,
+                    fontMono.className,
                     "text-primary text-center"
                   )}
                 >
                   {item.content}
                 </p>
 
-                <h4 className={cn(inconsolata.className, "text-center")}>
+                <h4 className={cn(fontMono.className, "text-center")}>
                   - {item.name}
                 </h4>
               </CarouselItem>
@@ -77,7 +75,7 @@ const Testimonials = () => {
           })}
         </CarouselContent>
       </Carousel>
-    </Wrapper>
+    </div>
   );
 };
 

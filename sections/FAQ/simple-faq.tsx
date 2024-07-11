@@ -4,12 +4,15 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { MegaTitle } from "@/components/ui/mega-title";
-import Wrapper from "@/components/ui/wrapper";
+} from "@/components/shadcn/accordion";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 // Types
 import { QuestionItem } from "@/types";
+
+// Fonts
+import {fontMono} from '@/app/fonts'
+import { cn } from "@/lib/utils";
 
 interface Props {
   sectionSmallText: string;
@@ -23,13 +26,16 @@ export default function Questions({
   data,
 }: Props) {
   return (
-    <Wrapper container="stretch" className="flex flex-col gap-6">
-      <MegaTitle
-        smallText={sectionSmallText}
-        beforeTextTitle={sectionTitle}
-        containerClassName="mb-10"
-      />
-      <Accordion type="single" collapsible className="w-full">
+    <div className="flex flex-col gap-6">
+
+      <SectionHeading className="mb-10 text-left">
+        <SectionHeadingSmall>{sectionSmallText}</SectionHeadingSmall>
+        <SectionHeadingTitle>{sectionTitle}</SectionHeadingTitle>
+      </SectionHeading>
+
+     
+      
+      <Accordion type="single" collapsible className={cn(fontMono.className,"w-full flex flex-col gap-3")}>
         {data.map((item) => (
           <AccordionItem key={item.id} value={item.title}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
@@ -39,6 +45,6 @@ export default function Questions({
           </AccordionItem>
         ))}
       </Accordion>
-    </Wrapper>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import { VideoSliderItem } from "../types";
 
-const videos: VideoSliderItem[] = [
+const slider_videos: VideoSliderItem[] = [
   {
     id: 1,
     posterUrl:
@@ -40,4 +40,4 @@ const videos: VideoSliderItem[] = [
     title: "¿Cuanto tarda en llegar mi pedido?",
   },
 ];
-export default videos;
+export default slider_videos;

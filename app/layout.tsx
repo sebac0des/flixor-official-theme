@@ -2,11 +2,15 @@
 import type { Metadata } from "next";
 
 // Fonts
-import { poppins } from "./fonts";
+import { fontSans } from "./fonts";
 
 // Styles
 import "./globals.css";
+
+// React
 import { Suspense } from "react";
+
+// Loading UI component
 import Loading from "./loading";
 
 export const metadata: Metadata = {
@@ -24,8 +28,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={poppins.className}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+      <body className={fontSans.className}>
+        <Suspense fallback={<Loading />}>
+            {children}
+        </Suspense>
       </body>
     </html>
   );

@@ -1,23 +1,28 @@
-import Link from "next/link";
+// Utilities
+import { cn } from "@/lib/utils";
 
 // Components
-import Logo from "./logo";
-import { Button } from "./ui/button";
+import Logo from "@/components/logo";
+import ShoppingCart from '@/components/shopping-cart';
+import React from "react";
 
-interface Props {
-  buttonText: string;
-  buttonUrl: string;
+
+
+const Header = ({ className }: React.HTMLAttributes<HTMLElement>) => {
+
+  return <header
+    className={cn(
+      "bg-white p-4 flex justify-between items-center",
+      className
+    )}
+  >
+    <Logo />
+    <ShoppingCart />
+  </header>
 }
 
-const Header = (props: Props) => {
-  return (
-    <header className="bg-white p-4 flex justify-between items-center">
-      <Logo />
-      <Button asChild>
-        <Link href={props.buttonUrl}>{props.buttonText}</Link>
-      </Button>
-    </header>
-  );
-};
 
-export default Header;
+
+
+
+export default Header

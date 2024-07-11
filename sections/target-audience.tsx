@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 // Components
-import { MegaTitle } from "@/components/ui/mega-title";
-import Wrapper from "@/components/ui/wrapper";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 interface Props {
   sectionSmallText: string;
@@ -23,12 +22,12 @@ export function TargetAudience({
   data,
 }: Props) {
   return (
-    <Wrapper container="stretch" className="flex flex-col">
-      <MegaTitle
-        containerClassName="mb-10 xl:mb-20"
-        smallText={sectionSmallText}
-        beforeTextTitle={sectionTitle}
-      />
+    <div className="flex flex-col">
+      <SectionHeading className="text-left mb-10 xl:mb-20">
+        <SectionHeadingSmall>{sectionSmallText}</SectionHeadingSmall>
+        <SectionHeadingTitle>{sectionTitle}</SectionHeadingTitle>
+      </SectionHeading>
+
 
       <ul className="grid md:grid-cols-2 gap-10 xl:gap-5">
         {data.map((item) => (
@@ -48,6 +47,6 @@ export function TargetAudience({
           </li>
         ))}
       </ul>
-    </Wrapper>
+    </div>
   );
 }

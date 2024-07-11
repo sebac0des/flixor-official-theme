@@ -1,11 +1,11 @@
 // Fonts
-import { inconsolata } from "@/app/fonts";
+import { fontMono } from "@/app/fonts";
 
 // Next
 import Link from "next/link";
 
 // Components
-import { Button } from "./ui/button";
+import { Button } from "./shadcn/button";
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -20,8 +20,8 @@ const Topbar = ({ message, url,className }: Props) => {
   return (
     <div
       className={cn(
-        inconsolata.className,
-        "bg-white border-b border-primary/20 py-2",
+        fontMono.className,
+        "bg-white border-b border-primary/20 py-2 text-center md:text-left",
         className
       )}
     >
