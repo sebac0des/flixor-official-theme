@@ -8,6 +8,8 @@ import Topbar from "@/components/topbar";
 // Components
 import { CardsGallery, CardsGalleryFeaturedImage, CardsGalleryGridImages, CardsGalleryGridVideos } from '@/components/flixor/cards-gallery' 
 import { CardCarousel, CardCarouselImages, CardCarouselSingleImage, CardCarouselSingleVideo } from '@/components/flixor/cards-carousel'; 
+import { SectionHeading, SectionHeadingTitle } from '@/components/flixor/section-heading';
+
 
 // Breadcrumb components
 import {
@@ -20,7 +22,7 @@ import {
 } from "@/components/shadcn/breadcrumb"
 
 // Wrapper component
-import Wrapper from '@/components/flixor/wrapper';
+import Container from '@/components/flixor/container';
 
 // Product info components
 import { ProductInfo, ProductInfoTitle, ProductInfoDescription, ProductInfoPrice } from '@/components/flixor/product/product-info';
@@ -46,8 +48,6 @@ import { cn } from '@/lib/utils';
 // Icons
 import { Lock, Truck, Package } from 'lucide-react';
 
-// Simple title component
-import { SimpleTitle } from '@/components/flixor/simple-title';
 import { AddToCartButton,AddToCartButtonText,AddToCartButtonIcon } from '@/components/flixor/add-to-cart';
 
 
@@ -77,7 +77,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </BreadcrumbList>
         </Breadcrumb>
 
-        <Wrapper container='stretch' className='flex flex-col md:gap-10 xl:flex-row py-2'>
+        <Container className='flex flex-col md:gap-10 xl:flex-row py-2'>
             {/* Show product gallery on desktop screens*/}
             <CardsGallery className="hidden xl:grid">
                 <CardsGalleryFeaturedImage
@@ -169,14 +169,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     </AccordionItem>
                 </Accordion>
             </ProductInfo>
-        </Wrapper>
+        </Container>
 
         {/* Show related products on the same category */}
-        <Wrapper container='stretch'>
-            <SimpleTitle
-                titleText="You might also like"
-                containerClassName="text-left"
-            />
+        <Container>
+            <SectionHeading className='text-left'>
+                <SectionHeadingTitle>You might also like</SectionHeadingTitle>
+            </SectionHeading>
+
             <ProductCarousel
                 opts={{
                     align: "start",
@@ -185,7 +185,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <ProductCarouselIndicators />
                 <ProductCarouselContent data={related_products} />
             </ProductCarousel>
-        </Wrapper>
+        </Container>
     </main>
 }
 

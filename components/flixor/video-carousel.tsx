@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from "react";
-
+// Components
+import { Card, CardTitle, CardVideo, CardContent } from '@/components/flixor/card'
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +10,9 @@ import {
   CarouselPrevious,
 } from "@/components/shadcn/carousel";
 
-import { VideoSliderItem } from "../../types";
-import { Card, CardTitle, CardVideo, CardContent } from '@/components/flixor/card'
+// Types
+import { VideoSliderItem } from "@/types";
+
 
 interface Props {
   data: VideoSliderItem[];

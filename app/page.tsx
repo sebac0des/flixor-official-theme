@@ -27,7 +27,7 @@ import { BenefitsVerticalSlider } from "@/components/flixor/benefits-vertical-sl
 
 import { FeaturedProducts } from '@/components/flixor/product/featured-products'
 import { ProductCarousel, ProductCarouselContent, ProductCarouselIndicators } from '@/components/flixor/product/product-carousel'
-import Wrapper from "@/components/flixor/wrapper";
+import Container from "@/components/flixor/container";
 import { Button } from "@/components/shadcn/button";
 
 
@@ -119,7 +119,7 @@ export default async function Page() {
         buttonUrl="#"
       />
 
-      <Wrapper container="stretch" className="flex flex-col gap-16">
+      <Container size="4">
         {/* Show featured products cards */}
         <FeaturedProducts data={featured_products} />
 
@@ -190,7 +190,7 @@ export default async function Page() {
           sectionTitle="¿Tienes dudas? ¡Te las aclaramos! 👇"
           data={faq}
         />
-      </Wrapper>
+      </Container>
 
 
 
