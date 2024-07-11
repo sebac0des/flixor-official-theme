@@ -56,7 +56,7 @@ export default async function Page() {
 
       {/* Show a floating pop over on the screen, ideal to offer quick contact to the user */}
       <FloatingPopOver>
-        <FloatingPopOverTrigger>
+        <FloatingPopOverTrigger position="left">
           <button>hello world</button>
         </FloatingPopOverTrigger>
         <FloatingPopOverContent>dsadassdda</FloatingPopOverContent>

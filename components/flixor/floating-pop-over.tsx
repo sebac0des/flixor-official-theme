@@ -34,12 +34,12 @@ interface FloatingPopOverContext {
 
 // Floating pop over variants
 const floatingPopOverVariants = cva(
-  "bg-red-500",
+  "fixed z-50",
   {
     variants: {
       position: {
         right:
-          "fixed bottom-0 right-0 z-50",
+          "bottom-0 right-0",
         left: "bottom-0 left-0",
       },
     },
@@ -77,7 +77,7 @@ const FloatingPopOverTrigger = ({children, className, position = 'right',...prop
   
   return <PopoverTrigger
   onClick={()=>setOpen(!open)} 
-  className={cn(cva(floatingPopOverVariants({className,position})))}
+  className={cn(floatingPopOverVariants({position,className}))}
   asChild
   {...props}>
     {children}
