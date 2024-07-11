@@ -3,8 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/shadcn/carousel";
-import Wrapper from "@/components/flixor/wrapper";
-import { SimpleTitle } from "@/components/flixor/simple-title";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 // Fonts
 import { fontMono } from "@/app/fonts";
@@ -19,15 +18,15 @@ import { cn } from "@/lib/utils";
 import { Testimonial } from "@/types";
 
 
-const Testimonials = ({data}:{data:Testimonial[]}) => {
+const Testimonials = ({ data }: { data: Testimonial[] }) => {
   return (
-    <div  className="text-primary bg-[#fbfbfb]">
-      <SimpleTitle
-      smallText="Resultados reales"
-      titleText="Más de 20 años distribuyendo productos a profesionales de estética ✌️"
-      containerClassName="mb-2.5 lg:mb-5 text-left"
-      />
-      
+    <div className="text-primary bg-[#fbfbfb]">
+      <SectionHeading className="mb-2.5 lg:mb-5 text-left">
+        <SectionHeadingSmall>Resultados reales</SectionHeadingSmall>
+        <SectionHeadingTitle>Más de 20 años distribuyendo productos a profesionales de estética ✌️</SectionHeadingTitle>
+      </SectionHeading>
+
+
       <Carousel
         opts={{
           loop: true,

@@ -1,5 +1,5 @@
 // Components
-import { SimpleTitle } from "@/components/flixor/simple-title";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 import VideoCarousel from "@/components/flixor/video-carousel";
 
 // Types
@@ -18,7 +18,10 @@ export default function FAQWithVideoCarousel({
 }: Props) {
   return (
     <div className="flex flex-col gap-5 lg:gap-10">
-      <SimpleTitle containerClassName="text-left" smallText={sectionSmallText} titleText={sectionTitle}/>
+      <SectionHeading>
+        <SectionHeadingSmall>{sectionSmallText}</SectionHeadingSmall>
+        <SectionHeadingTitle>{sectionTitle}</SectionHeadingTitle>
+      </SectionHeading>
       <VideoCarousel data={data} />
     </div>
   );

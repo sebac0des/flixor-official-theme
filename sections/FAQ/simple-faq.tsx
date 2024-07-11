@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/shadcn/accordion";
-import { SimpleTitle } from "@/components/flixor/simple-title";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 // Types
 import { QuestionItem } from "@/types";
@@ -27,7 +27,13 @@ export default function Questions({
 }: Props) {
   return (
     <div className="flex flex-col gap-6">
-      <SimpleTitle smallText={sectionSmallText} titleText={sectionTitle} containerClassName="mb-10 text-left" />
+
+      <SectionHeading className="mb-10 text-left">
+        <SectionHeadingSmall>{sectionSmallText}</SectionHeadingSmall>
+        <SectionHeadingTitle>{sectionTitle}</SectionHeadingTitle>
+      </SectionHeading>
+
+     
       
       <Accordion type="single" collapsible className={cn(fontMono.className,"w-full flex flex-col gap-3")}>
         {data.map((item) => (

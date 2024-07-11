@@ -19,7 +19,7 @@ import {
 
 import { Avatar, AvatarImage } from "@/components/shadcn/avatar";
 
-import { SimpleTitle } from "@/components/flixor/simple-title";
+import { SectionHeading, SectionHeadingTitle, SectionHeadingSmall, SectionHeadingDescription } from "@/components/flixor/section-heading";
 
 import { FloatingPopOver, FloatingPopOverTrigger, FloatingPopOverContent } from '@/components/flixor/floating-pop-over'
 
@@ -126,11 +126,10 @@ export default async function Page() {
         {/* Show popular on product card slider */}
         <ProductCarousel >
           <div className="lg:flex justify-between items-center">
-            <SimpleTitle
-              titleText="Most Popular ✨"
-              description="Looking for safe skincare products that actually work? Look no further!"
-              containerClassName="mb-3 text-left"
-            />
+            <SectionHeading className="mb-3 text-left">
+              <SectionHeadingTitle>Most Popular ✨</SectionHeadingTitle>
+              <SectionHeadingDescription>Looking for safe skincare products that actually work? Look no further!</SectionHeadingDescription>
+            </SectionHeading>
             <ProductCarouselIndicators />
           </div>
 
@@ -139,12 +138,12 @@ export default async function Page() {
 
         {/* Show a combo show case with video and shopping card */}
         <ComboShowcase >
-          <SimpleTitle
-            containerClassName="text-left mb-4"
-            smallText="Best treat for your skin
-        "
-            titleText="Bundle & Save 🤑"
-          />
+
+            <SectionHeading className="text-left mb-4">
+              <SectionHeadingSmall>Best treat for your skin</SectionHeadingSmall>
+              <SectionHeadingTitle>Bundle & Save 🤑</SectionHeadingTitle>
+            </SectionHeading>
+          
           <ComboShowcaseContent >
             <ComboVideoCard product={combo} />
             <ComboShoppingCard className="md:w-2/5" product={combo} />

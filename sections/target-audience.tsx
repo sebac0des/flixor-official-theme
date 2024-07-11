@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Components
-import { SimpleTitle } from "@/components/flixor/simple-title";
+import { SectionHeading, SectionHeadingSmall, SectionHeadingTitle } from "@/components/flixor/section-heading";
 
 interface Props {
   sectionSmallText: string;
@@ -22,12 +22,12 @@ export function TargetAudience({
   data,
 }: Props) {
   return (
-    <div  className="flex flex-col">
-      <SimpleTitle
-      containerClassName="text-left mb-10 xl:mb-20"
-        smallText={sectionSmallText}
-        titleText={sectionTitle}
-      />
+    <div className="flex flex-col">
+      <SectionHeading className="text-left mb-10 xl:mb-20">
+        <SectionHeadingSmall>{sectionSmallText}</SectionHeadingSmall>
+        <SectionHeadingTitle>{sectionTitle}</SectionHeadingTitle>
+      </SectionHeading>
+
 
       <ul className="grid md:grid-cols-2 gap-10 xl:gap-5">
         {data.map((item) => (
