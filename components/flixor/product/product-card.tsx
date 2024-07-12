@@ -13,7 +13,7 @@ const ProductCard = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-lg border border-soft bg-card text-card-foreground shadow-sm",
       className
     )}
     {...props}
@@ -27,7 +27,7 @@ const ProductCardImage = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <Image
     ref={ref}
-    className={cn("object-cover h-96",className)}
+    className={cn("object-cover h-96 rounded-t-md",className)}
     {...props}
   />
 ))
