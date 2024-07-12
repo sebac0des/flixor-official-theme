@@ -1,48 +1,93 @@
-// Next js
-import Image from "next/image";
+import * as React from "react"
+import { cn } from "@/lib/utils"
 
-// Utils
-import { cn } from "@/lib/utils";
+import Image, { ImageProps } from 'next/image'
 
 // Fonts
-import { fontMono } from "@/app/fonts";
+import { fontMono } from '@/app/fonts'
 
-// Types
-import { Product } from "@/types/product";
-import Link from "next/link";
+const ProductCard = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border border-soft",
+      className
+    )}
+    {...props}
+  />
+))
+ProductCard.displayName = "ProductCard"
+
+const ProductCardImage = React.forwardRef<
+  HTMLImageElement,
+  ImageProps
+>(({ className, ...props }, ref) => (
+  <Image
+    ref={ref}
+    className={cn("object-cover h-96 rounded-t-md",className)}
+    {...props}
+  />
+))
+ProductCardImage.displayName = "ProductCardImage"
+
+const ProductCardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-5", className)}
+    {...props}
+  />
+))
+ProductCardHeader.displayName = "ProductCardHeader"
+
+const ProductCardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(({ className, ...props }, ref) => <h3
+  ref={ref}
+  className={cn(
+    fontMono.className,
+    "text-xl mb-1",
+    className
+  )}
+  {...props}
+/>
+)
+ProductCardTitle.displayName = "ProductCardTitle"
+
+const ProductCardDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn(fontMono.className, "text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+ProductCardDescription.displayName = "ProductCardDescription"
 
 
+const ProductCardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+ProductCardContent.displayName = "ProductCardContent"
 
-interface Props {
-    className?: string
-    product: Product
-}
+const ProductCardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-5 pt-0", className)}
+    {...props}
+  />
+))
+ProductCardFooter.displayName = "ProductCardFooter"
 
-export function ProductCard({ product, className }: Props) {
-
-    if (product) return <div className={cn(className, 'relative border border-soft rounded-t-md rounded-b-md overflow-hidden')}>
-
-        <Image
-            width={1080}
-            height={1080}
-            alt={product.name}
-            src={product.cover_image}
-            className="object-cover h-96"
-        />
-
-        <div className="p-4 text-primary bg-white">
-            <Link href={`/shop/${product.slug}`}  >
-            <h3 className={cn(fontMono.className, "text-2xl mb-1")}>{product.name}</h3>
-            </Link>
-         
-            <p className={cn(fontMono.className, "text-sm mb-8")}>{product.short_desc}</p>
-
-            <div className="flex justify-between items-center">
-                <span className={cn(fontMono.className, "text-lg")}>${product.price.toFixed(2)}</span>
-            </div>
-        </div>
-
-
-    </div>
-}
-
+export { ProductCard, ProductCardHeader, ProductCardFooter, ProductCardTitle, ProductCardDescription, ProductCardContent, ProductCardImage }

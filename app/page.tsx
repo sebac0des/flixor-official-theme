@@ -138,7 +138,6 @@ export default async function Page() {
 
         {/* Show a combo show case with video and shopping card */}
         <ComboShowcase >
-
             <SectionHeading className="text-left mb-4">
               <SectionHeadingSmall>Best treat for your skin</SectionHeadingSmall>
               <SectionHeadingTitle>Bundle & Save 🤑</SectionHeadingTitle>
