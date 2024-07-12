@@ -8,7 +8,7 @@ interface Props {
 export function FeaturedProducts({data}:Props) {
     return <div className="grid md:grid-cols-2 gap-5" >
         {data.map(item=>{
-            return        <Card key={item.id}>
+            return <Card key={item.id}>
             <CardOverlay/>
             <CardImage
             src={item.cover_image}

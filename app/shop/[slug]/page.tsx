@@ -116,10 +116,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     <AddToCartButtonText>Agregar al carrito</AddToCartButtonText>
                 </AddToCartButton>
 
-
                 <Button variant="accent" className='mb-8 w-full py-6' size="lg">Buy now</Button>
-
-
 
                 {/* Show business benefits */}
                 <Benefit className='flex flex-col gap-2 mt-5'>
