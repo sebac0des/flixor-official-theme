@@ -5,6 +5,7 @@ import useCartStore from "@/store/cart";
 
 // Components
 import { Button, ButtonProps } from "@/components/shadcn/button";
+import { useToast } from "@/components/shadcn/use-toast";
 
 // Icons
 import { ShoppingCart, LucideProps } from "lucide-react";
@@ -14,7 +15,6 @@ import { cn } from "@/lib/utils";
 
 // Types
 import { Product } from '@/types/product';
-import { useToast } from "../shadcn/use-toast";
 
 
 interface AddToCartButtonProps extends ButtonProps {
