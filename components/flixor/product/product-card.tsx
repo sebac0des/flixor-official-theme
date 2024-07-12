@@ -19,7 +19,7 @@ const ProductCard = React.forwardRef<
     {...props}
   />
 ))
-ProductCard.displayName = "Card"
+ProductCard.displayName = "ProductCard"
 
 const ProductCardImage = React.forwardRef<
   HTMLImageElement,
@@ -31,7 +31,7 @@ const ProductCardImage = React.forwardRef<
     {...props}
   />
 ))
-ProductCardImage.displayName = "CardImage"
+ProductCardImage.displayName = "ProductCardImage"
 
 const ProductCardHeader = React.forwardRef<
   HTMLDivElement,
@@ -43,7 +43,7 @@ const ProductCardHeader = React.forwardRef<
     {...props}
   />
 ))
-ProductCardHeader.displayName = "CardHeader"
+ProductCardHeader.displayName = "ProductCardHeader"
 
 const ProductCardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(({ className, ...props }, ref) => <h3
   ref={ref}
@@ -55,7 +55,7 @@ const ProductCardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttrib
   {...props}
 />
 )
-ProductCardTitle.displayName = "CardTitle"
+ProductCardTitle.displayName = "ProductCardTitle"
 
 const ProductCardDescription = React.forwardRef<
   HTMLParagraphElement,
@@ -67,17 +67,16 @@ const ProductCardDescription = React.forwardRef<
     {...props}
   />
 ))
-ProductCardDescription.displayName = "CardDescription"
+ProductCardDescription.displayName = "ProductCardDescription"
 
 
-// DONT USED
 const ProductCardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
-ProductCardContent.displayName = "CardContent"
+ProductCardContent.displayName = "ProductCardContent"
 
 const ProductCardFooter = React.forwardRef<
   HTMLDivElement,
@@ -89,6 +88,6 @@ const ProductCardFooter = React.forwardRef<
     {...props}
   />
 ))
-ProductCardFooter.displayName = "CardFooter"
+ProductCardFooter.displayName = "ProductCardFooter"
 
 export { ProductCard, ProductCardHeader, ProductCardFooter, ProductCardTitle, ProductCardDescription, ProductCardContent, ProductCardImage }
