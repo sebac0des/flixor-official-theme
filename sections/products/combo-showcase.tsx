@@ -1,6 +1,6 @@
 // Components
 import { ProductVideoCard } from '@/components/flixor/product/product-video-card'
-import { ProductCard, ProductCardContent, ProductCardDescription, ProductCardFooter, ProductCardHeader, ProductCardImage, ProductCardTitle } from '@/components/flixor/product/product-card'
+import { ProductCard, ProductCardDescription, ProductCardFooter, ProductCardHeader, ProductCardImage, ProductCardTitle } from '@/components/flixor/product/product-card'
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Product } from "@/types/product";
 import { fontMono } from '@/app/fonts';
 import { AddToCartButton, AddToCartButtonIcon, AddToCartButtonText } from '@/components/flixor/add-to-cart';
+import Link from 'next/link';
 
 interface ComboShowcaseProps {
   children: React.ReactNode;
@@ -53,7 +54,10 @@ const ComboShowcaseContent = ({ className, children, ...props }: ComboShowcaseCo
 const ComboShoppingCard = ({ product, ...props }: ComboShoppingCardProps) => <ProductCard>
   <ProductCardImage width={1080} height={1080} alt="" src={product.cover_image} />
   <ProductCardHeader>
+    <Link href={`/shop/${product.slug}`}>
     <ProductCardTitle>{product.name}</ProductCardTitle>
+    
+    </Link>
     <ProductCardDescription>{product.short_desc}</ProductCardDescription>
   </ProductCardHeader>
 

@@ -19,6 +19,7 @@ import { Product } from "@/types/product";
 
 // Fonts
 import { fontMono } from "@/app/fonts";
+import Link from "next/link";
 
 
 type CarouselProps = React.ComponentProps<typeof Carousel>;
@@ -42,7 +43,10 @@ function ProductCarouselContent({ data, className, ...props }: CarouselContentPr
                 <ProductCard>
                     <ProductCardImage width={1080} height={1080} alt="" src={item.cover_image} />
                     <ProductCardHeader>
-                        <ProductCardTitle>{item.name}</ProductCardTitle>
+                        <Link href={`/shop/${item.slug}`}>
+                            <ProductCardTitle>{item.name}</ProductCardTitle>
+
+                        </Link>
                         <ProductCardDescription>{item.short_desc}</ProductCardDescription>
                     </ProductCardHeader>
 
