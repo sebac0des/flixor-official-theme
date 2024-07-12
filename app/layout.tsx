@@ -12,6 +12,7 @@ import { Suspense } from "react";
 
 // Loading UI component
 import Loading from "./loading";
+import { Toaster } from "@/components/shadcn/toaster";
 
 export const metadata: Metadata = {
   title: "Jalf",
@@ -30,6 +31,7 @@ export default function RootLayout({
       </head>
       <body className={fontSans.className}>
         <Suspense fallback={<Loading />}>
+            <Toaster/>
             {children}
         </Suspense>
       </body>
