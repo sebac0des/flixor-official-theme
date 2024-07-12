@@ -7,7 +7,9 @@ import {
     CarouselPrevious
 } from "@/components/shadcn/carousel"
 
-import { ProductCard } from "./product-card";
+import { ProductCard, ProductCardDescription, ProductCardFooter, ProductCardHeader, ProductCardTitle, ProductCardImage } from "@/components/flixor/product/product-card";
+
+import { AddToCartButton, AddToCartButtonIcon, AddToCartButtonText } from "@/components/flixor/add-to-cart";
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -15,11 +17,14 @@ import { cn } from "@/lib/utils";
 // Types
 import { Product } from "@/types/product";
 
+// Fonts
+import { fontMono } from "@/app/fonts";
+
 
 type CarouselProps = React.ComponentProps<typeof Carousel>;
 type CarouselContentProps = React.ComponentProps<typeof CarouselContent> & { data: Product[] }
 
-function ProductCarousel({ children, className,...props }: CarouselProps) {
+function ProductCarousel({ children, className, ...props }: CarouselProps) {
 
     return <Carousel
         {...props}
@@ -29,13 +34,32 @@ function ProductCarousel({ children, className,...props }: CarouselProps) {
     </Carousel>
 }
 
-function ProductCarouselContent({ data,className, ...props }: CarouselContentProps) {
+function ProductCarouselContent({ data, className, ...props }: CarouselContentProps) {
     return <CarouselContent {...props} className={cn(className)}>
-        {data.map((item) => (
-            <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
-                <ProductCard product={item} />
+
+        {data.map(item => {
+            return <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                <ProductCard>
+                    <ProductCardImage width={1080} height={1080} alt="" src={item.cover_image} />
+                    <ProductCardHeader>
+                        <ProductCardTitle>{item.name}</ProductCardTitle>
+                        <ProductCardDescription>{item.short_desc}</ProductCardDescription>
+                    </ProductCardHeader>
+
+                    <ProductCardFooter className="place-content-between">
+                        <span className={cn(fontMono.className, "text-lg")}>${item.price.toFixed(2)}</span>
+                        <AddToCartButton
+                            className="text-xs"
+                            size="sm"
+                            variant="secondary" cartItem={item}>
+                            <AddToCartButtonText>Agregar al carrito</AddToCartButtonText>
+                            <AddToCartButtonIcon className="w-4 h-4 ml-2.5" />
+                        </AddToCartButton>
+                    </ProductCardFooter>
+                </ProductCard>
             </CarouselItem>
-        ))}
+        })}
+
     </CarouselContent>
 }
 
