@@ -1,3 +1,5 @@
+import React from "react";
+
 // Fonts
 import { fontMono } from "@/app/fonts";
 
@@ -14,9 +16,6 @@ import { cn } from "@/lib/utils";
 
 // Types
 import {ImageProps} from 'next/image'
-import React from "react";
-
-type CardVideoProps = React.ComponentProps<typeof Video>;
 
 interface CardButton extends React.ComponentProps<typeof Button> {
   buttonUrl:string
