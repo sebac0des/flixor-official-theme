@@ -1,5 +1,8 @@
 'use client'
 
+// React
+import React, { ReactNode } from "react";
+
 // Cart State
 import useCartStore from "@/store/cart";
 
@@ -21,7 +24,11 @@ interface AddToCartButtonProps extends ButtonProps {
   cartItem: Product
 };
 
-const AddToCartButton = ({children,className,cartItem, ...props}:AddToCartButtonProps)=>{
+const AddToCartButton = React.forwardRef<
+  HTMLButtonElement,
+  AddToCartButtonProps
+>(({ className,cartItem, ...props }, ref) => {
+
   const {addItem} = useCartStore()
   const {toast} = useToast()
 
@@ -34,17 +41,27 @@ const AddToCartButton = ({children,className,cartItem, ...props}:AddToCartButton
   }
 
   return <Button
+  ref={ref}
   onClick={()=> handleAddToCart(cartItem)} 
-  className={cn(className)} 
+  className={cn(
+    "rounded-lg",
+    className
+  )}
   {...props}
-  >
-  {children}
-</Button>
-}
+/>
+})
+AddToCartButton.displayName = "AddToCartButton"
 
-const AddToCartButtonText = ({children,className, ...props}: React.HTMLAttributes<HTMLSpanElement>)=> 
-<span className={className} {...props}>{children}</span>
+const AddToCartButtonText = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(({ className, ...props }, ref) => <span
+  ref={ref}
+  className={className}
+  {...props}
+/>
+)
+AddToCartButtonText.displayName = "AddToCartButtonText"
 
-const AddToCartButtonIcon = ({className,...props}:LucideProps)=> <ShoppingCart className={className} {...props}/>
+const AddToCartButtonIcon = React.forwardRef<ReactNode,LucideProps>(({className,...props})=> <ShoppingCart className={className} {...props}/>)
+AddToCartButtonIcon.displayName = "AddToCartButtonText"
+
 
 export {AddToCartButton,AddToCartButtonText,AddToCartButtonIcon}
