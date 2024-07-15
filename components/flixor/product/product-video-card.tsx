@@ -1,6 +1,6 @@
 
 // Components
-import { Card, CardButton, CardContent, CardVideo, CardOverlay, CardSmallText, CardTitle } from "../card";
+import { Card, CardButton, CardContent, CardVideo, CardOverlay, CardDescription, CardTitle } from "../card";
 
 // Types
 import { Product } from "@/types/product";
@@ -25,7 +25,7 @@ export function ProductVideoCard({product,className}:Props) {
     preload="metadata"
     />
     <CardContent>
-        <CardSmallText>{product.tagline}</CardSmallText>
+        <CardDescription>{product.tagline}</CardDescription>
         <CardTitle>{product.name}</CardTitle>
         <CardButton buttonUrl={`/shop/${product.slug}`} className="mt-3">Mas info</CardButton>
     </CardContent>
