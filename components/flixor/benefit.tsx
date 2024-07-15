@@ -1,5 +1,8 @@
+// React
+import React from 'react'
+
 // Next js
-import Link from 'next/link'
+import Link, { LinkProps } from 'next/link'
 
 // Fonts
 import { fontMono } from '@/app/fonts'
@@ -7,33 +10,33 @@ import { fontMono } from '@/app/fonts'
 // Utils
 import { cn } from '@/lib/utils'
 
+const Benefit = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=> <div ref={ref} className={className} {...props}/>)
+Benefit.displayName = 'Benefit'
+
+const BenefitItem = React.forwardRef<HTMLDivElement,React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=> <div 
+ref={ref}
+className={cn("border-b border-soft pb-2",className)} 
+{...props}/>)
+BenefitItem.displayName = 'BenefitItem'
 
 
+const BenefitTitle = React.forwardRef<HTMLHeadingElement,React.HTMLAttributes<HTMLHeadingElement>>(({className,...props},ref)=> <h4 ref={ref} className={cn(fontMono.className,"text-sm font-bold",className)} {...props}/>)
+BenefitTitle.displayName = 'BenefitTitle'
 
-function Benefit({ className, children }: React.HTMLAttributes<HTMLDivElement>) {
-    return <div className={className}>
-        {children}
-    </div>
-}
+const BenefitContent = React.forwardRef<HTMLDivElement,React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=> <div ref={ref} className={className} {...props}/>)
+BenefitContent.displayName = 'BenefitContent'
 
-function BenefitItem({children,className}:React.HTMLAttributes<HTMLDivElement>){
-    return <div className={cn("border-b border-soft pb-2",className)}>{children}</div>
-}
 
-function BenefitTitle({children}:React.HTMLAttributes<HTMLHeadingElement>){
-    return <h4 className={cn(fontMono.className,"text-sm font-bold")}>{children}</h4>
-}
+const BenefitDescription = React.forwardRef<HTMLParagraphElement,React.HTMLAttributes<HTMLParagraphElement>>(({className,...props},ref)=> <p ref={ref} className={cn(fontMono.className,"text-xs",className)} {...props}/>)
+BenefitDescription.displayName = 'BenefitDescription'
 
-function BenefitContent({children}:React.HTMLAttributes<HTMLDivElement>){
-    return <div className=''>{children}</div> 
-}
-
-function BenefitDescription({children}:React.HTMLAttributes<HTMLParagraphElement>){
-    return <p className={cn("text-xs", fontMono.className)}>{children}</p> 
-}
-
-function BenefitLink({children}:React.HTMLAttributes<HTMLAnchorElement>){
-    return <Link href="#" className={cn("text-xs underline", fontMono.className)}>{children}</Link> 
-}
+const BenefitLink = React.forwardRef<HTMLAnchorElement,LinkProps>(({href,...props},ref)=> 
+<Link 
+ref={ref}
+href={href} 
+className={cn("text-xs underline", fontMono.className)}
+{...props}
+/>)
+BenefitLink.displayName = 'BenefitLink'
 
 export {Benefit,BenefitItem,BenefitTitle,BenefitDescription,BenefitLink, BenefitContent}
