@@ -1,8 +1,11 @@
+// React
+import React from "react";
+
 // Next js
-import Image, {ImageProps} from "next/image"
+import Image, { ImageProps } from "next/image"
 
 // Components
-import { Button } from "../shadcn/button";
+import { Button, ButtonProps } from "@/components/shadcn/button";
 
 // Icons
 import { X } from "lucide-react";
@@ -13,36 +16,32 @@ import { fontMono } from '@/app/fonts'
 // Utils
 import { cn } from '@/lib/utils'
 
-type Button = React.ComponentProps<typeof Button>
+const CartItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => <div ref={ref} className={cn("flex gap-4", className)} {...props} />)
+CartItem.displayName = 'CartItem'
+
+const CartItemImage = React.forwardRef<HTMLImageElement, ImageProps>(({ className, ...props }, ref) => <Image ref={ref} className={cn("h-20 w-20 rounded-md")} width={300} height={300} {...props} />)
+CartItemImage.displayName = 'CartItemImage'
+
+const CartItemContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => <div ref={ref} className={className} {...props} />)
+CartItemContent.displayName = 'CartItemContent'
+
+const CartItemName = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(({ className, ...props }, ref) => <h3 ref={ref} className={cn(fontMono.className, className)}
+    {...props} />)
+CartItemContent.displayName = 'CartItemName'
 
 
-const CartItem = ({ children, className, ...props}: React.HTMLAttributes<HTMLDivElement>) => {
-    return <div className={cn("flex gap-4",className)}
-    {...props}
-    >
-        {children}
-    </div>
-}
+const CartItemSubtotal = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(({ className, ...props }, ref) => <span
+    ref={ref} className={cn(fontMono.className, className)} {...props} />)
+CartItemSubtotal.displayName = 'CartItemSubtotal'
 
-const CartItemImage = ({src,alt}:ImageProps) => <Image
-    className='h-20 w-20 rounded-md'
-    src={src}
-    alt={alt}
-    width={300}
-    height={300}
-/>
+const CartItemRemove = React.forwardRef<ButtonProps, React.HTMLAttributes<HTMLButtonElement>>(({ className, ...props }) =>
+    <Button
+    className={cn("h-fit w-fit", className)} 
+    size="icon" 
+    variant="ghost"
+    {...props}>
+        <X className="w-4 h-4" />
+    </Button>)
+CartItemRemove.displayName = 'CartItemRemove'
 
-const CartItemContent = ({children, className, ...props}:React.HTMLAttributes<HTMLDivElement>)=> <div className={className} {...props}>{children}</div>
-
-const CartItemName = ({children, className, ...props}:React.HTMLAttributes<HTMLHeadingElement>) => <h3 className={cn(fontMono.className,className)} {...props}>{children}</h3>
-
-const CartItemSubtotal = ({children, className, ...props}:React.HTMLAttributes<HTMLSpanElement>) => <span className={cn(fontMono.className, className)} {...props}>{children}</span>
-
-const CartItemRemove = ({className, ...props}:Button)=> {
-    return <Button className={cn("h-fit w-fit",className)} size="icon" variant="ghost" {...props} {...props}>
-        <X className="w-4 h-4"/>
-    </Button>
-}
-
-
-export {CartItem,CartItemRemove,CartItemImage,CartItemContent,CartItemName,CartItemSubtotal}
+export { CartItem, CartItemRemove, CartItemImage, CartItemContent, CartItemName, CartItemSubtotal }
