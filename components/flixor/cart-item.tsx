@@ -27,7 +27,7 @@ CartItemContent.displayName = 'CartItemContent'
 
 const CartItemName = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(({ className, ...props }, ref) => <h3 ref={ref} className={cn(fontMono.className, className)}
     {...props} />)
-CartItemContent.displayName = 'CartItemName'
+CartItemName.displayName = 'CartItemName'
 
 
 const CartItemSubtotal = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(({ className, ...props }, ref) => <span
