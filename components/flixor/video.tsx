@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-interface VideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
+export interface VideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
     intersectionMode?: boolean
     playOnHoverMode?:boolean
 }

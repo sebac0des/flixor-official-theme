@@ -125,13 +125,13 @@ export default async function Page() {
 
         {/* Show popular on product card slider */}
         <ProductCarousel >
-          <div className="lg:flex justify-between items-center">
+          <Container size="5" className="lg:flex justify-between items-center">
             <SectionHeading className="mb-3 text-left">
               <SectionHeadingTitle>Most Popular ✨</SectionHeadingTitle>
               <SectionHeadingDescription>Looking for safe skincare products that actually work? Look no further!</SectionHeadingDescription>
             </SectionHeading>
             <ProductCarouselIndicators />
-          </div>
+          </Container>
 
           <ProductCarouselContent data={popular_products} />
         </ProductCarousel>

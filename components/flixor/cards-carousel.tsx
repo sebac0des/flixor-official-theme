@@ -4,7 +4,6 @@ import React from 'react'
 // Components
 import { Card, CardImage, CardVideo } from '@/components/flixor/card'
 
-
 // Next js
 import { Carousel, CarouselContent, CarouselItem} from '@/components/shadcn/carousel'
 

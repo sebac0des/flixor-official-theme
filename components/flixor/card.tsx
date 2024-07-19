@@ -1,9 +1,11 @@
+import React from "react";
+
 // Fonts
 import { fontMono } from "@/app/fonts";
 
 // Components
 import { Button } from "@/components/shadcn/button";
-import { Video } from "@/components/flixor/video";
+import { Video, VideoProps } from "@/components/flixor/video";
 
 // Next js
 import Link from "next/link";
@@ -15,49 +17,58 @@ import { cn } from "@/lib/utils";
 // Types
 import {ImageProps} from 'next/image'
 
-type CardVideoProps = React.ComponentProps<typeof Video>;
-
 interface CardButton extends React.ComponentProps<typeof Button> {
   buttonUrl:string
 }
 
+const Card = React.forwardRef<HTMLDivElement,React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=><div ref={ref} 
+className={cn("rounded-md relative overflow-hidden",className)}
+{...props}
+/>)
+Card.displayName = 'Card'
 
-const Card = (props:React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-      className={cn("rounded-md relative overflow-hidden",props.className)}
-      
-    >
-      {props.children}
-    </div>
-  );
+const CardImage = React.forwardRef<
+  HTMLImageElement,
+  ImageProps
+>(({ className, ...props }, ref) => (
+  <Image
+    ref={ref}
+    width={1080}
+    height={1080}
+    className={className}
+    {...props}
+  />
+))
+CardImage.displayName = "CardImage"
 
-const CardContent = ({ className, children }:React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-      className={cn("absolute bottom-0 left-0 p-4 text-white", className)}
-    >
-      {children}
-    </div>
-  );
+const CardContent = React.forwardRef<HTMLDivElement,React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=><div
+ref={ref}
+className={cn("absolute bottom-0 left-0 p-4 text-white",className)}
+{...props}/>)
+CardContent.displayName = 'CardContent'
 
-const CardImage = ({...props}:ImageProps) => 
-<Image
-width={1080}
-height={1080}
-  {...props}
-/>
+const CardTitle = React.forwardRef<HTMLHeadingElement,React.HTMLAttributes<HTMLHeadingElement>>(({className,...props},ref)=><h3 ref={ref} className={cn("text-2xl font-medium tracking-wider",className)} {...props}/>)
+CardTitle.displayName = 'CardTitle'
 
-const CardVideo = ({...props}:CardVideoProps) => <Video {...props}/>
+const CardDescription = React.forwardRef<HTMLSpanElement,React.HTMLAttributes<HTMLSpanElement>>(({className,...props},ref)=> <span
+ref={ref} 
+className={cn(fontMono.className,'text-sm md:text-base',className)}
+{...props}
+/>) 
+CardDescription.displayName = 'CardDescription'
 
-const CardSmallText = ({children, className}:React.HTMLAttributes<HTMLSpanElement>) => <span className={cn(fontMono.className,'text-sm md:text-base', className)}>{children}</span>
-  
-const CardTitle = ({children, className}:React.HTMLAttributes<HTMLHeadingElement>) => <h3 className={cn("text-2xl font-medium tracking-wider",className)}>{children}</h3>
-
-const CardButton = ({children, className, buttonUrl}:CardButton) => 
-<Button variant="secondary" className={className}>
-    <Link href={buttonUrl}>{children}</Link>
-</Button>
-
-const CardOverlay = () => <div className="block bg-black/40 absolute top-0 left-0 w-full h-full"></div>
+const CardButton = React.forwardRef<React.HTMLAttributes<HTMLButtonElement>,CardButton>(({buttonUrl,className,children})=> <Button variant="secondary" className={className}>
+  <Link href={buttonUrl}>{children}</Link>
+</Button>)
+CardButton.displayName = 'CardButton'
 
 
-export {Card,CardContent,CardTitle,CardSmallText,CardButton,CardImage,CardVideo,CardOverlay}
+const CardOverlay = React.forwardRef<HTMLDivElement,React.HTMLAttributes<HTMLDivElement>>(({className,...props},ref)=><div ref={ref}
+className="block bg-black/40 absolute top-0 left-0 w-full h-full"
+{...props}/>)
+CardOverlay.displayName = 'CardOverlay'
+
+const CardVideo = React.forwardRef<React.HTMLAttributes<HTMLVideoElement>,VideoProps>(({...props})=><Video {...props}/>)
+CardVideo.displayName = 'CardVideo'
+
+export {Card,CardContent,CardTitle,CardDescription,CardButton,CardImage,CardVideo,CardOverlay}

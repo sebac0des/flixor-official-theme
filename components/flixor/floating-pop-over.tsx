@@ -96,11 +96,6 @@ const FloatingPopOverContext = createContext<FloatingPopOverContext>({
 })
 const useFloatingPopOver = () => useContext(FloatingPopOverContext)
 
-
-
-
-
-
 export {
   FloatingPopOver,
   FloatingPopOverTrigger,FloatingPopOverContent
