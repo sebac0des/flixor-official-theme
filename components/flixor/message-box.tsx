@@ -25,7 +25,7 @@ const MessageBoxSmallMessage = React.forwardRef<HTMLSpanElement,React.HTMLAttrib
 className={cn(fontMono.className, "text-sm xl:text-base")}
 {...props}
 />)
-MessageBox.displayName = 'MessageBoxSmallMessage'
+MessageBoxSmallMessage.displayName = 'MessageBoxSmallMessage'
 
 
 const MessageBoxTitle = React.forwardRef<HTMLHeadingElement,React.HTMLAttributes<HTMLHeadingElement>>(({className,...props},ref)=><h4

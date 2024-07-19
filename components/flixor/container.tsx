@@ -39,5 +39,6 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(({ align, siz
   ref={ref}
   className={cn(containerVariants({ size, variant, align }), className)}
   {...props} />)
+Container.displayName = 'Container'
 
 export default Container;
